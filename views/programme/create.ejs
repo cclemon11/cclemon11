@@ -1,17 +1,24 @@
 <!--create.ejs-->
-<form action="/person/create" method="post">
+<form action="/programme/create" method="post">
 
     <div class="field">
-        <label class="label">Name</label>
+        <label class="label">Faculty Name</label>
         <div class="control">
-            <input class="input" type="text" name="name" required>
+            <input class="input" type="text" name="facultyname" required>
         </div>
     </div>
 
     <div class="field">
-        <label class="label">Age</label>
+        <label class="label">Prgramme Name</label>
         <div class="control">
-            <input class="input" type="number" name="age" required>
+            <input class="input" type="text" name="programmename" required>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Enrollment</label>
+        <div class="control">
+            <input class="input" type="number" name="enrollment" required>
         </div>
     </div>
 

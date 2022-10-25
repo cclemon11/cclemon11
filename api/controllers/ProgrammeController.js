@@ -6,8 +6,8 @@
  */
 
 module.exports = {
-  // action - create
-  create: async function (req, res) {
+// action - create
+create: async function (req, res) {
 
     if (req.method == "GET") return res.view('programme/create');
     
