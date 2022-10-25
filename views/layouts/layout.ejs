@@ -34,10 +34,23 @@
     <!--STYLES-->
     <link rel="stylesheet" href="/styles/importer.css">
     <!--STYLES END-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
 
   <body>
-    <%- body %>
+    <section class="section">
+      <div class="container ">
+  
+          <div class="columns is-centered">
+              <div class="column is-half">
+  
+                  <%- body %>
+  
+              </div>
+          </div>
+  
+      </div>
+  </section>
 
 
 
@@ -108,5 +121,6 @@
     <!--SCRIPTS-->
     <script src="/dependencies/sails.io.js"></script>
     <!--SCRIPTS END-->
+    <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
   </body>
 </html>
