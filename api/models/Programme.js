@@ -12,8 +12,14 @@ module.exports = {
     //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
     //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
     //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+    facultyname:{
+      type: "string" 
+    },
 
-    programmename: {
+    enrollment: {
+      type: "number"
+    },
+    imageurl: {
       type: "string"
     },
 
