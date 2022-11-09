@@ -13,7 +13,7 @@ create: async function (req, res) {
     
     var programme = await Programme.create(req.body).fetch();
 
-    return res.redirect("/");
+    return res.status(201).json({ id: programme.id });
 },
 
 // action - jsjson function
