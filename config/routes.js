@@ -41,7 +41,10 @@ module.exports.routes = {
    'GET /programme/list': 'ProgrammeController.list',
    'GET /programme/json': 'ProgrammeController.json',
 
-
+   'GET /programme/search': 'ProgrammeController.search',
    'GET /programme/read/:id': 'ProgrammeController.read',
+   'DELETE /programme/:id': 'ProgrammeController.delete',
 
-};
+   'GET /programme/update/:id': 'ProgrammeController.update',
+   'POST /programme/update/:id': 'ProgrammeController.update',
+}

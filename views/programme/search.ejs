@@ -1,0 +1,151 @@
+<style>
+    .spaceContent {
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+</style>
+
+<div class="container">
+    <div class="columns">
+
+        <% programmes.forEach( function(programme) { %>
+            <div class="column">
+                <div class="card">
+                    <div class="card-image">
+                        <figure>
+                            <img src='<%= programme.imageurl %>'></img>
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media-content">
+                            <p class="title is-4"><a href="http://localhost:1337/programme/read/<%= programme.id %>">
+                                    <%= programme.programmename %>
+                            </p></a>
+                            <p class="subtitle is-6">
+                                <%= programme.facultyname %>
+                            </p>
+                        </div>
+                        <div class="content">
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <% }); %>
+
+
+                <div class="column">
+                    <form action="/programme/search" method="GET">
+                        <label class="label">Programme Name</label>
+                        <div class="control">
+                            <input class="input" type="string" name="programmename">
+                        </div>
+                        <label class="label">Faculty Name</label>
+                        <div class="control">
+                            <div class="select">
+                                <select name="facultyname" onchange="facultySelected(this.value)">
+                                    <option value="">Select faculty</option>
+                                    <option value="Faculty o Arts">Faculty of Arts</option>
+                                    <option value="School of Business">School of Business</option>
+                                    <option value="School of Chinese Medicine">School of Chinese Medicine</option>
+                                    <option value="School of Communication">School of Communication</option>
+                                    <option value="School of CreativeArts">School of Creative Arts</option>
+                                    <option value="Faculty of Science">Faculty of Science</option>
+                                    <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+                                </select>
+                            </div>
+                        </div>
+     
+                        <br>
+                        <div class="control">
+                            <button type="submit" class="button is-link">Search</button>
+                        </div>
+                    </form>
+                </div>
+    </div>
+
+
+</div>
+
+
+<nav class="pagination" role="navigation" aria-label="pagination">
+    <a class="pagination-previous" id="previousButton">Previous</a>
+    <a class="pagination-next" id="nextButton">Next page</a>
+    <ul class="pagination-list">
+        <li>
+            <a class="pagination-link" id="firstLink">1</a>
+        </li>
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        <li>
+            <a class="pagination-link" id="previousLink">45</a>
+        </li>
+        <li>
+            <a class="pagination-link is-current" id="currentLink">46</a>
+        </li>
+        <li>
+            <a class="pagination-link" id="nextLink">47</a>
+        </li>
+        <li>
+            <span class="pagination-ellipsis">&hellip;</span>
+        </li>
+        <li>
+            <a class="pagination-link" id="lastLink">86</a>
+        </li>
+    </ul>
+</nav>
+<script>
+    
+    function setPagination() {
+
+        var previousButton = document.getElementById("previousButton");
+        var nextButton = document.getElementById("nextButton");
+        var currentLink = document.getElementById("currentLink");
+        var previousLink = document.getElementById("previousLink");
+        var nextLink = document.getElementById("nextLink");
+        var firstLink = document.getElementById("firstLink");
+        var lastLink = document.getElementById("lastLink");
+
+        var total = parseInt("<%= total %>");
+        var limit = Math.max(parseInt("<%= req.query.limit %>"), 2) || 2;
+        var offset = Math.max(parseInt("<%= req.query.offset %>"), 0) || 0;
+        var programmename = "<%= req.query.programmename %>";
+        var facultyname = "<%= req.query.facultyname %>";
+
+        var baseUrl = "/programme/search?programmename=" + programmename + "&facultyname=" + facultyname + "&offset=";
+
+        firstLink.href = baseUrl + 0;
+        previousButton.href = baseUrl + (offset - limit);
+        previousLink.href = baseUrl + (offset - limit);
+        currentLink.href = baseUrl + offset;
+        nextLink.href = baseUrl + (offset + limit);
+        nextButton.href = baseUrl + (offset + limit);
+        lastLink.href = baseUrl + (Math.ceil(total / limit) - 1) * limit;
+
+        var currentPageNumber = Math.floor(offset / limit) + 1;
+
+        previousLink.innerHTML = currentPageNumber - 1;
+        currentLink.innerHTML = currentPageNumber;
+        nextLink.innerHTML = currentPageNumber + 1;
+        lastLink.innerHTML = Math.ceil(total / limit);
+
+        if (offset < limit) {
+            previousButton.setAttribute("disabled", true);
+            previousButton.href = "";
+            previousLink.style.display = "none";
+        }
+
+        if (offset + limit >= total) {
+            nextButton.setAttribute("disabled", true);
+            nextButton.href = "";
+            nextLink.style.display = "none";
+        }
+    }
+
+    setPagination();
+
+</script>
+

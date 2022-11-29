@@ -16,6 +16,9 @@ module.exports = {
       type: "string" 
     },
 
+    programmename:{
+      type: "string" 
+    },
     enrollment: {
       type: "number"
     },

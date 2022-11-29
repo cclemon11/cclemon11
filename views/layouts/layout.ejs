@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>New Sails App</title>
 
-    <!-- Viewport mobile tag for sensible mobile support -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <title>New Sails App</title>
 
-    <%/* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
-    <%/* <meta name="robots" content="noindex"> */%>
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <% /* If you want to discourage search engines from indexing this site, uncomment the following line: */%>
+    <% /* <meta name="robots" content="noindex"> */%>
 
 
-    <!--
+      <!--
         Stylesheets and Preprocessors
         ==============================
 
@@ -31,17 +32,18 @@
             + Use a different or additional preprocessor, like SASS, SCSS or Stylus
     -->
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-  </head>
+      <!--STYLES-->
+      <link rel="stylesheet" href="/styles/importer.css">
+      <!--STYLES END-->
+      <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
 
 
 
 
 
-    <!--
+<!--
         Client-side Templates
         ========================
 
@@ -62,11 +64,11 @@
               stringfile before they're served.
     -->
 
-    <!--TEMPLATES-->
-    <!--TEMPLATES END-->
+<!--TEMPLATES-->
+<!--TEMPLATES END-->
 
 
-    <!--
+<!--
         Server-side View Locals
         ========================
 
@@ -80,130 +82,193 @@
         https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
 
     -->
-    <section>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
 
-    
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-    
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          
-          <a class="navbar-item" href="http://localhost:1337/programme/list">
-            <span class="icon has-text-success">
-              <i class="fas fa-home" ></i>
-            </span>
-            &nbsp; Home
-          </a>
+<body>
+  <!-- START NAVIGATION BAR -->
 
-          <a class="navbar-item" href="http://localhost:1337/programme/create">
-            <span class="icon has-text-danger">
-              <i class="fas fa-book" ></i>   
-            </span>
-            &nbsp;Programme
-          </a>
-    
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              <span class="icon has-text-info">
-                <i class="fas fa-info-circle"></i>
-              </span>
-              &nbsp; More
-            </a>
-    
-            <div class="navbar-dropdown">
-              <a class="navbar-item">
-                
-                About
-              </a>
-              <a class="navbar-item">
-                Evaluation
-              </a>
-              <a class="navbar-item">
-                Analysis
-              </a>
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                Report an issue
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-              <a class="button is-primary">
-                <strong>Sign up</strong>
-              </a>
-              <a class="button is-light">
-                Log in
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
-  </section>
+  <div id="bar" class="container">
 
+    <b-navbar>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
 
-
-
-   <section class="hero is-warning">
-     <div class="hero-body">
-        <p class="title">
-         UPMS
-         
-        </p>
-        <p class="subtitle">
-         University Programme Management System 
-       </p>
        
-      </div>
-    </section>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+              data-target="navbarBasicExample">
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+
+            <a class="navbar-item" href="http://localhost:1337/programme/list">
+              <span class="icon has-text-success">
+                <i class="fas fa-home"></i>
+              </span>
+              &nbsp; Home
+            </a>
+
+            <a class="navbar-item" href="http://localhost:1337/programme/create">
+              <span class="icon has-text-danger">
+                <i class="fas fa-book"></i>
+              </span>
+              &nbsp;Programme
+            </a>
+
+            <a class="navbar-item" href="http://localhost:1337/programme/search">
+              <span class="icon has-text-success">
+                <i class="fas fa-serach"></i>
+              </span>
+              &nbsp; Search
+            </a>
 
 
-    <!--
+            <a class="navbar-item" href="http://localhost:1337/programme/update">
+              <span class="icon has-text-success">
+                <i class="fas fa-serach"></i>
+              </span>
+              &nbsp; Update
+            </a>
 
-      Client-side Javascript
-      ========================
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link">
+                <span class="icon has-text-info">
+                  <i class="fas fa-info-circle"></i>
+                </span>
+                &nbsp; More
+              </a>
 
-      You can always bring in JS files manually with `script` tags, or asynchronously
-      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
-      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+              <div class="navbar-dropdown">
+                <a class="navbar-item">
 
-      By default, files in your `assets/js` folder are included here
-      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
-      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
-      and concatenated into a single file.
+                  About
+                </a>
+                
+                <a class="navbar-item">
+                  Evaluation
+                </a>
+                <a class="navbar-item">
+                  Analysis
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  Report an issue
+                </a>
+              </div>
+            </div>
+          </div>
 
-      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
-      For example, here are a few things you could do:
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-primary">
+                  <strong>Sign up</strong>
+                </a>
+                <a class="button is-light">
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+  <!-- END NAVIGATION BAR -->
 
-          + Change the order of your scripts
-          + Import scripts from other directories
-          + Use a different preprocessor, like TypeScript
-
-    -->
 
 
-    <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>UPMS</strong> created by 2022. All right reserved.
-      </p>
-    </div>
-  </footer>
-    
-    <!--SCRIPTS-->
-    <script src="/dependencies/sails.io.js"></script>
-    <!--SCRIPTS END-->
-    <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
-  </body>
+      <section class="hero is-warning">
+        <div class="hero-body">
+          <p class="title">
+            UPMS
+
+          </p>
+          <p class="subtitle">
+            University Programme Management System
+          </p>
+        </div>
+        </nav>
+      </section>
+    </b-navbar>
+&nbsp;
+  </div>
+  <%- body %>
+
+  &nbsp;
+  &nbsp;
+  <p>&copy;Copyright 2022 UPMS All Rights Reserved.</p>
+  <!--
+          Client-side Templates
+          ========================
+  
+          HTML templates are important prerequisites of modern, rich client applications.
+          To work their magic, frameworks like React, Vue.js, Angular, Ember, and Backbone
+          require that you load these templates client-side.
+  
+          By default, your Gruntfile is configured to automatically load and precompile
+          client-side JST templates in your `assets/templates` folder, then
+          include them here automatically (between TEMPLATES and TEMPLATES END).
+  
+          To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+          For example, here are a few things you could do:
+  
+              + Import templates from other directories
+              + Use a different view engine (handlebars, dust, pug/jade, etc.)
+              + Internationalize your client-side templates using a server-side
+                stringfile before they're served.
+      -->
+
+  <!--TEMPLATES-->
+  <!--TEMPLATES END-->
+
+
+  <!--
+          Server-side View Locals
+          ========================
+  
+          Sometimes, it's convenient to get access to your server-side view locals from
+          client-side JavaScript.  This can improve page load times, remove the need for
+          extra AJAX requests, and make your client-side code easier to understand and
+          to maintain.  Sails provides a simple mechanism for accessing dynamic view
+          locals: the "exposeLocalsToBrowser()" view partial.
+  
+          For more information on using this built-in feature, see:
+          https://sailsjs.com/docs/concepts/views/locals#?escaping-untrusted-data-using-exposelocalstobrowser
+  
+      -->
+
+
+  <!--
+  
+        Client-side Javascript
+        ========================
+  
+        You can always bring in JS files manually with `script` tags, or asynchronously
+        on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+        take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+  
+        By default, files in your `assets/js` folder are included here
+        automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+        CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+        and concatenated into a single file.
+  
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+  
+            + Change the order of your scripts
+            + Import scripts from other directories
+            + Use a different preprocessor, like TypeScript
+  
+      -->
+
+  <!--SCRIPTS-->
+  <script src="/dependencies/sails.io.js"></script>
+  <!--SCRIPTS END-->
+  <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
+
+</body>
+
 </html>

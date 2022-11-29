@@ -1,14 +1,54 @@
-<%= programme.name %>, <%= programme.age %>
-
-<!--create.ejs-->
-<form action="/programme/delete/<%= programme.id %>" method="post">
 
 
+<div class="container">
+    <div class="columns">
+        <div class="column">
+            <div class="column">
+                <div class=content is-medium>
+                    <ul>
 
-    <div class="field">
-        <div class="control">
-            <button class="button is-link" type="submit">Delete</button>
-        </div>
-    </div>
+                        <li>
+                        <%= programme.programmename %></b> 
+                         </li>
+                        <li><b>Faculty Name:  </b>
+                        <%= programme.facultyname %>
+                          </li>
 
-</form>
+                         <li><b> <%= programme.enrollment %> </b>
+                         </li>
+                    </ul>
+                </div>
+            </div>
+
+
+<!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
+
+        <button type="button" class="button is-danger" onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
+            <!-- </form> -->
+    
+            <script>
+                async function deleteProgramme(id) {
+                    var r = confirm("Confirm Delete?");
+    
+                    if (r) {
+                        var response = await fetch("/programme/" + id, {
+                            method: "DELETE",
+                        });
+    
+                        if (response.ok) {
+                            // var html = await response.text();
+                            //alert(html);
+                            alert("Programme deleted.");
+                            location.assign("/");
+    
+                        } else {
+                            alert(response.status + ": " + response.statusText);
+                        }
+    
+                    } else {
+                        alert("cancelled");
+                    }
+                };
+            </script>
+    
+

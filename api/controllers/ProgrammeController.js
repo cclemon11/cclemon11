@@ -4,43 +4,81 @@
  * @description :: Server-side actions for handling incoming requests.
  * @help        :: See https://sailsjs.com/docs/concepts/actions
  */
-
+const { programme } = require("grunt");
 module.exports = {
-// action - create
-create: async function (req, res) {
+    // action - create
+    create: async function (req, res) {
 
-    if (req.method == "GET") return res.view('programme/create');
+        if (req.method == "GET") return res.view('programme/create');
+
+        var programme = await Programme.create(req.body).fetch();
+
+        return res.redirect("/");
+    },
+
+    // action - jsjson function
+    json: async function (req, res) {
+
+        var programmes = await Programme.find();
+
+        return res.json(programmes);
+    },
+
+    // action - list
+    list: async function (req, res) {
+
+        var programmes = await Programme.find();
+
+        return res.view('programme/list', { programmes: programmes });
+    },
+
+    // action - read
+    read: async function (req, res) {
+
+        var thatProgramme = await Programme.findOne(req.params.id);
+
+        if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/read', { programme: thatProgramme });
+    },
+
+    // search function
+    search: async function (req, res) {
+
+        var whereClause = {};
+        var limit = Math.max(req.query.limit, 2) || 2;
+        var offset = Math.max(req.query.offset, 0) || 0;
+        if (req.query.programmename) whereClause.programmename = { contains: req.query.programmename };
+        if (req.query.facultyname) whereClause.facultyname = { contains: req.query.facultyname };
+
+            var thoseProgrammes = await Programme.find({
+                limit: limit,
+                skip: offset,
+                where: whereClause,
+                sort: 'programmename'
+            });
+
+  
+            var count = await Programme.count({ where: whereClause });
+
+            return res.view('programme/search', { programmes: thoseProgrammes, total: count });
+        
+    },
+        // action - delete 
+        delete: async function (req, res) {
+
+            var deletedProgramme = await Programme.destroyOne(req.params.id);
     
-    var programme = await Programme.create(req.body).fetch();
-
-    return res.status(201).json({ id: programme.id });
-},
-
-// action - jsjson function
-json: async function (req, res) {
-
-    var programmes = await Programme.find();
-
-    return res.json(programmes);
-},
-
-// action - list
-list: async function (req, res) {
-
-    var programmes = await Programme.find();
+            if (!deletedProgramme) return res.notFound();
     
-    return res.view('programme/list', { programmes: programmes});
-},
+            var allprogramme = await Programme.find();
+    
 
-// action - read
-read: async function (req, res) {
-
-    var thatProgramme = await Programme.findOne(req.params.id);
-
-    if (!thatProgramme) return res.notFound();
-
-    return res.view('programme/read', { programme: thatProgramme });
-},
-
-};
-
+            if (req.wantsJSON) {
+                return res.status(204).send();	    // for ajax request
+            } else {
+                return res.redirect('/');			// for normal request
+            }
+        },
+    
+}

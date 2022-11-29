@@ -1,0 +1,207 @@
+<section class="section">
+    <form action="/programme/update/<%= programme.id %>" method="post">
+
+        <div class="field">
+            <label class="label">Faculty Name</label>
+            <div class="control">
+                <div class="select">
+                    <select name="facultyname" onchange="facultySelected(this.value)" required>
+                        <option value="">Select faculty</option>
+                        <option value="Faculty of Arts">Faculty of Arts</option>
+                        <option value="School of Business">School of Business</option>
+                        <option value="School of Chinese Medicine">School of Chinese Medicine</option>
+                        <option value="School of Communication">School of Communication</option>
+                        <option value="School of CreativeArts">School of Creative Arts</option>
+                        <option value="Faculty of Science">Faculty of Science</option>
+                        <option value="Faculty of Social Sciences">Faculty of Social Sciences</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Programme Name</label>
+            <div class="control">
+                <div class="select">
+                    <select id="programmename" name="programmename" disabled>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Enrollment</label>
+            <div class="control">
+                <input class="input" type="number" name="enrollment" required>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label">Image Url</label>
+            <div class="control">
+                <input class="input" type="string" name="imageurl" style="font-weight: bold;" required>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <button class="button is-link" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
+
+    <button type="button" class="button is-danger" onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
+
+    <!-- </form> -->
+</section>
+<script>
+    var allFacultyofArts = ["Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)", "Bachelor of Arts (Hons) in Religion, Philosophy and Ethics", "Bachelor of Arts (Hons) / Bachelor of Music (Hons) (Music / Creative Industries)"];
+    var allSchoolofBusiness = ["Bachelor of Business Administration (Hons) - Accounting Concentration", "Bachelor of Business Administration (Hons)"];
+    var allSchoolofChineseMedicine = ["Bachelor of Chinese Medicine and Bachelor of Science (Hons) in Biomedical Science", "Bachelor of Pharmacy (Hons) in Chinese Medicine"];
+    var allSchoolofCommunication = ["Bachelor of Communication (Hons) (Journalism and Digital Media / Public Relations and Advertising)", "Bachelor of Communication (Hons) in Game Design and Animation"];
+    var allSchoolofCreativeArts = ["Bachelor of Arts(Hons)/Bachelor of Music(Hons) (Music/Creative Industries)", "Bachelor of Communication (Hons) in Film (Film and Television Concentration)", "Bachelor of Fine Arts (Hons) in Acting for Global Screen", "Bachelor of Arts(Hons) in Visual Arts", "Bachelor of Arts and Science(Hons) in Arts and Technology", "Bachelor of Arts(Hons) in Business Adminstration (Global Entertainment)"];
+    var allFacultyofScience = ["Bachelor of Science (Hons)", "Bachelor of Science(Hons) in Business Computing and Data Analytics"];
+    var allFacultyofSocialSciences = ["Bachelor of Social Work (Hons)", "Bachelor of Social Sciences (Hons) (European Studies [French/German Stream] / Geography/ Global and China Studies/ Government and International Studies/ History/ Sociology)"];
+
+    function facultySelected(faculty) {
+
+        var programmenameElem = document.getElementById("programmename");
+        programmenameElem.options.length = 0;
+
+        if (faculty == "Faculty of Arts") {
+
+            allFacultyofArts.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmenameElem.disabled = false;
+
+        } else if (faculty == "School of Business") {
+
+            allSchoolofBusiness.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmenameElem.disabled = false;
+
+        } else if (faculty == "School of Chinese Medicine") {
+
+            allSchoolofChineseMedicine.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmenameElem.disabled = false;
+
+        } else if (faculty == "School of Communication") {
+
+            allSchoolofCommunication.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmenameElem.disabled = false;
+
+        } else if (faculty == "School of CreativeArts") {
+
+            allSchoolofCreativeArts.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmenameElem.disabled = false;
+
+        } else if (faculty == "Faculty of Science") {
+
+            allFacultyofScience.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmename.disabled = false;
+
+        } else if (faculty == "Faculty of Social Sciences") {
+
+            allFacultyofSocialSciences.forEach(function (item) {
+                var option = document.createElement("option");
+                option.text = item;
+                option.value = item;
+                programmenameElem.add(option);
+            });
+
+            programmename.disabled = false;
+
+        } else {
+
+            programmename.disabled = true;
+        }
+    }
+
+</script>
+<script>
+    async function createForm(oFormElement) {
+
+        var response = await fetch("/programme/" + formElement.id, {
+            method: "PATCH",
+            credentials: 'same-origin',
+            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+
+            body: Array.from(oFormElement).map(input => encodeURIComponent(input.name) + '=' + encodeURIComponent(input.value)).join('&'),
+        });
+
+        if (response.ok) {
+            var data = await response.json();   // for res.ok() or res.json()
+            alert(data.message);
+            windows.location = data.url;
+            //location.reload(true);
+        } else if (response.status == 401) {
+            var data = await response.text();   // for res.send()
+            alert(data);
+        } else {
+            alert(response.statusText);
+        }
+
+    };
+
+</script>
+
+
+<script>
+    async function deleteProgramme(id) {
+        var r = confirm("Confirm Delete?");
+
+        if (r) {
+            var response = await fetch("/programme/" + id, {
+                method: "DELETE",
+            });
+
+            if (response.ok) {
+                // var html = await response.text();
+                //alert(html);
+                alert("Programme deleted.");
+                location.assign("/");
+
+            } else {
+                alert(response.status + ": " + response.statusText);
+            }
+
+        } else {
+            alert("cancelled");
+        }
+    };
+</script>
