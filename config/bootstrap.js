@@ -29,13 +29,5 @@ module.exports.bootstrap = async function() {
   // ]);
   // ```
 
-  if (await Programme.count() == 0) {
-    await Programme.createEach([
-      { facultyname: "Faculty of Arts", programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)", enrollment: "50", imageurl:"https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c=s1200",id: 1 },
-      { facultyname: "Faculty of Science", programmename: "Bachelor of Science (Hons)", enrollment: "30", imageurl:"",id: 2 }
-
-    ]);
-
- }
 
 };
