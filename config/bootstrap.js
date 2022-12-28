@@ -39,9 +39,28 @@ module.exports.bootstrap = async function () {
         enrollment: 100,
         imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg"
 
+      },
+      {
+        facultyname: "School of Chinese Medicine",
+        programmename: "Bachelor of Pharmacy (Hons) in Chinese Medicine",
+        enrollment: 80,
+        imageurl: "https://images.chinahighlights.com/allpicture/2020/02/a85b1cd2578e48a8b46b6ef5_cut_800x500_61.jpg"
 
+      },
+      {
+        facultyname: "Faculty of Science",
+        programmename: "Bachelor of Science(Hons) in Business Computing and Data Analytics",
+        enrollment: 80,
+        imageurl: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg"
 
-      }
+      },
+      {
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) / Bachelor of Music (Hons) (Music / Creative Industries)",
+        enrollment: 35,
+        imageurl: "https://thumbs.dreamstime.com/b/music-notes-8391476.jpg"
+
+      },
     ]);
   }
 
