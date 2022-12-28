@@ -30,49 +30,54 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
-  
-
 </style>
 
 <body class="spaceBody">
     <div class="columns">
-        <div class="column">
-            <div class="card-deck card-sm-gutters-3 d-block d-sm-flex">
-        
-              
-                
-                <% programmes.forEach( function(programme) { %>
+        <div class=justify-content: space-around;>
+            <div class="row">
+                <div class="card-deck card-sm-gutters-3 d-block d-sm-flex">
 
-       
+
+
+                    <% programmes.forEach( function(programme) { %>
+
+
                         <div class="card">
                             <figure class="image is-4by3">
                                 <img style="object-fit:cover" src='<%= programme.imageurl %>' />
                             </figure>
-        
+
                             <div class="spaceContent">
                                 <div class="media-content">
                                     <p class="title is-4">
                                         <a href="/programme/read/<%= programme.id%>">
-                                            <strong>  <%= programme.programmename %></strong>
+                                            <strong>
+                                                <%= programme.programmename %>
+                                            </strong>
                                         </a>
                                     </p>
                                 </div>
-                                <p>  <%= programme.facultyname %></p> <br>
-                                <p> Enrollment: <%= programme.enrollment %> </p>
+                                <p>
+                                    <%= programme.facultyname %>
+                                </p> <br>
+                                <p> Enrollment: <%= programme.enrollment %>
+                                </p>
                             </div>
                         </div>
                         <br>
+
                         <% }); %>
+                </div>
             </div>
         </div>
-            
-     
 
-           
-        </div>
+
+
+
+    </div>
     </div>
 </body>
 
 
 </html>
-

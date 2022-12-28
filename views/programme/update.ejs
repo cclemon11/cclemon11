@@ -2,6 +2,7 @@
     <form action="/programme/update/<%= programme.id %>" method="post">
 
         <div class="field">
+            
             <label class="label">Faculty Name</label>
             <div class="control">
                 <div class="select">
@@ -50,9 +51,9 @@
     </form>
 
     <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
-
+        <% if(req.session.role == "admin"){ %>
     <button type="button" class="button is-danger is-light is-normal" onclick="deleteProgramme('<%= programme.id %>')" style="float: right;">Delete</button>
-
+    <% } %>
     <!-- </form> -->
 </section>
 <script>

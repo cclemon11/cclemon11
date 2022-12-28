@@ -6,7 +6,7 @@
             <div class="column">
                 <div class=content is-medium>
                     <ul>
-
+                        <img style="object-fit:cover" src="<%= programme.imageurl %>" />
                         <li>
                         <%= programme.programmename %></b> 
                          </li>
@@ -14,7 +14,7 @@
                         <%= programme.facultyname %>
                           </li>
 
-                         <li><b> <%= programme.enrollment %> </b>
+                         <li><b>Enrollment: <%= programme.enrollment %> </b>
                          </li>
                     </ul>
                 </div>
@@ -22,10 +22,10 @@
 
 
 <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
-
+    <% if(req.session.role == "admin"){ %>
         <button type="button" class="button is-danger" onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
             <!-- </form> -->
-    
+     <% } %>
             <script>
                 async function deleteProgramme(id) {
                     var r = confirm("Confirm Delete?");
