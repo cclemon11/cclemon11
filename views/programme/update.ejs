@@ -5,7 +5,7 @@
             <label class="label">Faculty Name</label>
             <div class="control">
                 <div class="select">
-                    <select name="facultyname" onchange="facultySelected(this.value)" required>
+                    <select id="facultyname" name="facultyname" onchange="facultySelected(this.value)" >
                         <option value="">Select faculty</option>
                         <option value="Faculty of Arts">Faculty of Arts</option>
                         <option value="School of Business">School of Business</option>
@@ -32,26 +32,26 @@
         <div class="field">
             <label class="label">Enrollment</label>
             <div class="control">
-                <input class="input" type="number" name="enrollment" required>
+                <input class="input" type="number" name="enrollment" value="<%= programme.enrollment %>" required>
             </div>
         </div>
 
         <div class="field">
             <label class="label">Image Url</label>
             <div class="control">
-                <input class="input" type="string" name="imageurl" style="font-weight: bold;" required>
+                <input class="input" type="string" name="imageurl" style="font-weight: bold;" value="<%= programme.imageurl %>" required>
             </div>
         </div>
         <div class="field">
             <div class="control">
-                <button class="button is-link" type="submit">Submit</button>
+                <button class="button is-success is-light is-normal" type="submit" style="float: left;">Save</button>
             </div>
         </div>
     </form>
 
     <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
 
-    <button type="button" class="button is-danger" onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
+    <button type="button" class="button is-danger is-light is-normal" onclick="deleteProgramme('<%= programme.id %>')" style="float: right;">Delete</button>
 
     <!-- </form> -->
 </section>
@@ -152,33 +152,16 @@
         }
     }
 
-</script>
-<script>
-    async function createForm(oFormElement) {
+    function getFacProgramme() {
+        document.getElementById("facultyname").value = "<%= programme.facultyname%>";
+        facultySelected("<%= programme.facultyname%>");
+        document.getElementById("programmename").value = "<%= programme.programmename%>";
+    }
 
-        var response = await fetch("/programme/" + formElement.id, {
-            method: "PATCH",
-            credentials: 'same-origin',
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
-
-            body: Array.from(oFormElement).map(input => encodeURIComponent(input.name) + '=' + encodeURIComponent(input.value)).join('&'),
-        });
-
-        if (response.ok) {
-            var data = await response.json();   // for res.ok() or res.json()
-            alert(data.message);
-            windows.location = data.url;
-            //location.reload(true);
-        } else if (response.status == 401) {
-            var data = await response.text();   // for res.send()
-            alert(data);
-        } else {
-            alert(response.statusText);
-        }
-
-    };
+    getFacProgramme();
 
 </script>
+
 
 
 <script>

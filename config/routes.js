@@ -47,4 +47,13 @@ module.exports.routes = {
 
    'GET /programme/update/:id': 'ProgrammeController.update',
    'POST /programme/update/:id': 'ProgrammeController.update',
+
+   'GET /programme': 'ProgrammeController.adminlist',
+   'GET /programme/admin': 'ProgrammeController.adminlist',
+   'GET /programme/json': 'ProgrammeController.json',
+
+   'GET /user': 'UserController.login',
+   'GET /user/login': 'UserController.login',
+   'POST /user/login': 'UserController.login',
+   'POST /user/logout': 'UserController.logout',
 }

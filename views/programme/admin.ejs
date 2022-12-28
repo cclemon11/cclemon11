@@ -1,0 +1,25 @@
+<div class="container" style="padding-top: 40px">
+    <table class="table is-bordered is-striped is-hoverable is-fullwidth">
+
+
+            <th>ID</th></th>
+            <th>Programme</th>
+            <th>Faculty</th>
+
+
+        <% programmes.forEach( function(programme) { %>
+            <tr>
+                <td>
+                    <%= programme.id %>
+                </td>
+                <td><a href="http://localhost:1337/programme/update/<%= programme.id %>">
+                        <%= programme.programmename %>
+                    </a> </td>
+                <td>
+                    <%= programme.facultyname %>
+                </td>
+
+            </tr>
+            <% }); %>
+    </table>
+</div>

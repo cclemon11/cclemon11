@@ -19,4 +19,14 @@ module.exports.policies = {
 
   // '*': true,
 
+  ProgrammeController: {
+    create: 'isAdmin',
+    admin: 'isAdmin',
+    delete: 'isAdmin',
+    update: 'isAdmin',
+    
+  },
+
+
+
 };

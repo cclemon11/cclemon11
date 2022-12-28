@@ -92,13 +92,13 @@
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
 
-       
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-              data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu">
@@ -110,13 +110,14 @@
               </span>
               &nbsp; Home
             </a>
-
+            <% if(req.session.role == "admin"){ %>
             <a class="navbar-item" href="http://localhost:1337/programme/create">
               <span class="icon has-text-danger">
                 <i class="fas fa-book"></i>
               </span>
               &nbsp;Programme
             </a>
+            <% } %>
 
             <a class="navbar-item" href="http://localhost:1337/programme/search">
               <span class="icon has-text-success">
@@ -125,13 +126,14 @@
               &nbsp; Search
             </a>
 
-
-            <a class="navbar-item" href="http://localhost:1337/programme/update">
+            <% if(req.session.role == "admin"){ %>
+            <a class="navbar-item" href="http://localhost:1337/programme/admin">
               <span class="icon has-text-success">
-                <i class="fas fa-serach"></i>
+                <i class="fas fa-user"></i>
               </span>
-              &nbsp; Update
+              &nbsp; Admin
             </a>
+            <% } %>
 
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
@@ -146,7 +148,7 @@
 
                   About
                 </a>
-                
+
                 <a class="navbar-item">
                   Evaluation
                 </a>
@@ -164,43 +166,64 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a class="button is-light">
-                  Log in
-                </a>
+
+                <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+                || (req.session.role == "executivemanger" ) || (req.session.role == "student" )){ %>
+                  <div class="spaceWelcome">
+                    Hi, <%= req.session.username %>
+                  </div>
               </div>
+                <% } %>
+                &nbsp;
+
+                <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+                || (req.session.role == "executivemanger" ) || (req.session.role == "student" )){ %>
+                    <form action="/user/logout" method="POST">
+                      <button type="submit" class="button is-light">
+                        Log out
+                      </button>
+                    </form>
+                    <% }else{ %>
+                      <a class="button is-light" href="http://localhost:1337/user/login">
+                        Log in
+                      </a>
+                      <% } %>
+
             </div>
           </div>
         </div>
-      </nav>
-      
+
+
+  </div>
+  </nav>
+
   <!-- END NAVIGATION BAR -->
 
 
 
-      <section class="hero is-warning">
-        <div class="hero-body">
-          <p class="title">
-            UPMS
+  <section class="hero is-warning">
+    <div class="hero-body">
+      <p class="title">
+        UPMS
 
-          </p>
-          <p class="subtitle">
-            University Programme Management System
-          </p>
-        </div>
-        </nav>
-      </section>
-    </b-navbar>
-&nbsp;
+      </p>
+      <p class="subtitle">
+        University Programme Management System
+
+      </p>
+
+    </div>
+    </nav>
+  </section>
+  </b-navbar>
+  &nbsp;
   </div>
   <%- body %>
 
-  &nbsp;
-  &nbsp;
-  <p>&copy;Copyright 2022 UPMS All Rights Reserved.</p>
-  <!--
+    &nbsp;
+    &nbsp;
+    <p>&copy;Copyright 2022 UPMS All Rights Reserved.</p>
+    <!--
           Client-side Templates
           ========================
   
@@ -221,11 +244,11 @@
                 stringfile before they're served.
       -->
 
-  <!--TEMPLATES-->
-  <!--TEMPLATES END-->
+    <!--TEMPLATES-->
+    <!--TEMPLATES END-->
 
 
-  <!--
+    <!--
           Server-side View Locals
           ========================
   
@@ -241,7 +264,7 @@
       -->
 
 
-  <!--
+    <!--
   
         Client-side Javascript
         ========================
@@ -264,10 +287,10 @@
   
       -->
 
-  <!--SCRIPTS-->
-  <script src="/dependencies/sails.io.js"></script>
-  <!--SCRIPTS END-->
-  <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
+    <!--SCRIPTS-->
+    <script src="/dependencies/sails.io.js"></script>
+    <!--SCRIPTS END-->
+    <script defer src="https://use.fontawesome.com/releases/v5.10.0/js/all.js"></script>
 
 </body>
 
