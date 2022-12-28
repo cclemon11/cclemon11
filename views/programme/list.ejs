@@ -1,12 +1,14 @@
+<!--home.ejs-->
+<!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Programme</title>
+    <title>UPMS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-
 </head>
 
- 
 <style>
     .spaceTitle {
         padding-bottom: 24px;
@@ -28,44 +30,49 @@
         padding-top: 12px;
         padding-bottom: 12px;
     }
+  
+
 </style>
 
-
 <body class="spaceBody">
-    <div class="container">
-        <div class="columns">
-            <div class="spaceCard">
-                <div class="row">
-                    <% programmes.forEach( function(programme) { %>
-                        <div class="card" style="width: 40rem;">
-                            <div class="card-image">
-                                <figure>
-                                    <img src='<%= programme.imageurl %>' width="500" height="600"></img>
+    <div class="columns">
+        <div class="column">
+            <div class="card-deck card-sm-gutters-3 d-block d-sm-flex">
+        
+              
+                
+                <% programmes.forEach( function(programme) { %>
 
-                                </figure>
-                            </div>
-                            <div class="card-content">
+       
+                        <div class="card">
+                            <figure class="image is-4by3">
+                                <img style="object-fit:cover" src='<%= programme.imageurl %>' />
+                            </figure>
+        
+                            <div class="spaceContent">
                                 <div class="media-content">
-                                    <div class="spaceTitle">
-                                        <%= programme.programmename %>
-
-                                    </div>
-                                    <div class="spaceContent">
-                                        <p class="subtitle is-6"><a>
-                                            <%= programme.facultyname %>
-                                               
-                                        </p></a>
-                                    </div>
+                                    <p class="title is-4">
+                                        <a href="/programme/read/<%= programme.id%>">
+                                            <strong>  <%= programme.programmename %></strong>
+                                        </a>
+                                    </p>
                                 </div>
+                                <p>  <%= programme.facultyname %></p> <br>
+                                <p> Enrollment: <%= programme.enrollment %> </p>
                             </div>
-
                         </div>
-                </div>
+                        <br>
+                        <% }); %>
             </div>
-            <br>
-            <% }); %>
+        </div>
+            
+     
 
+           
         </div>
     </div>
-
 </body>
+
+
+</html>
+

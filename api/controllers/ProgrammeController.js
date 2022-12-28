@@ -34,7 +34,10 @@ module.exports = {
     // action - list
     list: async function (req, res) {
 
-        var programmes = await Programme.find();
+        var programmes = await Programme.find({
+            sort: "id DESC",
+            limit: 4
+        });
 
         return res.view('programme/list', { programmes: programmes });
     },
