@@ -16,6 +16,29 @@ module.exports = {
         return res.redirect("/");
     },
 
+    // action - evaluation
+    evaluation: async function (req, res) {
+
+        if (req.method == "GET") {
+
+            var thatProgramme = await Programme.findOne(req.params.id);
+
+            if (!thatProgramme) return res.notFound();
+
+            return res.view('programme/evaluation', { programme: thatProgramme });
+
+        } else {
+
+            var updatedProgramme = await Programme.updateOne(req.params.id).set(req.body);
+
+            if (!updatedProgramme) return res.notFound();
+
+            var allprogramme = await Programme.find();
+
+            return res.view('programme/read', { programmes: allprogramme });
+        }
+    },
+
     // action -admin
     adminlist: async function (req, res) {
         var theProgramme = await Programme.find();
