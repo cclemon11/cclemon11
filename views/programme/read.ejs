@@ -6,20 +6,35 @@
             <div class="column">
                 <div class=content is-medium>
                     <ul>
+                        <td><a href="<%= programme.programmewebsite %>">
                         <img style="object-fit:cover" src="<%= programme.imageurl %>" />
-                        <li>
+                        </a> </td>
+
+                        <li><b>
                         <%= programme.programmename %></b> 
                          </li>
                         <li><b>Faculty Name:  </b>
                         <%= programme.facultyname %>
                           </li>
 
-                         <li><b>Enrollment: <%= programme.enrollment %> </b>
+                         <li><b>Enrollment:</b> <%= programme.enrollment %> 
+                         </li>
+                         
+                         <li><b>Programme Objectives:</b> <%= programme.programmeobjectives %> 
                          </li>
 
+                         <li><b>Credits required for graduation:</b> <%= programme.credits %> 
+                         </li>
+
+                         <li><b>Duration of Study:</b> <%= programme.duration %> 
+                         </li>
+
+                         <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+                         || (req.session.role == "executivemanger" )){ %>
                          <td><a href="http://localhost:1337/programme/evaluation/<%= programme.id %>">
                             Evaluation
                         </a> </td>
+                        <% } %>
                     <td>
                     </ul>
                 </div>

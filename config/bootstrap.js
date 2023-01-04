@@ -37,6 +37,10 @@ module.exports.bootstrap = async function () {
         facultyname: "School of Business",
         programmename: "Bachelor of Business Administration (Hons)",
         enrollment: 100,
+        programmeobjectives: "The Bachelor of Business Administration (Hons) Programme is an integrated combination of general education and high quality business studies",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=13",
+        credits: 244,
+        duration: 4,
         imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg"
 
       },
@@ -44,21 +48,33 @@ module.exports.bootstrap = async function () {
         facultyname: "School of Chinese Medicine",
         programmename: "Bachelor of Pharmacy (Hons) in Chinese Medicine",
         enrollment: 80,
+        programmeobjectives: "Cultivate and enhance students’ competence in applying Chinese medicine theories and methods in clinical practice as well as in the research and development of Chinese medicine",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=243",
+        credits: 244,
+        duration: 6,
         imageurl: "https://images.chinahighlights.com/allpicture/2020/02/a85b1cd2578e48a8b46b6ef5_cut_800x500_61.jpg"
 
       },
       {
         facultyname: "Faculty of Science",
         programmename: "Bachelor of Science(Hons) in Business Computing and Data Analytics",
-        enrollment: 80,
+        enrollment: 15,
+        programmeobjectives: "Provide good data-driven problem-solving skills and an analytical and creative mind for data analytics solution design, management and planning in business organizations",
+        programmewebsite: "https://bcda.comp.hkbu.edu.hk/",
+        credits: 128,
+        duration: 4,
         imageurl: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg"
 
       },
       {
         facultyname: "Faculty of Arts",
         programmename: "Bachelor of Arts (Hons) / Bachelor of Music (Hons) (Music / Creative Industries)",
-        enrollment: 35,
-        imageurl: "https://thumbs.dreamstime.com/b/music-notes-8391476.jpg"
+        enrollment: 43,
+        programmeobjectives: "Nurture aspiring musicians who will acquire the general knowledge and practical skills needed for a variety of careers, and to provide students with opportunities to personal and intellectual development",
+        programmewebsite: "https://mus.hkbu.edu.hk/web/",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://www.hkco.org/uploads/images/source/55e003ff34d841.jpg"
 
       },
     ]);

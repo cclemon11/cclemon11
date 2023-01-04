@@ -126,7 +126,8 @@
               &nbsp; Search
             </a>
 
-            <% if(req.session.role == "admin"){ %>
+            <% if(req.session.role == "admin" || (req.session.role == "facultymember" ) 
+            || (req.session.role == "executivemanger" )){ %>
             <a class="navbar-item" href="http://localhost:1337/programme/admin">
               <span class="icon has-text-success">
                 <i class="fas fa-user"></i>
@@ -149,7 +150,7 @@
                   About
                 </a>
 
-               
+            
                 <a class="navbar-item">
                   Evaluation
                 </a>
@@ -224,7 +225,7 @@
 
     &nbsp;
     &nbsp;
-    <p>&copy;Copyright 2022 UPMS All Rights Reserved.</p>
+    <p>&copy;Copyright 2023 UPMS All Rights Reserved.</p>
     <!--
           Client-side Templates
           ========================
