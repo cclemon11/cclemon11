@@ -38,44 +38,42 @@
             <div class="row">
                 <div class="card-deck card-sm-gutters-3 d-block d-sm-flex">
 
-
-
-                
                     <% programmes.forEach( function(programme) { %>
 
                         <% if(programme.programme) { %>
-    <% programme.programme.forEach( function(f) { %>
+                            <% programme.programme.forEach( function(f) { %>
+                                <%= programme.programme.rate %>
+               
+                                <% }); %>
+                                    <% } %>
 
-        <% }); %>
-        <% } %>
+                                        <div class="card">
+                                            <figure class="image is-4by3">
+                                                <td><a href="<%= programme.programmewebsite %>">
+                                                        <img style="object-fit:cover" src='<%= programme.imageurl %>' />
+                                                    </a> </td>
+                                            </figure>
 
-                        <div class="card">
-                            <figure class="image is-4by3">
-                                <td><a href="<%= programme.programmewebsite %>">
-                                <img style="object-fit:cover" src='<%= programme.imageurl %>' />
-                            </a> </td>
-                            </figure>
+                                            <div class="spaceContent">
+                                                <div class="media-content">
+                                                    <p class="title is-4">
+                                                        <a href="/programme/read/<%= programme.id%>">
+                                                            <strong>
+                                                                <%= programme.programmename %>
+                                                            </strong>
+                                                        </a>
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    <%= programme.facultyname %>
+                                                </p> <br>
+                                                <p> Enrollment: <%= programme.enrollment %>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <br>
 
-                            <div class="spaceContent">
-                                <div class="media-content">
-                                    <p class="title is-4">
-                                        <a href="/programme/read/<%= programme.id%>">
-                                            <strong>
-                                                <%= programme.programmename %>
-                                            </strong>
-                                        </a>
-                                    </p>
-                                </div>
-                                <p>
-                                    <%= programme.facultyname %>
-                                </p> <br>
-                                <p> Enrollment: <%= programme.enrollment %>
-                                </p>
-                            </div>
-                        </div>
-                        <br>
-
-                        <% }); %>
+                                        <% }); %>
                 </div>
             </div>
         </div>
