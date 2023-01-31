@@ -43,14 +43,14 @@ module.exports.routes = {
 
    'GET /programme/search': 'ProgrammeController.search',
    'GET /programme/read/:id': 'ProgrammeController.read',
-   'GET /programme/read/:id': 'ProgrammeController.analysis',
+  //  'GET /programme/read/:id': 'ProgrammeController.analysis',
    'DELETE /programme/:id': 'ProgrammeController.delete',
 
    'GET /programme/update/:id': 'ProgrammeController.update',
    'POST /programme/update/:id': 'ProgrammeController.update',
 
-   'GET /programme/evaluation/:id': 'ProgrammeController.evaluation',
-   'POST /programme/evaluation/:id': 'ProgrammeController.evaluation',
+   'GET /programme/evaluation/:id': 'FeedbackController.create',
+   'POST /programme/evaluation/:id': 'FeedbackController.create',
 
    'GET /programme': 'ProgrammeController.adminlist',
    'GET /programme/admin': 'ProgrammeController.adminlist',

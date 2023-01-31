@@ -1,219 +1,306 @@
-
 <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
 <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
+gug
 <div id="chartdiv" style="width:100vw; height:100vh"></div>
 
 <div class="container">
-    <div class="columns">
-        <div class="column">
-            <div class="column">
-                <div class=content is-medium>
-                    <ul>
-                        <td><a href="<%= programme.programmewebsite %>">
-                        <img style="object-fit:cover" src="<%= programme.imageurl %>" />
-                        </a> </td>
+  <div class="columns">
+    <div class="column">
+      <div class="column">
+        <div class=content is-medium>
+          <ul>
+            <td><a href="<%= programme.programmewebsite %>">
+                <img style="object-fit:cover" src="<%= programme.imageurl %>" />
+              </a> </td>
 
-                        <li><b>
-                        <%= programme.programmename %></b> 
-                         </li>
-                        <li><b>Faculty Name:  </b>
-                        <%= programme.facultyname %>
-                          </li>
+            <li><b>
+                <%= programme.programmename %>
+              </b>
+            </li>
+            <li><b>Faculty Name: </b>
+              <%= programme.facultyname %>
+            </li>
 
-                         <li><b>Enrollment:</b> <%= programme.enrollment %> 
-                         </li>
-                         
-                         <li><b>Programme Objectives:</b> <%= programme.programmeobjectives %> 
-                         </li>
+            <li><b>Enrollment:</b>
+              <%= programme.enrollment %>
+            </li>
 
-                         <li><b>Credits required for graduation:</b> <%= programme.credits %> 
-                         </li>
+            <li><b>Programme Objectives:</b>
+              <%= programme.programmeobjectives %>
+            </li>
 
-                         <li><b>Duration of Study:</b> <%= programme.duration %> 
-                         </li>
+            <li><b>Credits required for graduation:</b>
+              <%= programme.credits %>
+            </li>
 
-                         <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
-                         || (req.session.role == "executivemanger" )){ %>
-                         <td><a href="http://localhost:1337/programme/evaluation/<%= programme.id %>">
-                            Evaluation
-                        </a> </td>
-                        <% } %>
-                    <td>
-                    </ul>
-                </div>
+            <li><b>Duration of Study:</b>
+              <%= programme.duration %>
+            </li>
+
+            <% if((req.session.role=="admin" ) || (req.session.role=="facultymember" ) ||
+              (req.session.role=="executivemanger" )){ %>
+              <td><a href="http://localhost:1337/programme/evaluation/<%= programme.id %>">
+                  Evaluation
+                </a> </td>
+              <% } %>
+                <td>
+          </ul>
+
+          <form action="/programme/evaluation/<%= programme.id %>" method="post">
+            <h1>Online Feedback Form</h1>
+            <p>Thank you for taking the time to fill in our online feedback form. By providing us the feedback, it will
+              enhance the evaluation of programme.</p>
+            <h4>Name<span>*</span></h4>
+            <input class="first-name" type="text" name="name"  />
+            <h4>Email<span>*</span></h4>
+            <input type="text" name="email" />
+            <h4>How satisfied were you with:<span>*</span></h4>
+
+            <table>
+              <tr>
+                <th class="first-col"></th>
+                <th>Very Good</th>
+                <th>Good</th>
+                <th>Fair</th>
+                <th>Poor</th>
+                <th>Very Poor</th>
+              </tr>
+              <tr>
+                <td class="first-col">How would you rate your overall feeling with the programme?</td>
+                <td><input type="radio" value="5" name="rate" /></td>
+                <td><input type="radio" value="4" name="rate" /></td>
+                <td><input type="radio" value="3" name="rate" /></td>
+                <td><input type="radio" value="2" name="rate" /></td>
+                <td><input type="radio" value="1" name="rate" /></td>
+              </tr>
+              <tr>
+                <td class="first-col">How satisfied are you with the curriculum of the programme?</td>
+                <td><input type="radio" value="5" name="satisfied" /></td>
+                <td><input type="radio" value="4" name="satisfied" /></td>
+                <td><input type="radio" value="3" name="satisfied" /></td>
+                <td><input type="radio" value="2" name="satisfied" /></td>
+                <td><input type="radio" value="1" name="satisfied" /></td>
+              </tr>
+              <tr>
+                <td class="first-col">How would you rate the programme objectives connect to the future career path?
+                </td>
+                <td><input type="radio" value="5" name="career" /></td>
+                <td><input type="radio" value="4" name="career" /></td>
+                <td><input type="radio" value="3" name="career" /></td>
+                <td><input type="radio" value="2" name="career" /></td>
+                <td><input type="radio" value="1" name="career" /></td>
+              </tr>
+              <tr>
+                <td class="first-col">How satisfied are you with the programme's curriculum difficulty?</td>
+                <td><input type="radio" value="5" name="difficulty" /></td>
+                <td><input type="radio" value="4" name="difficulty" /></td>
+                <td><input type="radio" value="3" name="difficulty" /></td>
+                <td><input type="radio" value="2" name="difficulty" /></td>
+                <td><input type="radio" value="1" name="difficulty" /></td>
+              </tr>
+              <tr>
+                <td class="first-col">How satisfied are you with the faculty members support?</td>
+                <td><input type="radio" value="none" name="support" /></td>
+                <td><input type="radio" value="none" name="support" /></td>
+                <td><input type="radio" value="none" name="support" /></td>
+                <td><input type="radio" value="none" name="support" /></td>
+                <td><input type="radio" value="none" name="support" /></td>
+              </tr>
+              <tr>
+                <td class="first-col">Would you recommend the programme to others?</td>
+                <td><input type="radio" value="5" name="recommend" /></td>
+                <td><input type="radio" value="4" name="recommend" /></td>
+                <td><input type="radio" value="3" name="recommend" /></td>
+                <td><input type="radio" value="2" name="recommend" /></td>
+                <td><input type="radio" value="1" name="recommend" /></td>
+              </tr>
+            </table>
+            <h4>Please use a sentence to describe how you feel with the programme:</h4>
+            <textarea name="feel" rows="5"></textarea>
+            <h4>Anything you want to share about the programme:</h4>
+            <textarea name="share" rows="5"></textarea>
+            <h4>Feel free to add any other comments or suggestions:</h4>
+            <textarea name="comments" rows="5"></textarea>
+            <small>* The information given within the Feedback Form will be used for programme improvement only and are
+              strictly
+              confidential.</small>
+            <div class="btn-block">
+              <button type="submit" href="/">Send Feedback</button>
             </div>
 
+          </form>
+        </div>
+      </div>
 
-<!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
-    <% if(req.session.role == "admin"){ %>
+
+      <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
+      <% if(req.session.role=="admin" ){ %>
         <button type="button" class="button is-danger" onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
-            <!-- </form> -->
-     <% } %>
-            <script>
-                async function deleteProgramme(id) {
-                    var r = confirm("Confirm Delete?");
-    
-                    if (r) {
-                        var response = await fetch("/programme/" + id, {
-                            method: "DELETE",
-                        });
-    
-                        if (response.ok) {
-                            // var html = await response.text();
-                            //alert(html);
-                            alert("Programme deleted.");
-                            location.assign("/");
-    
-                        } else {
-                            alert(response.status + ": " + response.statusText);
-                        }
-    
-                    } else {
-                        alert("cancelled");
-                    }
-                };
-            </script>
-    
+        <!-- </form> -->
+        <% } %>
+          <script>
+            async function deleteProgramme(id) {
+              var r = confirm("Confirm Delete?");
 
-    <script>
-document.addEventListener("DOMContentLoaded", async function () {
-    // Create root and chart
-    var root = am5.Root.new("chartdiv");
+              if (r) {
+                var response = await fetch("/programme/" + id, {
+                  method: "DELETE",
+                });
+
+                if (response.ok) {
+                  // var html = await response.text();
+                  //alert(html);
+                  alert("Programme deleted.");
+                  location.assign("/");
+
+                } else {
+                  alert(response.status + ": " + response.statusText);
+                }
+
+              } else {
+                alert("cancelled");
+              }
+            };
+          </script>
 
 
-// Set themes
-// https://www.amcharts.com/docs/v5/concepts/themes/
-root.setThemes([
-  am5themes_Animated.new(root)
-]);
+          <script>
+            document.addEventListener("DOMContentLoaded", async function () {
+              // Create root and chart
+              var root = am5.Root.new("chartdiv");
 
 
-// Create chart
-// https://www.amcharts.com/docs/v5/charts/xy-chart/
-var chart = root.container.children.push(am5xy.XYChart.new(root, {
-  panX: true,
-  panY: true,
-  wheelX: "panX",
-  wheelY: "zoomX",
-  pinchZoomX: true
-}));
-
-// Add cursor
-// https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-cursor.lineY.set("visible", false);
+              // Set themes
+              // https://www.amcharts.com/docs/v5/concepts/themes/
+              root.setThemes([
+                am5themes_Animated.new(root)
+              ]);
 
 
-// Create axes
-// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
-xRenderer.labels.template.setAll({
-  rotation: -90,
-  centerY: am5.p50,
-  centerX: am5.p100,
-  paddingRight: 15
-});
+              // Create chart
+              // https://www.amcharts.com/docs/v5/charts/xy-chart/
+              var chart = root.container.children.push(am5xy.XYChart.new(root, {
+                panX: true,
+                panY: true,
+                wheelX: "panX",
+                wheelY: "zoomX",
+                pinchZoomX: true
+              }));
 
-xRenderer.grid.template.setAll({
-  location: 1
-})
-
-var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-  maxDeviation: 0.3,
-  categoryField: "country",
-  renderer: xRenderer,
-  tooltip: am5.Tooltip.new(root, {})
-}));
-
-var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-  maxDeviation: 0.3,
-  renderer: am5xy.AxisRendererY.new(root, {
-    strokeOpacity: 0.1
-  })
-}));
+              // Add cursor
+              // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
+              var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+              cursor.lineY.set("visible", false);
 
 
-// Create series
-// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-  name: "Series 1",
-  xAxis: xAxis,
-  yAxis: yAxis,
-  valueYField: "value",
-  sequencedInterpolation: true,
-  categoryXField: "country",
-  tooltip: am5.Tooltip.new(root, {
-    labelText: "{valueY}"
-  })
-}));
+              // Create axes
+              // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+              var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });
+              xRenderer.labels.template.setAll({
+                rotation: -90,
+                centerY: am5.p50,
+                centerX: am5.p100,
+                paddingRight: 15
+              });
 
-series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-series.columns.template.adapters.add("fill", function(fill, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
+              xRenderer.grid.template.setAll({
+                location: 1
+              })
 
-series.columns.template.adapters.add("stroke", function(stroke, target) {
-  return chart.get("colors").getIndex(series.columns.indexOf(target));
-});
+              var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+                maxDeviation: 0.3,
+                categoryField: "country",
+                renderer: xRenderer,
+                tooltip: am5.Tooltip.new(root, {})
+              }));
 
-
-var response = await fetch('/data/chart');
-
-if (response.ok) {
-
-    var data = await response.json();
-
-    xAxis.data.setAll(data);
-    series.data.setAll(data);
-
-}
-
-// // Set data
-// var data = [{
-//   country: "USA",
-//   value: 2025
-// }, {
-//   country: "China",
-//   value: 1882
-// }, {
-//   country: "Japan",
-//   value: 1809
-// }, {
-//   country: "Germany",
-//   value: 1322
-// }, {
-//   country: "UK",
-//   value: 1122
-// }, {
-//   country: "France",
-//   value: 1114
-// }, {
-//   country: "India",
-//   value: 984
-// }, {
-//   country: "Spain",
-//   value: 711
-// }, {
-//   country: "Netherlands",
-//   value: 665
-// }, {
-//   country: "South Korea",
-//   value: 443
-// }, {
-//   country: "Canada",
-//   value: 441
-// }];
-
-xAxis.data.setAll(data);
-series.data.setAll(data);
+              var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+                maxDeviation: 0.3,
+                renderer: am5xy.AxisRendererY.new(root, {
+                  strokeOpacity: 0.1
+                })
+              }));
 
 
-// Make stuff animate on load
-// https://www.amcharts.com/docs/v5/concepts/animations/
-series.appear(1000);
-chart.appear(1000, 100);
-});
-    </script>
+              // Create series
+              // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+              var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+                name: "Series 1",
+                xAxis: xAxis,
+                yAxis: yAxis,
+                valueYField: "value",
+                sequencedInterpolation: true,
+                categoryXField: "country",
+                tooltip: am5.Tooltip.new(root, {
+                  labelText: "{valueY}"
+                })
+              }));
 
+              series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
+              series.columns.template.adapters.add("fill", function (fill, target) {
+                return chart.get("colors").getIndex(series.columns.indexOf(target));
+              });
+
+              series.columns.template.adapters.add("stroke", function (stroke, target) {
+                return chart.get("colors").getIndex(series.columns.indexOf(target));
+              });
+
+
+              var response = await fetch('/data/chart');
+
+              if (response.ok) {
+
+                var data = await response.json();
+
+                xAxis.data.setAll(data);
+                series.data.setAll(data);
+
+              }
+
+              // // Set data
+              // var data = [{
+              //   country: "USA",
+              //   value: 2025
+              // }, {
+              //   country: "China",
+              //   value: 1882
+              // }, {
+              //   country: "Japan",
+              //   value: 1809
+              // }, {
+              //   country: "Germany",
+              //   value: 1322
+              // }, {
+              //   country: "UK",
+              //   value: 1122
+              // }, {
+              //   country: "France",
+              //   value: 1114
+              // }, {
+              //   country: "India",
+              //   value: 984
+              // }, {
+              //   country: "Spain",
+              //   value: 711
+              // }, {
+              //   country: "Netherlands",
+              //   value: 665
+              // }, {
+              //   country: "South Korea",
+              //   value: 443
+              // }, {
+              //   country: "Canada",
+              //   value: 441
+              // }];
+
+              xAxis.data.setAll(data);
+              series.data.setAll(data);
+
+
+              // Make stuff animate on load
+              // https://www.amcharts.com/docs/v5/concepts/animations/
+              series.appear(1000);
+              chart.appear(1000, 100);
+            });
+          </script>
