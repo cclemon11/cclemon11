@@ -59,4 +59,6 @@ module.exports.routes = {
    'GET /user/login': 'UserController.login',
    'POST /user/login': 'UserController.login',
    'POST /user/logout': 'UserController.logout',
+
+   'GET /data/chart' : 'ProgrammeController.chartdata'
 }

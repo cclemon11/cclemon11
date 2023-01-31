@@ -19,24 +19,24 @@ module.exports = {
     // action - evaluation
     evaluation: async function (req, res) {
 
-        if (req.method == "GET") {
+   if (req.method == "GET") {
 
-            var thatProgramme = await Programme.findOne(req.params.id);
+        var thatProgramme = await Programme.findOne(req.params.id);
 
-            if (!thatProgramme) return res.notFound();
+        if (!thatProgramme) return res.notFound();
 
-            return res.view('programme/evaluation', { programme: thatProgramme });
+        return res.view('programme/evaluation', { programme: thatProgramme });
 
-        } else {
+    } else {
 
-            var updatedProgramme = await Programme.updateOne(req.params.id).set(req.body);
+        var updatedProgramme = await Programme.updateOne(req.params.id).set(req.body);
 
-            if (!updatedProgramme) return res.notFound();
+        if (!updatedProgramme) return res.notFound();
 
-            var allprogramme = await Programme.find();
+        var allprogramme = await Programme.find();
 
-            return res.view('programme/read', { programmes: allprogramme });
-        }
+        return res.view('programme/read', { programmes: allprogramme });
+    }
     },
 
     // action -admin
@@ -149,4 +149,52 @@ module.exports = {
 
         return res.view('programme/paginate', { programmes: someProgrammes, total: count });
     },
+
+    chartdata: async function (req, res) {
+
+
+        var thoseProgrammes = await Programme.find({
+            // limit: limit,
+            // skip: offset,
+            // where: whereClause,
+            // sort: 'programmename'
+        });
+
+        console.log(thoseProgrammes);
+
+
+
+        var result = [
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+        ];
+
+        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business"]
+
+        for (faculty of array) {
+
+            var filteredResults = thoseProgrammes.filter(function (prog) {
+
+                return prog.facultyname == faculty
+            })
+
+            result.push({ country: faculty, value: filteredResults.length })
+        }
+
+
+
+        // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
+        return res.json(result);
+
+    }
 }
