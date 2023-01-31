@@ -77,6 +77,17 @@ module.exports.bootstrap = async function () {
         imageurl: "https://www.hkco.org/uploads/images/source/55e003ff34d841.jpg"
 
       },
+      {
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)",
+        enrollment: 35,
+        programmeobjectives: "To provide students with a vigorous curriculum to develop creative and professional writing skills in Chinese and English;",
+        programmewebsite: "https://artsbu.hkbu.edu.hk/study/prospective/scholarships/faculty-wide",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://scontent-hkg4-2.xx.fbcdn.net/v/t39.30808-6/298949173_603915657765891_8879388103446064863_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=P5KwNQ23M_4AX8OtFBI&_nc_ht=scontent-hkg4-2.xx&oh=00_AfAW8rZpdZaAMVjntQyqebF1Q8J9khRluE1S6Nx_nHhtRA&oe=63DE9E21"
+
+      },
     ]);
   }
 

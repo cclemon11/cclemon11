@@ -43,6 +43,7 @@ module.exports.routes = {
 
    'GET /programme/search': 'ProgrammeController.search',
    'GET /programme/read/:id': 'ProgrammeController.read',
+   'GET /programme/read/:id': 'ProgrammeController.analysis',
    'DELETE /programme/:id': 'ProgrammeController.delete',
 
    'GET /programme/update/:id': 'ProgrammeController.update',
