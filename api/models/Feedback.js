@@ -8,68 +8,66 @@
 module.exports = {
 
     attributes: {
-  
-      //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
-      //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
-      //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
-      name:{
-        type: "string" 
-      },
-  
-      email:{
-        type: "string" 
-      },
 
-      rate: {
-        type: "string"
-      },
+        //  ╔═╗╦═╗╦╔╦╗╦╔╦╗╦╦  ╦╔═╗╔═╗
+        //  ╠═╝╠╦╝║║║║║ ║ ║╚╗╔╝║╣ ╚═╗
+        //  ╩  ╩╚═╩╩ ╩╩ ╩ ╩ ╚╝ ╚═╝╚═╝
+        name: {
+            type: "string"
+        },
 
-      satisfied: {
-        type: "string"
-      },
+        email: {
+            type: "string"
+        },
 
-      career: {
-        type: "string"
-      },
+        rate: {
+            type: "string"
+        },
 
-      difficulty: {
-        type: "string"
-      },
+        satisfied: {
+            type: "string"
+        },
 
-      support: {
-        type: "string"
-      },
+        career: {
+            type: "string"
+        },
 
-      recommend: {
-        type: "string"
-      },
-  
-      feel: {
-        type: "string"
-      },
+        difficulty: {
+            type: "string"
+        },
 
-      share: {
-        type: "string"
-      },
+        support: {
+            type: "string"
+        },
 
-      comments: {
-        type: "string"
-      },
-      //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
-      //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
-      //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
-  
-  
-      //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
-      //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
-      //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
-  
-      feedbacks: {
-        collection: 'Programme',
-        via: 'programme'
-      }
+        recommend: {
+            type: "string"
+        },
+
+        feel: {
+            type: "string"
+        },
+
+        share: {
+            type: "string"
+        },
+
+        comments: {
+            type: "string"
+        },
+        //  ╔═╗╔╦╗╔╗ ╔═╗╔╦╗╔═╗
+        //  ║╣ ║║║╠╩╗║╣  ║║╚═╗
+        //  ╚═╝╩ ╩╚═╝╚═╝═╩╝╚═╝
+
+
+        //  ╔═╗╔═╗╔═╗╔═╗╔═╗╦╔═╗╔╦╗╦╔═╗╔╗╔╔═╗
+        //  ╠═╣╚═╗╚═╗║ ║║  ║╠═╣ ║ ║║ ║║║║╚═╗
+        //  ╩ ╩╚═╝╚═╝╚═╝╚═╝╩╩ ╩ ╩ ╩╚═╝╝╚╝╚═╝
+        feedback: {
+            model: 'Programme'
+        }
+
 
     },
-  
-  };
-  
+
+};

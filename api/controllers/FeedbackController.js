@@ -12,7 +12,7 @@ module.exports = {
         if (req.method == "GET") return res.view('feedback/create');
 
         var feedback = await Feedback.create(req.body).fetch();
-
+        await Programme.addToCollection(req.params.id, 'programmes').members(feedback.id);
         return res.redirect("/");
     },
 

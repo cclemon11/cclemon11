@@ -39,7 +39,7 @@ module.exports = {
         var programmes = await Programme.find({
             sort: "id DESC",
             limit: 4
-        });
+        }).populate('programmes');
 
         return res.view('programme/list', { programmes: programmes });
     },
