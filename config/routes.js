@@ -51,6 +51,9 @@ module.exports.routes = {
    'GET /programme/evaluation/:id': 'FeedbackController.create',
    'POST /programme/evaluation/:id': 'FeedbackController.create',
 
+   'GET /feedbacks': 'FeedbackController.json',
+   'GET /feedback/:id': 'FeedbackController.read',
+
    'GET /programme': 'ProgrammeController.adminlist',
    'GET /programme/admin': 'ProgrammeController.adminlist',
    'GET /programme/json': 'ProgrammeController.json',

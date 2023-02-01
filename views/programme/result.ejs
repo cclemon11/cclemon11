@@ -51,7 +51,7 @@
             <p>Thank you for taking the time to fill in our online feedback form. By providing us the feedback, it will
               enhance the evaluation of programme.</p>
             <h4>Name<span>*</span></h4>
-            <input class="first-name" type="text" name="name"  />
+            <input class="first-name" type="text" name="name" value="<%= feedback.name %>" />
             <h4>Email<span>*</span></h4>
             <input type="text" name="email" />
             <h4>How satisfied were you with:<span>*</span></h4>
@@ -67,52 +67,52 @@
               </tr>
               <tr>
                 <td class="first-col">How would you rate your overall feeling with the programme?</td>
-                <td><input type="radio" value="5" name="rate" /></td>
-                <td><input type="radio" value="4" name="rate" /></td>
-                <td><input type="radio" value="3" name="rate" /></td>
-                <td><input type="radio" value="2" name="rate" /></td>
-                <td><input type="radio" value="1" name="rate" /></td>
+                <td><input type="radio" value="5" name="rate" value="<%= feedback.rate %>"/></td>
+                <td><input type="radio" value="4" name="rate" value="<%= feedback.rate %>"/></td>
+                <td><input type="radio" value="3" name="rate" value="<%= feedback.rate %>"/></td>
+                <td><input type="radio" value="2" name="rate" value="<%= feedback.rate %>"/></td>
+                <td><input type="radio" value="1" name="rate" value="<%= feedback.rate %>"/></td>
               </tr>
               <tr>
                 <td class="first-col">How satisfied are you with the curriculum of the programme?</td>
-                <td><input type="radio" value="5" name="satisfied" /></td>
-                <td><input type="radio" value="4" name="satisfied" /></td>
-                <td><input type="radio" value="3" name="satisfied" /></td>
-                <td><input type="radio" value="2" name="satisfied" /></td>
-                <td><input type="radio" value="1" name="satisfied" /></td>
+                <td><input type="radio" value="5" name="satisfied" value="<%= feedback.satisfied %>"/></td>
+                <td><input type="radio" value="4" name="satisfied" value="<%= feedback.satisfied %>"/></td>
+                <td><input type="radio" value="3" name="satisfied" value="<%= feedback.satisfied %>"/></td>
+                <td><input type="radio" value="2" name="satisfied" value="<%= feedback.satisfied %>"/></td>
+                <td><input type="radio" value="1" name="satisfied" value="<%= feedback.satisfied %>"/></td>
               </tr>
               <tr>
                 <td class="first-col">How would you rate the programme objectives connect to the future career path?
                 </td>
-                <td><input type="radio" value="5" name="career" /></td>
-                <td><input type="radio" value="4" name="career" /></td>
-                <td><input type="radio" value="3" name="career" /></td>
-                <td><input type="radio" value="2" name="career" /></td>
-                <td><input type="radio" value="1" name="career" /></td>
+                <td><input type="radio" value="5" name="career" value="<%= feedback.career %>"/></td>
+                <td><input type="radio" value="4" name="career" value="<%= feedback.career %>"/></td>
+                <td><input type="radio" value="3" name="career" value="<%= feedback.career %>"/></td>
+                <td><input type="radio" value="2" name="career" value="<%= feedback.career %>"/></td>
+                <td><input type="radio" value="1" name="career" value="<%= feedback.career %>"/></td>
               </tr>
               <tr>
                 <td class="first-col">How satisfied are you with the programme's curriculum difficulty?</td>
-                <td><input type="radio" value="5" name="difficulty" /></td>
-                <td><input type="radio" value="4" name="difficulty" /></td>
-                <td><input type="radio" value="3" name="difficulty" /></td>
-                <td><input type="radio" value="2" name="difficulty" /></td>
-                <td><input type="radio" value="1" name="difficulty" /></td>
+                <td><input type="radio" value="5" name="difficulty" value="<%= feedback.difficulty %>"/></td>
+                <td><input type="radio" value="4" name="difficulty" value="<%= feedback.difficulty %>"/></td>
+                <td><input type="radio" value="3" name="difficulty" value="<%= feedback.difficulty %>"/></td>
+                <td><input type="radio" value="2" name="difficulty" value="<%= feedback.difficulty %>"/></td>
+                <td><input type="radio" value="1" name="difficulty" value="<%= feedback.difficulty %>"/></td>
               </tr>
               <tr>
                 <td class="first-col">How satisfied are you with the faculty members support?</td>
-                <td><input type="radio" value="none" name="support" /></td>
-                <td><input type="radio" value="none" name="support" /></td>
-                <td><input type="radio" value="none" name="support" /></td>
-                <td><input type="radio" value="none" name="support" /></td>
-                <td><input type="radio" value="none" name="support" /></td>
+                <td><input type="radio" value="none" name="support" value="<%= feedback.support %>"/></td>
+                <td><input type="radio" value="none" name="support" value="<%= feedback.support %>"/></td>
+                <td><input type="radio" value="none" name="support" value="<%= feedback.support %>"/></td>
+                <td><input type="radio" value="none" name="support" value="<%= feedback.support %>"/></td>
+                <td><input type="radio" value="none" name="support" value="<%= feedback.support %>"/></td>
               </tr>
               <tr>
                 <td class="first-col">Would you recommend the programme to others?</td>
-                <td><input type="radio" value="5" name="recommend" /></td>
-                <td><input type="radio" value="4" name="recommend" /></td>
-                <td><input type="radio" value="3" name="recommend" /></td>
-                <td><input type="radio" value="2" name="recommend" /></td>
-                <td><input type="radio" value="1" name="recommend" /></td>
+                <td><input type="radio" value="5" name="recommend" value="<%= feedback.recommend %>"/></td>
+                <td><input type="radio" value="4" name="recommend" value="<%= feedback.recommend %>"></td>
+                <td><input type="radio" value="3" name="recommend" value="<%= feedback.recommend %>"/></td>
+                <td><input type="radio" value="2" name="recommend" value="<%= feedback.recommend %>"/></td>
+                <td><input type="radio" value="1" name="recommend" value="<%= feedback.recommend %>"/></td>
               </tr>
             </table>
             <h4>Please use a sentence to describe how you feel with the programme:</h4>
