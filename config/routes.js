@@ -43,8 +43,9 @@ module.exports.routes = {
 
    'GET /programme/search': 'ProgrammeController.search',
    'GET /programme/read/:id': 'ProgrammeController.read',
+   'GET /programme/feedback/:id': 'ProgrammeController.feedback',
    'GET /programme/visualAnalysis': 'ProgrammeController.visualAnalysis',
-   'GET /programme/visualAnalysisPerProg/:id': 'ProgrammeController.visualAnalysisPerProg',
+   'GET /programme/:id/visualAnalysisPerProg': 'ProgrammeController.visualAnalysisPerProg',
    'DELETE /programme/:id': 'ProgrammeController.delete',
 
    'GET /programme/update/:id': 'ProgrammeController.update',

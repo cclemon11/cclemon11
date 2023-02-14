@@ -54,6 +54,18 @@ module.exports = {
         return res.view('programme/read', { programme: thatProgramme });
     },
 
+
+        // action - read
+        feedback: async function (req, res) {
+
+            var thatProgramme = await Programme.findOne(req.params.id);
+    
+            if (!thatProgramme) return res.notFound();
+    
+            return res.view('programme/feedback', { programme: thatProgramme });
+        },
+    
+
     // action - visualization
     visualAnalysis: async function (req, res) {
 
@@ -62,6 +74,16 @@ module.exports = {
         // if (!thatProgramme) return res.notFound();
 
         return res.view('programme/visualAnalysis');
+    },
+
+       // action - visualization
+       visualAnalysisPerProg: async function (req, res) {
+
+        // var thatProgramme = await Programme.findOne(req.params.id);
+
+        // if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/visualAnalysisPerProg');
     },
 
     // action - read

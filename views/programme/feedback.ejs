@@ -1,0 +1,83 @@
+<form action="/programme/evaluation/<%= programme.id %>" method="post">
+    <h1>Online Feedback Form</h1>
+    <p>Thank you for taking the time to fill in our online feedback form. By providing us the feedback, it will
+      enhance the evaluation of programme.</p>
+    <h4>Name<span>*</span></h4>
+    <input class="first-name" type="text" name="name" required />
+    <h4>Email<span>*</span></h4>
+    <input type="text" name="email" required/>
+    <h4>How satisfied were you with:<span>*</span></h4>
+
+    <table>
+      <tr>
+        <th class="first-col"></th>
+        <th>Very Good</th>
+        <th>Good</th>
+        <th>Fair</th>
+        <th>Poor</th>
+        <th>Very Poor</th>
+      </tr>
+      <tr>
+        <td class="first-col">How would you rate your overall feeling with the programme?</td>
+        <td><input type="radio" value="5" name="rate" required/></td>
+        <td><input type="radio" value="4" name="rate" required/></td>
+        <td><input type="radio" value="3" name="rate" required/></td>
+        <td><input type="radio" value="2" name="rate" required/></td>
+        <td><input type="radio" value="1" name="rate" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">How satisfied are you with the curriculum of the programme?</td>
+        <td><input type="radio" value="5" name="satisfied" required/></td>
+        <td><input type="radio" value="4" name="satisfied" required/></td>
+        <td><input type="radio" value="3" name="satisfied" required/></td>
+        <td><input type="radio" value="2" name="satisfied" required/></td>
+        <td><input type="radio" value="1" name="satisfied" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">How would you rate the programme objectives connect to the future career path?
+        </td>
+        <td><input type="radio" value="5" name="career" required/></td>
+        <td><input type="radio" value="4" name="career" required/></td>
+        <td><input type="radio" value="3" name="career" required/></td>
+        <td><input type="radio" value="2" name="career" required/></td>
+        <td><input type="radio" value="1" name="career" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">How satisfied are you with the programme's curriculum difficulty?</td>
+        <td><input type="radio" value="5" name="difficulty" required/></td>
+        <td><input type="radio" value="4" name="difficulty" required/></td>
+        <td><input type="radio" value="3" name="difficulty" required/></td>
+        <td><input type="radio" value="2" name="difficulty" required/></td>
+        <td><input type="radio" value="1" name="difficulty" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">How satisfied are you with the faculty members support?</td>
+        <td><input type="radio" value="none" name="support" required/></td>
+        <td><input type="radio" value="none" name="support" required/></td>
+        <td><input type="radio" value="none" name="support" required/></td>
+        <td><input type="radio" value="none" name="support" required/></td>
+        <td><input type="radio" value="none" name="support" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Would you recommend the programme to others?</td>
+        <td><input type="radio" value="5" name="recommend" required/></td>
+        <td><input type="radio" value="4" name="recommend" required/></td>
+        <td><input type="radio" value="3" name="recommend" required/></td>
+        <td><input type="radio" value="2" name="recommend" required/></td>
+        <td><input type="radio" value="1" name="recommend" required/></td>
+      </tr>
+    </table>
+    <h4>Please use a sentence to describe how you feel with the programme:</h4>
+    <textarea name="feel" rows="5"></textarea>
+    <h4>Anything you want to share about the programme:</h4>
+    <textarea name="share" rows="5"></textarea>
+    <h4>Feel free to add any other comments or suggestions:</h4>
+    <textarea name="comments" rows="5"></textarea>
+    <small>* The information given within the Feedback Form will be used for programme improvement only and are
+      strictly
+      confidential.</small>
+    <div class="btn-block">
+      <button type="submit" href="/">Send Feedback</button>
+    </div>
+
+  </form>
