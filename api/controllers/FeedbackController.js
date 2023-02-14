@@ -23,10 +23,13 @@ module.exports = {
 
     json: async function (req, res) {
 
+        
         var feedbacks = await Feedback.find();
 
         return res.json(feedbacks);
     },
+
+
 
     // action - read
     read: async function (req, res) {

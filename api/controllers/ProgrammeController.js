@@ -54,6 +54,28 @@ module.exports = {
         return res.view('programme/read', { programme: thatProgramme });
     },
 
+    // action - visualization
+    visualAnalysis: async function (req, res) {
+
+        var thatProgramme = await Programme.findOne(req.params.id);
+
+        if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/visualAnalysis', { programme: thatProgramme });
+    },
+
+    // action - read
+    populate: async function (req, res) {
+
+        var thatProgramme = await Programme.findOne(req.params.id).populate("programmes");
+
+        if (!thatProgramme) return res.notFound();
+
+       // res.json(thatProgramme.programmes)
+
+         return res.view('programme/view', { feedbacks: thatProgramme.programmes });
+    },
+
 
      // action - analysis
     analysis: async function (req, res) {
