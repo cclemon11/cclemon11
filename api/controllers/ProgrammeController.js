@@ -205,7 +205,9 @@ module.exports = {
                return prog.facultyname == faculty
             })
 
+            if(filteredResults.length != 0){
             result.push({ country: faculty, value: filteredResults.length })
+            }
         }
 
 
