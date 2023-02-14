@@ -57,11 +57,11 @@ module.exports = {
     // action - visualization
     visualAnalysis: async function (req, res) {
 
-        var thatProgramme = await Programme.findOne(req.params.id);
+        // var thatProgramme = await Programme.findOne(req.params.id);
 
-        if (!thatProgramme) return res.notFound();
+        // if (!thatProgramme) return res.notFound();
 
-        return res.view('programme/visualAnalysis', { programme: thatProgramme });
+        return res.view('programme/visualAnalysis');
     },
 
     // action - read
@@ -174,6 +174,60 @@ module.exports = {
         });
 
         console.log(thoseProgrammes);
+
+
+
+        var result = [
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+            // {
+            //     country: "School of Chinese Medicine", value: 0
+            // }, 
+        ];
+
+        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
+        ,"Faculty of Science", "Faculty of Social Science" ]
+
+        
+
+        for (faculty of array) {
+
+            var filteredResults = thoseProgrammes.filter(function (prog) {
+
+               // return prog.facultyname == faculty
+               return prog.facultyname == faculty
+            })
+
+            result.push({ country: faculty, value: filteredResults.length })
+        }
+
+
+
+        // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
+        return res.json(result);
+
+    },
+
+    chartdataPerProgramme: async function (req, res) {
+
+        var whereClause = {id: req.params.id}
+
+
+        var thatProgramme = await Programme.findOne({
+            // limit: limit,
+            // skip: offset,
+            where: whereClause,
+            // sort: 'programmename'
+        }).populate("programmes");
+
+        console.log(thatProgramme.programmes);
 
 
 

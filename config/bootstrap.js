@@ -87,7 +87,7 @@ module.exports.bootstrap = async function () {
         duration: 4,
         imageurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoKKajccYnR4Bib0Nb0I3R_7jm-uNdOwZYQ&usqp=CAU"
 
-      },
+      }
     ]);
   }
 
