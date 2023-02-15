@@ -270,16 +270,16 @@ module.exports = {
             // }, 
         ];
 
-        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business"]
+        var array = ["rate"]
 
-        for (faculty of array) {
+        for (rate of array) {
 
             var filteredResults = thoseProgrammes.filter(function (prog) {
 
-                return prog.facultyname == faculty
+                return prog.rate == rate
             })
 
-            result.push({ country: faculty, value: filteredResults.length })
+            result.push({ country: rate, value: filteredResults.length })
         }
 
 
