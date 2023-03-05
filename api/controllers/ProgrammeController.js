@@ -44,6 +44,12 @@ module.exports = {
         return res.view('programme/list', { programmes: programmes });
     },
 
+    // action - whole Analysis
+    wholeAnalysis: async function (req, res) {
+
+        return res.view('programme/wholeAnalysis');
+    },
+
     // action - read
     read: async function (req, res) {
 
@@ -55,16 +61,16 @@ module.exports = {
     },
 
 
-        // action - read
-        feedback: async function (req, res) {
+    // action - read
+    feedback: async function (req, res) {
 
-            var thatProgramme = await Programme.findOne(req.params.id);
-    
-            if (!thatProgramme) return res.notFound();
-    
-            return res.view('programme/feedback', { programme: thatProgramme });
-        },
-    
+        var thatProgramme = await Programme.findOne(req.params.id);
+
+        if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/feedback', { programme: thatProgramme });
+    },
+
 
     // action - visualization
     visualAnalysis: async function (req, res) {
@@ -76,8 +82,8 @@ module.exports = {
         return res.view('programme/visualAnalysis');
     },
 
-       // action - visualization
-       visualAnalysisPerProg: async function (req, res) {
+    // action - visualization
+    visualAnalysisPerProg: async function (req, res) {
 
         // var thatProgramme = await Programme.findOne(req.params.id);
 
@@ -93,13 +99,13 @@ module.exports = {
 
         if (!thatProgramme) return res.notFound();
 
-       // res.json(thatProgramme.programmes)
+        // res.json(thatProgramme.programmes)
 
-         return res.view('programme/view', { feedbacks: thatProgramme.programmes });
+        return res.view('programme/view', { feedbacks: thatProgramme.programmes });
     },
 
 
-     // action - analysis
+    // action - analysis
     analysis: async function (req, res) {
 
         var thatProgramme = await Programme.findOne(req.params.id);
@@ -215,20 +221,20 @@ module.exports = {
         ];
 
         var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
-        ,"Faculty of Science", "Faculty of Social Science" ]
+            , "Faculty of Science", "Faculty of Social Science"]
 
-        
+
 
         for (faculty of array) {
 
             var filteredResults = thoseProgrammes.filter(function (prog) {
 
-               // return prog.facultyname == faculty
-               return prog.facultyname == faculty
+                // return prog.facultyname == faculty
+                return prog.facultyname == faculty
             })
 
-            if(filteredResults.length != 0){
-            result.push({ country: faculty, value: filteredResults.length })
+            if (filteredResults.length != 0) {
+                result.push({ country: faculty, value: filteredResults.length })
             }
         }
 
@@ -241,7 +247,7 @@ module.exports = {
 
     chartdataPerProgramme: async function (req, res) {
 
-        var whereClause = {id: req.params.id}
+        var whereClause = { id: req.params.id }
 
 
         var thatProgramme = await Programme.findOne({
@@ -270,18 +276,30 @@ module.exports = {
             // }, 
         ];
 
-        var array = ["rate"]
+        // var array = ["rate"]
 
-        for (rate of array) {
+        // for (rate of array) {
 
-            var filteredResults = thoseProgrammes.filter(function (prog) {
+        //     var filteredResults = thatProgramme.programmes.filter(function (prog) {
 
-                return prog.rate == rate
-            })
+        //         return prog.rate == rate
+        //     })
 
-            result.push({ country: rate, value: filteredResults.length })
-        }
+        //     result.push({ country: rate, value: filteredResults.length })
+        // }
+        // for (rate of array) {
 
+        //     var filteredResults = thatProgramme.programmes.filter(function (prog) {
+
+        //         return prog.rate == rate
+        //     })
+
+        //     result.push({ country: rate, value: filteredResults.length })
+        // }
+
+
+        if (thatProgramme.programmes)
+            result = thatProgramme.programmes.map(item => item.rate)
 
 
         // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);

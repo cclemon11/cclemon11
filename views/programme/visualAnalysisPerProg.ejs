@@ -86,7 +86,7 @@
       });
 
 
-      var response = await fetch('/data/chartPerProgramme');
+      var response = await fetch('/data/<%=req.params.id%>/chartPerProg');
 
       if (response.ok) {
 

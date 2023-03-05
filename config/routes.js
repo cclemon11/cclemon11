@@ -45,6 +45,7 @@ module.exports.routes = {
    'GET /programme/read/:id': 'ProgrammeController.read',
    'GET /programme/feedback/:id': 'ProgrammeController.feedback',
    'GET /programme/visualAnalysis': 'ProgrammeController.visualAnalysis',
+   'GET /programme/wholeAnalysis': 'ProgrammeController.wholelAnalysis',
    'GET /programme/:id/visualAnalysisPerProg': 'ProgrammeController.visualAnalysisPerProg',
    'DELETE /programme/:id': 'ProgrammeController.delete',
 
@@ -71,5 +72,6 @@ module.exports.routes = {
    'POST /user/logout': 'UserController.logout',
 
    'GET /data/chart' : 'ProgrammeController.chartdata',
-   'GET /data/chartPerProg' : 'ProgrammeController.chartdataPerProgramme'
+   'GET /data/:id/chartPerProg' : 'ProgrammeController.chartdataPerProgramme'
+
 }

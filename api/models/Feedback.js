@@ -21,7 +21,7 @@ module.exports = {
         },
 
         rate: {
-            type: "string"
+            type: "number"
         },
 
         satisfied: {
