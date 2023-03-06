@@ -296,12 +296,26 @@ module.exports = {
         // }
 
 
-        if (thatProgramme.programmes)
-            result = thatProgramme.programmes.map(item => item.rate)
+        // if (thatProgramme.programmes)
+        //     result = thatProgramme.programmes.map(item => item.rate)
+
+        var array = ["q1love", "q2progress", "q3instructions", "q4reallife", "q5enjoy", "q6pressured"
+            , "q7curriculum", "q8difficulty","q9structure","q10overall"]
 
 
+            for (question of array) {
+
+                var filteredResults = thoseProgrammes.filter(function (prog) {
+    
+                    // return prog.facultyname == faculty
+                    return prog.f == question
+                })
+    
+                if (filteredResults.length != 0) {
+                    result.push({ country: question, value: filteredResults.length })
+                }
         // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
         return res.json(result);
-
+            }
     }
 }

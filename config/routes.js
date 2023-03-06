@@ -62,6 +62,8 @@ module.exports.routes = {
    'GET /programme/admin': 'ProgrammeController.adminlist',
    'GET /programme/:id/feedbacks': 'ProgrammeController.populate',
 
+   'GET /feedback/getQ1/:id' : 'FeedbackController.getQ1',
+
    
 
    'GET /programme/json': 'ProgrammeController.populate',

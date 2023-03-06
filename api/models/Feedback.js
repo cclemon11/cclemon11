@@ -22,6 +22,33 @@ module.exports = {
         q1love: {
             type: "number"
         },
+        q2progress: {
+            type: "number"
+        },
+        q3instructions: {
+            type: "number"
+        },
+        q4reallife: {
+            type: "number"
+        },
+        q5enjoy: {
+            type: "number"
+        },
+        q6pressured: {
+            type: "number"
+        },
+        q7curriculum: {
+            type: "number"
+        },
+        q8difficulty: {
+            type: "number"
+        },
+        q9structure: {
+            type: "number"
+        },
+        q10overall: {
+            type: "number"
+        },
 
         rate: {
             type: "number"

@@ -9,7 +9,8 @@
  * https://sailsjs.com/config/bootstrap
  */
 
-const { programme } = require("grunt");
+// const { programme } = require("grunt");
+// const Feedback = require("../api/models/Feedback");
 
 module.exports.bootstrap = async function () {
 
@@ -102,6 +103,44 @@ module.exports.bootstrap = async function () {
       }
     ]);
   }
+
+  if (await Feedback.count() == 0) {
+    await Feedback.createEach([{
+      "name": "Ka Man",
+      "email": "carmen22454@gmail.com",
+      "q1love": 4,
+      "q2progress": 3,
+      "q3instructions": 4,
+      "q4reallife": 2,
+      "q5enjoy": 4,
+      "q6pressured": 3,
+      "q7curriculum": 3,
+      "q8difficulty": 4,
+      "q9structure": 2,
+      "q10overall": 3,
+      "rate": 4,
+      "satisfied": "4",
+      "career": "5",
+      "difficulty": "3",
+      "support": "none",
+      "recommend": "3",
+      "feel": "I enjoy study the programme and courses",
+      "share": "I think the programme can add more facilities",
+      "comments": "I recommend others to study this programme",
+      "createdAt": 1678095319139,
+      "updatedAt": 1678095319204,
+      // "feedback": {
+      //   "$oid": "6405b39adf8a3280cf491642"
+      // }
+    },
+    
+    ]);
+  }
+
+  let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)"})
+  let f1 = await Feedback.findOne({email:"carmen22454@gmail.com"})
+
+  await Programme.addToCollection(p1.id,'programmes' ).members([f1.id]);
 
   return generateUsers();
 

@@ -86,7 +86,14 @@
       });
 
 
-      var response = await fetch('/data/<%=req.params.id%>/chartPerProg');
+      var pathArray = window.location.pathname.split('/')
+
+      // alert(pathArray[2])
+
+      // var response = await fetch('/data/<%=req.params.id%>/chartPerProg');
+      var response = await fetch('/feedback/getQ1/' + pathArray[2]);
+
+
 
       if (response.ok) {
 
