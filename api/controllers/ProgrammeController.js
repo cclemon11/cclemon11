@@ -16,8 +16,6 @@ module.exports = {
         return res.redirect("/");
     },
 
-
-
     // action -admin
     adminlist: async function (req, res) {
         var theProgramme = await Programme.find();

@@ -19,6 +19,9 @@ module.exports = {
         email: {
             type: "string"
         },
+        q1love: {
+            type: "number"
+        },
 
         rate: {
             type: "number"

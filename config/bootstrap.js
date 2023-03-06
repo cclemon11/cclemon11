@@ -30,6 +30,18 @@ module.exports.bootstrap = async function () {
   // ```
 
 
+
+
+  // if (await Progr.count() == 0) {
+  //   await Feedback.createEach([
+  //     {
+
+  //     }
+
+  //   ])
+  // }
+
+
   if (await Programme.count() == 0) {
 
     await Programme.createEach([
@@ -41,7 +53,7 @@ module.exports.bootstrap = async function () {
         programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=13",
         credits: 244,
         duration: 4,
-        imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg"
+        imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg",
 
       },
       {

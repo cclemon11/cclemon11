@@ -34,9 +34,7 @@ module.exports = {
     // action - read
     read: async function (req, res) {
 
-        
 
-        
         var thatFeedback = await Feedback.findOne(req.params.id).populate("feedback");
 
         if (!thatFeedback) return res.notFound();
