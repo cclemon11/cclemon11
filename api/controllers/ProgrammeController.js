@@ -45,6 +45,9 @@ module.exports = {
     // action - whole Analysis
     wholeAnalysis: async function (req, res) {
 
+
+
+        
         return res.view('programme/wholeAnalysis');
     },
 
@@ -190,8 +193,6 @@ module.exports = {
     },
 
     chartdata: async function (req, res) {
-
-
         var thoseProgrammes = await Programme.find({
             // limit: limit,
             // skip: offset,
@@ -200,8 +201,6 @@ module.exports = {
         });
 
         console.log(thoseProgrammes);
-
-
 
         var result = [
             // {

@@ -31,78 +31,70 @@
         padding-bottom: 12px;
     }
 </style>
+<div class="container" style="padding-top: 40px">
 
-<body class="spaceBody">
-    <div class="columns">
-        <div class=justify-content: space-around;>
-            <div class="row">
-                <div class="card-deck card-sm-gutters-2 d-block d-sm-flex">
-
-                    <% feedbacks.forEach( function(feedback) { %>
-
-                       
-                            <div class="card">
-
-                                <div class="spaceContent">
-                                    <div class="media-content">
-                                        <p class="title is-4">
-                                            <strong>
-                                                Name: <%= feedback.name %>
-                                            </strong>
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <p>
-                                        Email: <%= feedback.email %>
-                                    </p> <br>
-                                    <p>
-                                        How would you rate your overall feeling with the programme? <%= feedback.rate %>
-                                    </p> <br>
-                                    <p>
-                                        How satisfied are you with the curriculum of the programme? <%= feedback.satisfied %>
-                                    </p> <br>
-                                    <p>
-                                        How would you rate the programme objectives connect to the future career path? <%= feedback.career %>
-                                    </p> <br>
-                                    <p>
-                                        How satisfied are you with the programme's curriculum difficulty? <%= feedback.difficulty %>
-                                    </p> <br>
-                                    <p>
-                                        How satisfied are you with the faculty members support? <%= feedback.support %>
-                                    </p> <br>
-                                    <p>
-                                        Would you recommend the programme to others? <%= feedback.recommend %>
-                                    </p> <br>
-                                    <p>
-                                        Feel: <%= feedback.feel %>
-                                    </p> <br>
-                                    <p>
-                                        Share: <%= feedback.share %>
-                                    </p> <br>
-                                    <p>
-                                        Comments: <%= feedback.comments %>
-                                    </p> <br>
+    <body class="spaceBody">
+        <div class="columns is-multiline">
 
 
-                                </div>
+            <% feedbacks.forEach( function(feedback) { %>
 
 
-                            </div>
-                          
+                <div class="column is-half">
 
-                     <% }); %>
+                    <div class="card">
+                        <div class="media-content">
+
+                            <p class="title is-4">
+                                <strong>
+                                    Name: <%= feedback.name %>
+                                </strong>
+                                </a>
+                            </p>
+                        </div>
+                        <p>
+                            Email: <%= feedback.email %>
+                        </p> <br>
+                        <p>
+                            How would you rate your overall feeling with the programme? <%= feedback.rate %>
+                        </p> <br>
+                        <p>
+                            How satisfied are you with the curriculum of the programme? <%= feedback.satisfied %>
+                        </p> <br>
+                        <p>
+                            How would you rate the programme objectives connect to the future career path? <%=
+                                feedback.career %>
+                        </p> <br>
+                        <p>
+                            How satisfied are you with the programme's curriculum difficulty? <%= feedback.difficulty %>
+                        </p> <br>
+                        <p>
+                            How satisfied are you with the faculty members support? <%= feedback.support %>
+                        </p> <br>
+                        <p>
+                            Would you recommend the programme to others? <%= feedback.recommend %>
+                        </p> <br>
+                        <p>
+                            Feel: <%= feedback.feel %>
+                        </p> <br>
+                        <p>
+                            Share: <%= feedback.share %>
+                        </p> <br>
+                        <p>
+                            Comments: <%= feedback.comments %>
+                        </p> <br>
+
+
+                    </div>
 
 
                 </div>
-            </div>
+                <% }); %>
         </div>
 
 
+    </body>
 
-
-    </div>
-    </div>
-</body>
-
+</div>
 
 </html>
