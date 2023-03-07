@@ -133,8 +133,13 @@
       enhance the evaluation of programme.</p>
     <h4>Name<span>*</span></h4>
     <input class="first-name" type="text" name="name" required />
+    <h4>Student ID<span>*</span></h4>
+    <input type="text" name="studetID" required/>
     <h4>Email<span>*</span></h4>
     <input type="text" name="email" required/>
+    <h4>Studied:  <%= programme.programmename%></h4>
+   
+
     <h4>How satisfied/agree were you with the programme:<span>*</span></h4>
 
     <table>
@@ -143,7 +148,7 @@
         <th class="first-col"></th>
         <th>Totally Agree</th>
         <th>Agree</th>
-        <th>Normal</th>
+        <th>Neither</th>
         <th>Disagree</th>
         <th>Totally Disagree</th>
       </tr>
@@ -157,44 +162,38 @@
         <td><input type="radio" value="2" name="q1love" required/></td>
         <td><input type="radio" value="1" name="q1love" required/></td>
       </tr>
-
       <tr>
-        <td class="first-col">Q2. In the teaching process, I have made progress than before</td>
-        <td><input type="radio" value="5" name="q2progress" required/></td>
-        <td><input type="radio" value="4" name="q2progress" required/></td>
-        <td><input type="radio" value="3" name="q2progress" required/></td>
-        <td><input type="radio" value="2" name="q2progress" required/></td>
-        <td><input type="radio" value="1" name="q2progress" required/></td>
+        <td class="first-col">Q2. I studied related subjects in secondary school</td>
+        <td><input type="radio" value="5" name="q2related" required/></td>
+        <td><input type="radio" value="4" name="q2related" required/></td>
+        <td><input type="radio" value="3" name="q2related" required/></td>
+        <td><input type="radio" value="2" name="q2related" required/></td>
+        <td><input type="radio" value="1" name="q2related" required/></td>
       </tr>
-
       <tr>
-        <td class="first-col">Q3. Programme's instructions are clear and easy to understand </td>
-        <td><input type="radio" value="5" name="q3instructions" required/></td>
-        <td><input type="radio" value="4" name="q3instructions" required/></td>
-        <td><input type="radio" value="3" name="q3instructions" required/></td>
-        <td><input type="radio" value="2" name="q3instructions" required/></td>
-        <td><input type="radio" value="1" name="q3instructions" required/></td>
+        <td class="first-col">Q3. I can catch up the programme easily</td>
+        <td><input type="radio" value="5" name="q3catchup" required/></td>
+        <td><input type="radio" value="4" name="q3catchup" required/></td>
+        <td><input type="radio" value="3" name="q3catchup" required/></td>
+        <td><input type="radio" value="2" name="q3catchup" required/></td>
+        <td><input type="radio" value="1" name="q3catchup" required/></td>
       </tr>
-
       <tr>
-        <td class="first-col">Q4. What I have learned in this course is directly related to real life </td>
-        <td><input type="radio" value="5" name="q4reallife" required/></td>
-        <td><input type="radio" value="4" name="q4reallife" required/></td>
-        <td><input type="radio" value="3" name="q4reallife" required/></td>
-        <td><input type="radio" value="2" name="q4reallife" required/></td>
-        <td><input type="radio" value="1" name="q4reallife" required/></td>
+        <td class="first-col">Q4. In the teaching process, I have made progress than before</td>
+        <td><input type="radio" value="5" name="q4progress" required/></td>
+        <td><input type="radio" value="4" name="q4progress" required/></td>
+        <td><input type="radio" value="3" name="q4progress" required/></td>
+        <td><input type="radio" value="2" name="q4progress" required/></td>
+        <td><input type="radio" value="1" name="q4progress" required/></td>
       </tr>
-
       <tr>
-        <td class="first-col">Q5. I enjoyed to study in the programme </td>
+        <td class="first-col">Q5. I enjoyed what I learned in the programme </td>
         <td><input type="radio" value="5" name="q5enjoy" required/></td>
         <td><input type="radio" value="4" name="q5enjoy" required/></td>
         <td><input type="radio" value="3" name="q5enjoy" required/></td>
         <td><input type="radio" value="2" name="q5enjoy" required/></td>
         <td><input type="radio" value="1" name="q5enjoy" required/></td>
       </tr>
-
-
       <tr>
         <td class="first-col">Q6. I don't feel pressured to take this programme </td>
         <td><input type="radio" value="5" name="q6pressured" required/></td>
@@ -203,27 +202,166 @@
         <td><input type="radio" value="2" name="q6pressured" required/></td>
         <td><input type="radio" value="1" name="q6pressured" required/></td>
       </tr>
-      
       <tr>
-        <td class="first-col">Q7. I can handle the programme's curriculum</td>
-        <td><input type="radio" value="5" name="q7curriculum" required/></td>
-        <td><input type="radio" value="4" name="q7curriculum" required/></td>
-        <td><input type="radio" value="3" name="q7curriculum" required/></td>
-        <td><input type="radio" value="2" name="q7curriculum" required/></td>
-        <td><input type="radio" value="1" name="q7curriculum" required/></td>
+        <td class="second-col">Q7. I will recommend the programme to others</td>
+        <td><input type="radio" value="5" name="q7recommend" required/></td>
+        <td><input type="radio" value="4" name="q7recommend" required/></td>
+        <td><input type="radio" value="3" name="q7recommend" required/></td>
+        <td><input type="radio" value="2" name="q7recommend" required/></td>
+        <td><input type="radio" value="1" name="q7recommend" required/></td>
       </tr>
-      
       <tr>
-        <td class="first-col">Q8. I think the course difficulty is moderate</td>
-        <td><input type="radio" value="5" name="q8difficulty" required/></td>
-        <td><input type="radio" value="4" name="q8difficulty" required/></td>
-        <td><input type="radio" value="3" name="q8difficulty" required/></td>
-        <td><input type="radio" value="2" name="q8difficulty" required/></td>
-        <td><input type="radio" value="1" name="q8difficulty" required/></td>
+        <td class="first-col">Q8. I can develop my whole person development in the programme (E.g Communication skills, Time management)</td>
+        <td><input type="radio" value="5" name="q8wholeperson" required/></td>
+        <td><input type="radio" value="4" name="q8wholeperson" required/></td>
+        <td><input type="radio" value="3" name="q8wholeperson" required/></td>
+        <td><input type="radio" value="2" name="q8wholeperson" required/></td>
+        <td><input type="radio" value="1" name="q8wholeperson" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q9. If I can choose again, I still want to study this programme</td>
+        <td><input type="radio" value="5" name="q9choose" required/></td>
+        <td><input type="radio" value="4" name="q9choose" required/></td>
+        <td><input type="radio" value="3" name="q9choose" required/></td>
+        <td><input type="radio" value="2" name="q9choose" required/></td>
+        <td><input type="radio" value="1" name="q9choose" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q10. Overall, I feel joyful to study this programme</td>
+        <td><input type="radio" value="5" name="q10joyful" required/></td>
+        <td><input type="radio" value="4" name="q10joyful" required/></td>
+        <td><input type="radio" value="3" name="q10joyful" required/></td>
+        <td><input type="radio" value="2" name="q10joyful" required/></td>
+        <td><input type="radio" value="1" name="q10joyful" required/></td>
       </tr>
 
+
+
+
+
       <tr>
-        <td class="first-col">Q9. I think the structure of the course content is complete</td>
+        <td class="first-col">Q11. Programme's instructions are clear and easy to understand </td>
+        <td><input type="radio" value="5" name="q11instructions" required/></td>
+        <td><input type="radio" value="4" name="q11instructions" required/></td>
+        <td><input type="radio" value="3" name="q11instructions" required/></td>
+        <td><input type="radio" value="2" name="q11instructions" required/></td>
+        <td><input type="radio" value="1" name="q11instructions" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q12. I think the programme difficulty is moderate</td>
+        <td><input type="radio" value="5" name="q12difficulty" required/></td>
+        <td><input type="radio" value="4" name="q12difficulty" required/></td>
+        <td><input type="radio" value="3" name="q12difficulty" required/></td>
+        <td><input type="radio" value="2" name="q12difficulty" required/></td>
+        <td><input type="radio" value="1" name="q12difficulty" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q13. I can adapt the programme curriculum easily</td>
+        <td><input type="radio" value="5" name="q13adapt" required/></td>
+        <td><input type="radio" value="4" name="q13adapt" required/></td>
+        <td><input type="radio" value="3" name="q13adapt" required/></td>
+        <td><input type="radio" value="2" name="q13adapt" required/></td>
+        <td><input type="radio" value="1" name="q13adapt" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q14. I think the programme curriculum is well-structured</td>
+        <td><input type="radio" value="5" name="q14wellstructured" required/></td>
+        <td><input type="radio" value="4" name="q14wellstructured" required/></td>
+        <td><input type="radio" value="3" name="q14wellstructured" required/></td>
+        <td><input type="radio" value="2" name="q14wellstructured" required/></td>
+        <td><input type="radio" value="1" name="q14wellstructured" required/></td>
+      </tr>
+      <tr>
+        <td class="second-col">Q15. I think the faculty provides enough resources for teaching</td>
+        <td><input type="radio" value="none" name="q15resources" required/></td>
+        <td><input type="radio" value="none" name="q15resources" required/></td>
+        <td><input type="radio" value="none" name="q15resources" required/></td>
+        <td><input type="radio" value="none" name="q15resources" required/></td>
+        <td><input type="radio" value="none" name="q15resources" required/></td>
+      </tr>
+      <tr>
+        <td class="second-col">Q16. I am satisfied with the faculty members support</td>
+        <td><input type="radio" value="none" name="q16support" required/></td>
+        <td><input type="radio" value="none" name="q16support" required/></td>
+        <td><input type="radio" value="none" name="q16support" required/></td>
+        <td><input type="radio" value="none" name="q16support" required/></td>
+        <td><input type="radio" value="none" name="q16support" required/></td>
+      </tr>
+      <tr>
+        <td class="second-col">Q17. I am satisfied with the faculty facilities including lab, study room</td>
+        <td><input type="radio" value="none" name="q17facilities" required/></td>
+        <td><input type="radio" value="none" name="q17facilities" required/></td>
+        <td><input type="radio" value="none" name="q17facilities" required/></td>
+        <td><input type="radio" value="none" name="q17facilities" required/></td>
+        <td><input type="radio" value="none" name="q17facilities" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q18. Overall, I am satisfied with the content and curriculum of this programme</td>
+        <td><input type="radio" value="5" name="q18overall" required/></td>
+        <td><input type="radio" value="4" name="q18overall" required/></td>
+        <td><input type="radio" value="3" name="q18overall" required/></td>
+        <td><input type="radio" value="2" name="q18overall" required/></td>
+        <td><input type="radio" value="1" name="q18overall" required/></td>
+      </tr>
+
+
+
+
+      <tr>
+        <td class="first-col">Q4. Do you think the programme objectives connect to the future career path?</td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q4. Do you believe an complusory internship during the programme is good for future career?</td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q4. Do you think what you learned in th programme can help in your career?</td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q4. Do you believe the programme can provide the knoweldge that applied in the workplace?</td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q4. Do you believe you will continue your career in this industry?</td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+      <tr>
+        <td class="first-col">Q4. Overall, I think the programme is useful </td>
+        <td><input type="radio" value="5" name="q4reallife" required/></td>
+        <td><input type="radio" value="4" name="q4reallife" required/></td>
+        <td><input type="radio" value="3" name="q4reallife" required/></td>
+        <td><input type="radio" value="2" name="q4reallife" required/></td>
+        <td><input type="radio" value="1" name="q4reallife" required/></td>
+      </tr>
+    
+
+
+
+
+      <tr>
+        <td class="first-col">Q9. I think the structure of the programme content is complete</td>
         <td><input type="radio" value="5" name="q9structure" required/></td>
         <td><input type="radio" value="4" name="q9structure" required/></td>
         <td><input type="radio" value="3" name="q9structure" required/></td>
@@ -231,14 +369,7 @@
         <td><input type="radio" value="1" name="q9structure" required/></td>
       </tr>
 
-      <tr>
-        <td class="first-col">Q10. Overall, I am satisfied with the content and curriculum of this programme</td>
-        <td><input type="radio" value="5" name="q10overall" required/></td>
-        <td><input type="radio" value="4" name="q10overall" required/></td>
-        <td><input type="radio" value="3" name="q10overall" required/></td>
-        <td><input type="radio" value="2" name="q10overall" required/></td>
-        <td><input type="radio" value="1" name="q10overall" required/></td>
-      </tr>
+    
 
      
 
@@ -287,22 +418,8 @@
         <td><input type="radio" value="2" name="difficulty" required/></td>
         <td><input type="radio" value="1" name="difficulty" required/></td>
       </tr>
-      <tr>
-        <td class="second-col">How satisfied are you with the faculty members support?</td>
-        <td><input type="radio" value="none" name="support" required/></td>
-        <td><input type="radio" value="none" name="support" required/></td>
-        <td><input type="radio" value="none" name="support" required/></td>
-        <td><input type="radio" value="none" name="support" required/></td>
-        <td><input type="radio" value="none" name="support" required/></td>
-      </tr>
-      <tr>
-        <td class="second-col">Would you recommend the programme to others?</td>
-        <td><input type="radio" value="5" name="recommend" required/></td>
-        <td><input type="radio" value="4" name="recommend" required/></td>
-        <td><input type="radio" value="3" name="recommend" required/></td>
-        <td><input type="radio" value="2" name="recommend" required/></td>
-        <td><input type="radio" value="1" name="recommend" required/></td>
-      </tr>
+    
+ 
     </table>
     <h4>Please use a sentence to describe how you feel with the programme:</h4>
     <textarea name="feel" rows="5"></textarea>
