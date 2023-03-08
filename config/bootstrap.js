@@ -107,40 +107,48 @@ module.exports.bootstrap = async function () {
   if (await Feedback.count() == 0) {
     await Feedback.createEach([{
       "name": "Ka Man",
+      "studentID": "19232195",
       "email": "carmen22454@gmail.com",
       "q1love": 4,
-      "q2progress": 3,
-      "q3instructions": 4,
-      "q4reallife": 2,
+      "q2related": 3,
+      "q3catchup": 4,
+      "q4progress": 3,
       "q5enjoy": 4,
       "q6pressured": 3,
-      "q7curriculum": 3,
-      "q8difficulty": 4,
-      "q9structure": 2,
-      "q10overall": 3,
-      "rate": 4,
-      "satisfied": "4",
-      "career": "5",
-      "difficulty": "3",
-      "support": "none",
-      "recommend": "3",
-      "feel": "I enjoy study the programme and courses",
-      "share": "I think the programme can add more facilities",
-      "comments": "I recommend others to study this programme",
-      "createdAt": 1678095319139,
-      "updatedAt": 1678095319204,
+      "q7recommend": 4,
+      "q8wholeperson": 3,
+      "q9choose": 4,
+      "q10joyful": 4,
+      "q11instructions": 5,
+      "q12difficulty": 4,
+      "q13adapt": 3,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 5,
+      "q17facilities": 2,
+      "q18overall": 4,
+      "q19connect": 3,
+      "q20internship": 3,
+      "q21help": 4,
+      "q22knowledge": 4,
+      "q23career": 3,
+      "q24useful": 4,
+      "feel": "I enjoy studying the program and courses",
+      "share": "I think the program can add more facilities",
+      "comments": "I recommend others to study this program",
+      "createdAt": 1678242378642,
+      "updatedAt": 1678242378683,
       // "feedback": {
-      //   "$oid": "6405b39adf8a3280cf491642"
+      //   "$oid": "6407f1b26d08bbbc5ec79972"
       // }
-    },
-    
-    ]);
+  
+   } ]);
   }
 
-  let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)"})
-  let f1 = await Feedback.findOne({email:"carmen22454@gmail.com"})
+   let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)"})
+   let f1 = await Feedback.findOne({studentID: "19232195",})
 
-  await Programme.addToCollection(p1.id,'programmes' ).members([f1.id]);
+   await Programme.addToCollection(p1.id,'programmes' ).members([f1.id]);
 
   return generateUsers();
 

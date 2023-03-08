@@ -19,16 +19,19 @@ module.exports = {
         email: {
             type: "string"
         },
+        studentID:{
+            type: "string"
+        },
         q1love: {
             type: "number"
         },
-        q2progress: {
+        q2related: {
             type: "number"
         },
-        q3instructions: {
+        q3catchup: {
             type: "number"
         },
-        q4reallife: {
+        q4progress: {
             type: "number"
         },
         q5enjoy: {
@@ -37,41 +40,65 @@ module.exports = {
         q6pressured: {
             type: "number"
         },
-        q7curriculum: {
+        q7recommend: {
             type: "number"
         },
-        q8difficulty: {
+        q8wholeperson: {
             type: "number"
         },
-        q9structure: {
+        q9choose: {
             type: "number"
         },
-        q10overall: {
-            type: "number"
-        },
-
-        rate: {
+        q10joyful: {
             type: "number"
         },
 
-        satisfied: {
-            type: "string"
+        q11instructions: {
+            type: "number"
         },
 
-        career: {
-            type: "string"
+        q12difficulty: {
+            type: "number"
+        },
+        q13adapt: {
+            type: "number"
+        },
+        q14wellstructured: {
+            type: "number"
         },
 
-        difficulty: {
-            type: "string"
+        q15resources: {
+            type: "number"
         },
-
-        support: {
-            type: "string"
+        q16support: {
+            type: "number"
         },
-
-        recommend: {
-            type: "string"
+        q16support: {
+            type: "number"
+        },
+        q17facilities: {
+            type: "number"
+        },
+        q18overall: {
+            type: "number"
+        },
+        q19connect: {
+            type: "number"
+        },
+        q20internship: {
+            type: "number"
+        },
+        q21help: {
+            type: "number"
+        },
+        q22knowledge: {
+            type: "number"
+        },
+        q23career: {
+            type: "number"
+        },
+        q24useful: {
+            type: "number"
         },
 
         feel: {

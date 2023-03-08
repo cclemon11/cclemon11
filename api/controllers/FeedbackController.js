@@ -62,33 +62,78 @@ module.exports = {
         var sum8 = 0;
         var sum9 = 0;
         var sum10 = 0;
+        var sum11 = 0;
+        var sum12 = 0;
+        var sum13 = 0;
+        var sum14 = 0;
+        var sum15 = 0;
+        var sum16 = 0;
+        var sum17 = 0;
+        var sum18 = 0;
+        var sum19 = 0;
+        var sum20 = 0;
+        var sum21 = 0;
+        var sum22 = 0;
+        var sum23 = 0;
+        var sum24 = 0;
         var count = 0;
 
         result.programmes.forEach(element => {
             sum1 = sum1 + parseInt(element.q1love)
-            sum2 = sum2 + parseInt(element.q2progress)
-            sum3 = sum3 + parseInt(element.q3instructions)
-            sum4 = sum4 + parseInt(element.q4reallife)
+            sum2 = sum2 + parseInt(element.q2related)
+            sum3 = sum3 + parseInt(element.q3catchup)
+            sum4 = sum4 + parseInt(element.q4progress)
             sum5 = sum5 + parseInt(element.q5enjoy)
             sum6 = sum6 + parseInt(element.q6pressured)
-            sum7 = sum7 + parseInt(element.q7curriculum)
-            sum8 = sum8 + parseInt(element.q8difficulty)
-            sum9 = sum9 + parseInt(element.q9structure)
-            sum10 = sum10 + parseInt(element.q10overall)
+            sum7 = sum7 + parseInt(element.q7recommend)
+            sum8 = sum8 + parseInt(element.q8wholeperson)
+            sum9 = sum9 + parseInt(element.q9choose)
+            sum10 = sum10 + parseInt(element.q10joyful)
+            sum11 = sum11 + parseInt(element.q11instructions)
+            sum12 = sum12 + parseInt(element.q12difficulty)
+            sum13 = sum13 + parseInt(element.q13adapt)
+            sum14 = sum14 + parseInt(element.q14wellstructured)
+            sum15 = sum15 + parseInt(element.q15resources)
+            sum16 = sum16 + parseInt(element.q16support)
+            sum17 = sum17 + parseInt(element.q17facilities)
+            sum18 = sum18 + parseInt(element.q18overall)
+            sum19 = sum19 + parseInt(element.q19connect)
+            sum20 = sum20 + parseInt(element.q20internship)
+            sum21 = sum21 + parseInt(element.q21help)
+            sum22 = sum22 + parseInt(element.q22knowledge)
+            sum23 = sum23 + parseInt(element.q23career)
+            sum24 = sum24 + parseInt(element.q24useful)
+
+
             count++
         });
 
         var final = [
-            {country: "q1", value: sum1/count},
-            {country: "q2",  value: sum2/count},
-            {country: "q3",  value: sum3/count},
-            {country: "q4", value: sum4/count},
-            {country: "q5", value: sum5/count},
-            {country: "q6", value: sum6/count},
-            {country: "q7", value: sum7/count},
-            {country: "q8", value: sum8/count},
-            {country: "q9", value: sum9/count},
-            {country: "q10", value: sum10/count},
+            {country: "Q1. Love the programme", value: sum1/count},
+            {country: "Q2. Studied related subjects before",  value: sum2/count},
+            {country: "Q3. Catch up the programme easily",  value: sum3/count},
+            {country: "Q4. Made progress than before", value: sum4/count},
+            {country: "Q5. Enjoyed in the programme", value: sum5/count},
+            {country: "Q6. Don't feel pressured", value: sum6/count},
+            {country: "Q7. Recommend the programme to others", value: sum7/count},
+            {country: "Q8. Develop my whole person development", value: sum8/count},
+            {country: "Q9. Still want to study this programme", value: sum9/count},
+            {country: "Q10. Overall feeling joyful", value: sum10/count},
+            {country: "Q11. Programme's instructions are clear", value: sum11/count},
+            {country: "Q12. Programme difficulty is moderate", value: sum12/count},
+            {country: "Q13. Adapt the programme curriculum easily", value: sum13/count},
+            {country: "Q14. Programme curriculum is well-structured", value: sum14/count},
+            {country: "Q15. Faculty provides enough resources", value: sum15/count},
+            {country: "Q16. Satisfied with faculty members support", value: sum16/count},
+            {country: "Q17. Satisfied with faculty facilities", value: sum17/count},
+            {country: "Q18. Overall satisfaction for the curriculum", value: sum18/count},
+            {country: "Q19. Programme objectives connect to career", value: sum19/count},
+            {country: "Q20. Compulsory internship is good", value: sum20/count},
+            {country: "Q21. The programme can help in the career", value: sum21/count},
+            {country: "Q22. Knowledge applied in the workplace", value: sum22/count},
+            {country: "Q23. Continue career in this industry", value: sum23/count},
+            {country: "Q24. Overall useful for career", value: sum24/count},
+
 
         ]
 
