@@ -48,7 +48,7 @@ module.exports.bootstrap = async function () {
     await Programme.createEach([
       {
         facultyname: "School of Business",
-        programmename: "Bachelor of Business Administration (Hons)",
+        programmename: "Bachelor of Business Administration (Hons) in Accounting Concentration",
         enrollment: 100,
         programmeobjectives: "The Bachelor of Business Administration (Hons) Programme is an integrated combination of general education and high quality business studies",
         programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=13",
@@ -81,7 +81,7 @@ module.exports.bootstrap = async function () {
       },
       {
         facultyname: "Faculty of Arts",
-        programmename: "Bachelor of Arts (Hons) / Bachelor of Music (Hons) (Music / Creative Industries)",
+        programmename: "Bachelor of Arts (Hons) in Music",
         enrollment: 43,
         programmeobjectives: "Nurture aspiring musicians who will acquire the general knowledge and practical skills needed for a variety of careers, and to provide students with opportunities to personal and intellectual development",
         programmewebsite: "https://mus.hkbu.edu.hk/web/",
@@ -92,7 +92,7 @@ module.exports.bootstrap = async function () {
       },
       {
         facultyname: "Faculty of Arts",
-        programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)",
+        programmename: "Bachelor of Arts (Hons) in Creative and Professional Writing",
         enrollment: 35,
         programmeobjectives: "To provide students with a vigorous curriculum to develop creative and professional writing skills in Chinese and English;",
         programmewebsite: "https://artsbu.hkbu.edu.hk/study/prospective/scholarships/faculty-wide",
@@ -145,7 +145,7 @@ module.exports.bootstrap = async function () {
    } ]);
   }
 
-   let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) (Chinese Language and Literature / Creative and Professional Writing / English Language and Literature / Humanities / Translation)"})
+   let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) in Creative and Professional Writing"})
    let f1 = await Feedback.findOne({studentID: "19232195",})
 
    await Programme.addToCollection(p1.id,'programmes' ).members([f1.id]);
