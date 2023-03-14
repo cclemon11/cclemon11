@@ -47,7 +47,7 @@ module.exports = {
 
 
 
-        
+
         return res.view('programme/wholeAnalysis');
     },
 
@@ -194,27 +194,13 @@ module.exports = {
 
     chartdata: async function (req, res) {
         var thoseProgrammes = await Programme.find({
-            // limit: limit,
-            // skip: offset,
-            // where: whereClause,
-            // sort: 'programmename'
+
         });
 
         console.log(thoseProgrammes);
 
         var result = [
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
+
         ];
 
         var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
@@ -256,65 +242,107 @@ module.exports = {
 
         console.log(thatProgramme.programmes);
 
-
-
         var result = [
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
-            // {
-            //     country: "School of Chinese Medicine", value: 0
-            // }, 
+
         ];
 
-        // var array = ["rate"]
-
-        // for (rate of array) {
-
-        //     var filteredResults = thatProgramme.programmes.filter(function (prog) {
-
-        //         return prog.rate == rate
-        //     })
-
-        //     result.push({ country: rate, value: filteredResults.length })
-        // }
-        // for (rate of array) {
-
-        //     var filteredResults = thatProgramme.programmes.filter(function (prog) {
-
-        //         return prog.rate == rate
-        //     })
-
-        //     result.push({ country: rate, value: filteredResults.length })
-        // }
-
-
-        // if (thatProgramme.programmes)
-        //     result = thatProgramme.programmes.map(item => item.rate)
 
         var array = ["q1love", "q2progress", "q3instructions", "q4reallife", "q5enjoy", "q6pressured"
-            , "q7curriculum", "q8difficulty","q9structure","q10overall"]
+            , "q7curriculum", "q8difficulty", "q9structure", "q10overall"]
 
 
-            for (question of array) {
+        for (question of array) {
 
-                var filteredResults = thoseProgrammes.filter(function (prog) {
-    
-                    // return prog.facultyname == faculty
-                    return prog.f == question
-                })
-    
-                if (filteredResults.length != 0) {
-                    result.push({ country: question, value: filteredResults.length })
-                }
+            var filteredResults = thoseProgrammes.filter(function (prog) {
+
+                // return prog.facultyname == faculty
+                return prog.f == question
+            })
+
+            if (filteredResults.length != 0) {
+                result.push({ country: question, value: filteredResults.length })
+            }
+            // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
+            return res.json(result);
+        }
+    },
+    partitionedBarChart: async function (req, res) {
+        // var data = [{
+        //     //   region: "Central",
+        //     //   state: "North Dakota",
+        //     //   sales: 920
+        //     // }, {
+        //     //   region: "Central",
+        //     //   state: "South Dakota",
+        //     //   sales: 1317
+
+
+        var allFacultyofArts = ["Bachelor of Arts (Hons) in Chinese Language and Literature", "Bachelor of Arts (Hons) in Creative and Professional Writing", "Bachelor of Arts (Hons) in English Language and Literature", "Bachelor of Arts (Hons) in Humanities",
+            "Bachelor of Arts (Hons) in Translation", "Bachelor of Arts (Hons) in Religion, Philosophy and Ethics", "Bachelor of Music (Hons) in Creative Industries", "Bachelor of Arts (Hons) in Music"]
+
+        for (eachprogramme of allFacultyofArts) {
+
+            var filteredResults = eachprogramme.filter(function (prog) {
+
+                // return prog.facultyname == faculty
+                return prog.programmename == eachprogramme
+            })
+
+            if (filteredResults.length != 0) {
+                result.push({ country: faculty, value: filteredResults.length })
+            }
+
+            result.push({ region: prog.facultyname, state: eachprogramme })
+        }
+
+
+
         // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
         return res.json(result);
+    },
+
+
+    newChart: async function (req, res) {
+
+        var array = []
+
+        var programmes = await Programme.find({ facultyname: "Faculty of Arts" }).populate("programmes")
+
+        programmes.forEach(function (program) {
+
+            var q1 = 0
+            var q2 = 0
+            var count = 0
+
+            program.programmes.forEach(function (feedback) {
+
+                q1 = q1 + feedback.q1love
+                count++
+                console.log(q1)
+
+            })
+
+            if (count != 0) {
+                array.push(
+                    {
+                        region: program.programmename,
+                        state: "Q1",
+                        sales: q1 / count * 5000
+                    })
             }
+
+
+
+
+
+        })
+
+        return res.json(array)
+
+    },
+
+    partitionedBarChart : async function(req, res) {
+
+        return res.view('programme/partitionedBarChart')
     }
 }
