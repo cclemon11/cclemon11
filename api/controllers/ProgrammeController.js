@@ -312,13 +312,26 @@ module.exports = {
 
             var q1 = 0
             var q2 = 0
+            var q3 = 0
+            var q4 = 0
+            var q5 = 0
+            var q7 = 0
+            var q8 = 0
+            var q9 = 0
+            var q10 = 0
             var count = 0
 
             program.programmes.forEach(function (feedback) {
 
                 q1 = q1 + feedback.q1love
+                q2 = q2 + feedback.q2related
+                q3 = q3 + feedback.q3catchup
+                q4 = q4 + feedback.q4progress
+                q5 = q5 + feedback.q5enjoy
+            
                 count++
                 console.log(q1)
+
 
             })
 
@@ -327,8 +340,33 @@ module.exports = {
                     {
                         region: program.programmename,
                         state: "Q1",
-                        sales: q1 / count * 5000
-                    })
+
+                    },
+                    {
+                        region: program.programmename,
+                        state: "Q2",
+                        sales: q2 / count 
+                    },
+                    {
+
+                        region: program.programmename,
+                        state: "Q3",
+                        sales: q3 / count 
+                    },
+                    {
+                        region: program.programmename,
+                        state: "Q4",
+                        sales: q4 / count
+                    },
+                    {
+                        region: program.programmename,
+                        state: "Q5",
+                        sales: q5 / count 
+                    },   
+                 
+
+
+                    )
             }
 
 
@@ -341,7 +379,7 @@ module.exports = {
 
     },
 
-    partitionedBarChart : async function(req, res) {
+    partitionedBarChart: async function (req, res) {
 
         return res.view('programme/partitionedBarChart')
     }
