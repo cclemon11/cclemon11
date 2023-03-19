@@ -141,6 +141,57 @@ module.exports = {
 
 
 
+    },
+
+    getQ1Q10: async function (req, res) {
+
+        var result = await Programme.findOne(req.params.id).populate("programmes");
+
+        var sum1 = 0;
+        var sum2 = 0;
+        var sum3 = 0;
+        var sum4 = 0;
+        var sum5 = 0;
+        var sum6 = 0;
+        var sum7 = 0;
+        var sum8 = 0;
+        var sum9 = 0;
+        var sum10 = 0;
+        var count = 0;
+
+        result.programmes.forEach(element => {
+            sum1 = sum1 + parseInt(element.q1love)
+            sum2 = sum2 + parseInt(element.q2related)
+            sum3 = sum3 + parseInt(element.q3catchup)
+            sum4 = sum4 + parseInt(element.q4progress)
+            sum5 = sum5 + parseInt(element.q5enjoy)
+            sum6 = sum6 + parseInt(element.q6pressured)
+            sum7 = sum7 + parseInt(element.q7recommend)
+            sum8 = sum8 + parseInt(element.q8wholeperson)
+            sum9 = sum9 + parseInt(element.q9choose)
+            sum10 = sum10 + parseInt(element.q10joyful)
+
+            count++
+        });
+
+        var final = [
+            {nerwork: "Q1. Love the programme", value: sum1/count},
+            {nerwork: "Q2. Studied related subjects before",  value: sum2/count},
+            {nerwork: "Q3. Catch up the programme easily",  value: sum3/count},
+            {nerwork: "Q4. Made progress than before", value: sum4/count},
+            {nerwork: "Q5. Enjoyed in the programme", value: sum5/count},
+            {nerwork: "Q6. Don't feel pressured", value: sum6/count},
+            {nerwork: "Q7. Recommend the programme to others", value: sum7/count},
+            {nerwork: "Q8. Develop my whole person development", value: sum8/count},
+            {nerwork: "Q9. Still want to study this programme", value: sum9/count},
+            {nerwork: "Q10. Overall feeling joyful", value: sum10/count}
+
+        ]
+
+        return res.json(final);
+
+
+
     }
 
 
