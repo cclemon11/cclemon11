@@ -81,6 +81,6 @@ module.exports.routes = {
 
 
    'GET /data/chart' : 'ProgrammeController.chartdata',
-   'GET /data/:id/chartPerProg' : 'ProgrammeController.chartdataPerProgramme'
+   'GET /data/:id/chartPerProg' : 'ProgrammeController.chartdataPerProgramme',
 
 }

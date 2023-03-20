@@ -175,16 +175,16 @@ module.exports = {
         });
 
         var final = [
-            {nerwork: "Q1. Love the programme", value: sum1/count},
-            {nerwork: "Q2. Studied related subjects before",  value: sum2/count},
-            {nerwork: "Q3. Catch up the programme easily",  value: sum3/count},
-            {nerwork: "Q4. Made progress than before", value: sum4/count},
-            {nerwork: "Q5. Enjoyed in the programme", value: sum5/count},
-            {nerwork: "Q6. Don't feel pressured", value: sum6/count},
-            {nerwork: "Q7. Recommend the programme to others", value: sum7/count},
-            {nerwork: "Q8. Develop my whole person development", value: sum8/count},
-            {nerwork: "Q9. Still want to study this programme", value: sum9/count},
-            {nerwork: "Q10. Overall feeling joyful", value: sum10/count}
+            {nerwork: "Q1.", value: sum1/count * 1000000},
+            {nerwork: "Q2.",  value: sum2/count* 1000000},
+            {nerwork: "Q3.",  value: sum3/count* 1000000},
+            {nerwork: "Q4.", value: sum4/count* 1000000},
+            {nerwork: "Q5.", value: sum5/count* 1000000},
+            {nerwork: "Q6.", value: sum6/count* 1000000},
+            {nerwork: "Q7.", value: sum7/count* 1000000},
+            {nerwork: "Q8.", value: sum8/count* 1000000},
+            {nerwork: "Q9. ", value: sum9/count* 1000000},
+            {nerwork: "Q10. ", value: sum10/count* 1000000}
 
         ]
 

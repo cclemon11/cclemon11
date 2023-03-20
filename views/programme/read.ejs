@@ -1,60 +1,71 @@
 <div class="container">
   <div class="columns">
     <div class="column">
-        <div class=content is-medium>
-          <ul>
-            <td><a href="<%= programme.programmewebsite %>">
-                <img style="object-fit:cover" src="<%= programme.imageurl %>" />
-              </a> </td>
-
-            <li><b>
-                <%= programme.programmename %>
-              </b>
-            </li>
-            <li><b>Faculty Name: </b>
-              <%= programme.facultyname %>
-            </li>
-
-            <li><b>Enrollment:</b>
-              <%= programme.enrollment %>
-            </li>
-
-            <li><b>Programme Objectives:</b>
-              <%= programme.programmeobjectives %>
-            </li>
-
-            <li><b>Credits required for graduation:</b>
-              <%= programme.credits %>
-            </li>
-
-            <li><b>Duration of Study:</b>
-              <%= programme.duration %>
-            </li>
-
-
-          </ul>
-
-          <td><a a class="button is-link" href="http://localhost:1337/programme/feedback/<%= programme.id %>">
-              Feedback
+      <div class=content is-medium>
+        <ul>
+          <td><a href="<%= programme.programmewebsite %>">
+              <img style="object-fit:cover" src="<%= programme.imageurl %>" />
             </a> </td>
 
+          <li><b>
+              <%= programme.programmename %>
+            </b>
+          </li>
+          <li><b>Faculty Name: </b>
+            <%= programme.facultyname %>
+          </li>
 
-          <a class="button is-warning" href="http://localhost:1337/programme/<%= programme.id %>/feedbacks">
-            Feedback Result
-          </a>
+          <li><b>Enrollment:</b>
+            <%= programme.enrollment %>
+          </li>
 
-          <a class="button is-success" href="http://localhost:1337/programme/<%= programme.id %>/visualAnalysisPerProg">
-            Visual Analysis per Programme
-          </a>
+          <li><b>Programme Objectives:</b>
+            <%= programme.programmeobjectives %>
+          </li>
 
-          <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
-          <% if(req.session.role=="admin" ){ %>
-            <button type="button" class="button is-danger"
-              onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
-            <!-- </form> -->
-            <% } %>
+          <li><b>Credits required for graduation:</b>
+            <%= programme.credits %>
+          </li>
 
-        </div>
+          <li><b>Duration of Study:</b>
+            <%= programme.duration %>
+          </li>
+
+
+        </ul>
+
+        <td><a a class="button is-link" href="http://localhost:1337/programme/feedback/<%= programme.id %>">
+            Feedback
+          </a> </td>
+
+
+        <a class="button is-warning" href="http://localhost:1337/programme/<%= programme.id %>/feedbacks">
+          Feedback Result
+        </a>
+
+        <a class="button is-success" href="http://localhost:1337/programme/<%= programme.id %>/visualAnalysisPerProg">
+          Visual Analysis per Programme
+        </a>
+        <br>
+        <a class="button is-primary is-rounded"
+          href="http://localhost:1337/programme/<%= programme.id %>/feelingBarChart">
+          Feeling on Programme Q1-10
+        </a>
+        <a class="button is-link is-rounded" href="http://localhost:1337/programme/partitionedBarChart">
+          Programme's curriculum Q11-18
+        </a>
+
+        <a class="button is-success is-rounded" href="http://localhost:1337/programme/partitionedBarChart">
+          Programme links to career Q19-24
+        </a>
+        <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
+        <% if(req.session.role=="admin" ){ %>
+          <button type="button" class="button is-danger"
+            onclick="deleteProgramme('<%= programme.id %>')">Delete</button>
+          <!-- </form> -->
+          <% } %>
+
+      </div>
 
 
 

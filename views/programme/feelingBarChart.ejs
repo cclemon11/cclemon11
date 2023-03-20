@@ -94,7 +94,7 @@
         // alert(pathArray[2])
 
         // var response = await fetch('/data/<%=req.params.id%>/chartPerProg');
-        var response = await fetch('/feedback/getQ1/' + pathArray[2]);
+        var response = await fetch('/feedback/getQ1Q10/' + pathArray[2]);
 
         if (response.ok) {
 
@@ -169,28 +169,28 @@
 
 
         // update data with random values each 1.5 sec
-        setInterval(function () {
-            updateData();
-        }, 1500)
+        // setInterval(function () {
+        //     updateData();
+        // }, 1500)
 
-        function updateData() {
-            am5.array.each(series.dataItems, function (dataItem) {
-                var value = dataItem.get("valueX") + Math.round(Math.random() * 1000000000 - 500000000);
-                if (value < 0) {
-                    value = 500000000;
-                }
-                // both valueY and workingValueY should be changed, we only animate workingValueY
-                dataItem.set("valueX", value);
-                dataItem.animate({
-                    key: "valueXWorking",
-                    to: value,
-                    duration: 600,
-                    easing: am5.ease.out(am5.ease.cubic)
-                });
-            })
+        // function updateData() {
+        //     am5.array.each(series.dataItems, function (dataItem) {
+        //         var value = dataItem.get("valueX") + Math.round(Math.random() * 1000000000 - 500000000);
+        //         if (value < 0) {
+        //             value = 500000000;
+        //         }
+        //         // both valueY and workingValueY should be changed, we only animate workingValueY
+        //         dataItem.set("valueX", value);
+        //         dataItem.animate({
+        //             key: "valueXWorking",
+        //             to: value,
+        //             duration: 600,
+        //             easing: am5.ease.out(am5.ease.cubic)
+        //         });
+        //     })
 
-            sortCategoryAxis();
-        }
+        //     sortCategoryAxis();
+        // }
 
 
         // Make stuff animate on load
