@@ -1,0 +1,66 @@
+<style>
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/wc.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<!-- Chart code -->
+<script>
+    am5.ready(async function () {
+
+        // Create root element
+        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root = am5.Root.new("chartdiv");
+
+
+        // Set themes
+        // https://www.amcharts.com/docs/v5/concepts/themes/
+        root.setThemes([
+            am5themes_Animated.new(root)
+        ]);
+
+
+        // Add series
+        // https://www.amcharts.com/docs/v5/charts/word-cloud/
+
+
+        var response = await fetch("/programme/worldcloudApi/" + "6416eb473dae53352fbcb659")
+
+        if (response.ok) {
+
+            var string = await response.text()
+
+            alert(string)
+            string = string.replaceAll("the", "")
+            alert(string)
+            // series.data.text = string
+
+            var series = root.container.children.push(am5wc.WordCloud.new(root, {
+                maxCount: 100,
+                minWordLength: 2,
+                maxFontSize: am5.percent(35),
+                text: string
+            }));
+
+
+            // Configure labels
+            series.labels.template.setAll({
+                paddingTop: 5,
+                paddingBottom: 5,
+                paddingLeft: 5,
+                paddingRight: 5,
+                fontFamily: "Courier New"
+            });
+        }
+
+    }); // end am5.ready()
+</script>
+
+<!-- HTML -->
+<div id="chartdiv"></div>

@@ -5,7 +5,7 @@
 
 
 <script>
-    am5.ready( async function () {
+    am5.ready(async function () {
 
 
         // Create root element
@@ -94,7 +94,22 @@
         // alert(pathArray[2])
 
         // var response = await fetch('/data/<%=req.params.id%>/chartPerProg');
+        // var response = await fetch('/feedback/getQ1Q10/' + pathArray[2]);
+
+        // if (response.ok) {
+
+        //     var data = await response.json();
+
+        //     xAxis.data.setAll(data);
+        //     series.data.setAll(data);
+
+        // }
+
+
+
         var response = await fetch('/feedback/getQ1Q10/' + pathArray[2]);
+
+
 
         if (response.ok) {
 

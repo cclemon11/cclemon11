@@ -83,6 +83,36 @@ module.exports = {
         return res.view('programme/visualAnalysis');
     },
 
+   
+    worldcloud: async function (req, res) {
+
+        // var thatProgramme = await Programme.findOne(req.params.id);
+
+        // if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/worldcloud');
+    },
+
+    worldcloudApi: async function (req, res) {
+
+        var thatProgramme = await Programme.findOne(req.params.id).populate("programmes");
+
+        var string = ""
+
+        thatProgramme.programmes.forEach(function(feedback) {
+
+            string = string + feedback.feel + " " + feedback.share + " " + feedback.comment
+
+        })
+
+        
+
+        // if (!thatProgramme) return res.notFound();
+
+        return res.send(string)
+
+        // return res.view('programme/worldcloud');
+    },
     // action - visualization
     visualAnalysisPerProg: async function (req, res) {
 
@@ -236,7 +266,36 @@ module.exports = {
         return res.json(result);
 
     },
+    charforsnsd: async function(req, res){
+        var thoseProgrammes = await Programme.find({
 
+        });
+
+        var result = [
+
+        ];
+
+        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
+            , "Faculty of Science", "Faculty of Social Science"]
+
+
+
+        for (faculty of array) {
+
+            var filteredResults = thoseProgrammes.filter(function (prog) {
+
+                // return prog.facultyname == faculty
+                return prog.facultyname == faculty
+            })
+
+            if (filteredResults.length != 0) {
+                result.push({ value: filteredResults.length, category: faculty })
+            }
+        }
+
+        // { value: 1, category: "Seven" }
+        return res.json(result); 
+    },
     chartdataPerProgramme: async function (req, res) {
 
         var whereClause = { id: req.params.id }

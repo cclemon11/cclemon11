@@ -45,6 +45,8 @@ module.exports.routes = {
    'GET /programme/read/:id': 'ProgrammeController.read',
    'GET /programme/feedback/:id': 'ProgrammeController.feedback',
    'GET /programme/visualAnalysis': 'ProgrammeController.visualAnalysis',
+   'GET /programme/worldcloud': 'ProgrammeController.worldcloud',
+   'GET /programme/worldcloudApi/:id': 'ProgrammeController.worldcloudApi',
    'GET /programme/wholeAnalysis': 'ProgrammeController.wholeAnalysis',
    'GET /programme/:id/visualAnalysisPerProg': 'ProgrammeController.visualAnalysisPerProg',
    'GET /programme/:id/feelingBarChart': 'ProgrammeController.feelingBarChart',
@@ -79,7 +81,7 @@ module.exports.routes = {
    'GET /data/BarChart' : 'ProgrammeController.newChart',
   //  'GET /programme/wholeAnalysis' : 'ProgrammeController.chartdataBarProgramme'
 
-
+  'GET /data/chartforsnsd' : 'ProgrammeController.charforsnsd',
    'GET /data/chart' : 'ProgrammeController.chartdata',
    'GET /data/:id/chartPerProg' : 'ProgrammeController.chartdataPerProgramme',
 

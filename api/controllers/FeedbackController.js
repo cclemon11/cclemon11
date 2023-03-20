@@ -175,22 +175,21 @@ module.exports = {
         });
 
         var final = [
-            {nerwork: "Q1.", value: sum1/count * 1000000},
-            {nerwork: "Q2.",  value: sum2/count* 1000000},
-            {nerwork: "Q3.",  value: sum3/count* 1000000},
-            {nerwork: "Q4.", value: sum4/count* 1000000},
-            {nerwork: "Q5.", value: sum5/count* 1000000},
-            {nerwork: "Q6.", value: sum6/count* 1000000},
-            {nerwork: "Q7.", value: sum7/count* 1000000},
-            {nerwork: "Q8.", value: sum8/count* 1000000},
-            {nerwork: "Q9. ", value: sum9/count* 1000000},
-            {nerwork: "Q10. ", value: sum10/count* 1000000}
+            {"network": "Q1.", value: sum1/count },
+            {"network": "Q2.",  value: sum2/count},
+            {"network": "Q3.",  value: sum3/count},
+            {"network": "Q4.", value: sum4/count},
+            {"network": "Q5.", value: sum5/count},
+            {"network": "Q6.", value: sum6/count},
+            {"network": "Q7.", value: sum7/count},
+            {"network": "Q8.", value: sum8/count},
+            {"network": "Q9. ", value: sum9/count},
+            {"network": "Q10. ", value: sum10/count}
 
         ]
-
         return res.json(final);
 
-
+        
 
     }
 
