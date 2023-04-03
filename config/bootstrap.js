@@ -146,7 +146,7 @@ module.exports.bootstrap = async function () {
   }
 
    let p1 = await Programme.findOne({programmename: "Bachelor of Arts (Hons) in Creative and Professional Writing"})
-   let f1 = await Feedback.findOne({studentID: "19232195",})
+   let f1 = await Feedback.findOne({studentID: "19232195"})
 
    await Programme.addToCollection(p1.id,'programmes' ).members([f1.id]);
 

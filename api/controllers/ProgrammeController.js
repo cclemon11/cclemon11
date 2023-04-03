@@ -378,6 +378,7 @@ module.exports = {
                 result.push({ country: faculty, value: filteredResults.length })
             }
 
+            
             result.push({ region: prog.facultyname, state: eachprogramme })
         }
 
@@ -423,28 +424,29 @@ module.exports = {
                 array.push(
                     {
                         region: program.programmename,
-                        state: "Q1",
+                        state: program.id + "Q1",
+                        sales: q1 / count 
 
                     },
                     {
                         region: program.programmename,
-                        state: "Q2",
+                        state: program.id + "Q2",
                         sales: q2 / count 
                     },
                     {
 
                         region: program.programmename,
-                        state: "Q3",
+                        state: program.id +  "Q3",
                         sales: q3 / count 
                     },
                     {
                         region: program.programmename,
-                        state: "Q4",
+                        state: program.id + "Q4",
                         sales: q4 / count
                     },
                     {
                         region: program.programmename,
-                        state: "Q5",
+                        state: program.id +  "Q5",
                         sales: q5 / count 
                     },   
                  
