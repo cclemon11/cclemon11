@@ -185,7 +185,7 @@ module.exports = {
         return res.json(final);
 
     },
-    getQ1118: async function (req, res) {
+    getQ11Q18: async function (req, res) {
 
         var result = await Programme.findOne(req.params.id).populate("programmes");
 

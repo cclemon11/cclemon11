@@ -71,7 +71,7 @@ module.exports.routes = {
    'GET /feedback/getQ1/:id' : 'FeedbackController.getQ1',
 
    'GET /feedback/getQ1Q10/:id' : 'FeedbackController.getQ1Q10',
-   'GET /feedback/getQ1118/:id' : 'FeedbackController.getQ11Q18',
+   'GET /feedback/getQ11Q18/:id' : 'FeedbackController.getQ11Q18',
 
    'GET /programme/json': 'ProgrammeController.populate',
 
