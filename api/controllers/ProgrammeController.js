@@ -381,8 +381,6 @@ module.exports = {
             result.push({ region: prog.facultyname, state: eachprogramme })
         }
 
-
-
         // return res.json([{ "country": "egg", value: 12 }, { "country": "bread", value: 13 }]);
         return res.json(result);
     },
