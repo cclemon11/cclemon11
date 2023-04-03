@@ -171,16 +171,16 @@ module.exports = {
         });
 
         var final = [
-            {"network": "Q1.", value: sum1/count },
-            {"network": "Q2.",  value: sum2/count},
-            {"network": "Q3.",  value: sum3/count},
-            {"network": "Q4.", value: sum4/count},
-            {"network": "Q5.", value: sum5/count},
-            {"network": "Q6.", value: sum6/count},
-            {"network": "Q7.", value: sum7/count},
-            {"network": "Q8.", value: sum8/count},
-            {"network": "Q9. ", value: sum9/count},
-            {"network": "Q10. ", value: sum10/count}
+            {"network": "Q1. Love the programme", value: sum1/count },
+            {"network": "Q2. Studied related subjects before",  value: sum2/count},
+            {"network": "Q3. Catch up the programme easily",  value: sum3/count},
+            {"network": "Q4. Made progress than before", value: sum4/count},
+            {"network": "Q5. Enjoyed in the programme", value: sum5/count},
+            {"network": "Q6. Don't feel pressured", value: sum6/count},
+            {"network": "Q7. Recommend the programme to others", value: sum7/count},
+            {"network": "Q8. Develop my whole person development", value: sum8/count},
+            {"network": "Q9. Still want to study this programme", value: sum9/count},
+            {"network": "Q10. Overall feeling joyful", value: sum10/count}
         ]
         return res.json(final);
 
@@ -213,14 +213,14 @@ module.exports = {
         });
 
         var final = [
-            {"network": "Q11.", value: sum1/count },
-            {"network": "Q12.",  value: sum2/count},
-            {"network": "Q13.",  value: sum3/count},
-            {"network": "Q14.", value: sum4/count},
-            {"network": "Q15.", value: sum5/count},
-            {"network": "Q16.", value: sum6/count},
-            {"network": "Q17.", value: sum7/count},
-            {"network": "Q18.", value: sum8/count},
+            {"network": "Q11. Programme's instructions are clear", value: sum1/count },
+            {"network": "Q12. Programme difficulty is moderate",  value: sum2/count},
+            {"network": "Q13. Adapt the programme curriculum easily",  value: sum3/count},
+            {"network": "Q14. Programme curriculum is well-structured", value: sum4/count},
+            {"network": "Q15. Faculty provides enough resources", value: sum5/count},
+            {"network": "Q16. Satisfied with faculty members support", value: sum6/count},
+            {"network": "Q17. Satisfied with faculty facilities", value: sum7/count},
+            {"network": "Q18. Overall satisfaction for the curriculum", value: sum8/count},
         ]
         return res.json(final);
 
@@ -250,12 +250,12 @@ module.exports = {
         });
 
         var final = [
-            {"network": "Q19.", value: sum1/count },
-            {"network": "Q20.",  value: sum2/count},
-            {"network": "Q21.",  value: sum3/count},
-            {"network": "Q22.", value: sum4/count},
-            {"network": "Q23.", value: sum5/count},
-            {"network": "Q24.", value: sum6/count},
+            {"network": "Q19. Programme objectives connect to career", value: sum1/count },
+            {"network": "Q20. Compulsory internship is good",  value: sum2/count},
+            {"network": "Q21. The programme can help in the career",  value: sum3/count},
+            {"network": "Q22. Knowledge applied in the workplace", value: sum4/count},
+            {"network": "Q23. Continue career in this industry", value: sum5/count},
+            {"network": "Q24. Overall useful for career", value: sum6/count},
         ]
         return res.json(final);
     },
