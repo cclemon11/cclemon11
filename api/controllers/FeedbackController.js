@@ -224,7 +224,41 @@ module.exports = {
         ]
         return res.json(final);
 
-    }
+    },
+
+    getQ19Q24: async function (req, res) {
+
+        var result = await Programme.findOne(req.params.id).populate("programmes");
+
+        var sum1 = 0;
+        var sum2 = 0;
+        var sum3 = 0;
+        var sum4 = 0;
+        var sum5 = 0;
+        var sum6 = 0;
+
+        var count = 0;
+
+        result.programmes.forEach(element => {
+            sum1 = sum1 + parseInt(element.q19connect)
+            sum2 = sum2 + parseInt(element.q20internship)
+            sum3 = sum3 + parseInt(element.q21help)
+            sum4 = sum4 + parseInt(element.q22knowledge)
+            sum5 = sum5 + parseInt(element.q23career)
+            sum6 = sum6 + parseInt(element.q24useful)
+            count++
+        });
+
+        var final = [
+            {"network": "Q19.", value: sum1/count },
+            {"network": "Q20.",  value: sum2/count},
+            {"network": "Q21.",  value: sum3/count},
+            {"network": "Q22.", value: sum4/count},
+            {"network": "Q23.", value: sum5/count},
+            {"network": "Q24.", value: sum6/count},
+        ]
+        return res.json(final);
+    },
 
 
 }

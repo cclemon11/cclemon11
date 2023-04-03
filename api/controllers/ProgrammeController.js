@@ -132,6 +132,24 @@ module.exports = {
         return res.view('programme/feelingBarChart');
     },
 
+    curriculumBarChart: async function (req, res) {
+
+        // var thatProgramme = await Programme.findOne(req.params.id);
+
+        // if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/curriculumBarChart');
+    },
+
+    careerBarChart: async function (req, res) {
+
+        // var thatProgramme = await Programme.findOne(req.params.id);
+
+        // if (!thatProgramme) return res.notFound();
+
+        return res.view('programme/careerBarChart');
+    },
+
     // action - read
     populate: async function (req, res) {
 
