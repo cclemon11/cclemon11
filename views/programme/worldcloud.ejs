@@ -25,12 +25,12 @@
             am5themes_Animated.new(root)
         ]);
 
-
+        var pathArray = window.location.pathname.split('/')
         // Add series
         // https://www.amcharts.com/docs/v5/charts/word-cloud/
 
 
-        var response = await fetch("/programme/worldcloudApi/" + "6416eb473dae53352fbcb659")
+        var response = await fetch("/programme/worldcloudApi/" + pathArray[2])
 
         if (response.ok) {
 

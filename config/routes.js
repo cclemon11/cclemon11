@@ -45,7 +45,7 @@ module.exports.routes = {
    'GET /programme/read/:id': 'ProgrammeController.read',
    'GET /programme/feedback/:id': 'ProgrammeController.feedback',
    'GET /programme/visualAnalysis': 'ProgrammeController.visualAnalysis',
-   'GET /programme/worldcloud': 'ProgrammeController.worldcloud',
+   'GET /programme/:id/worldcloud': 'ProgrammeController.worldcloud',
    'GET /programme/worldcloudApi/:id': 'ProgrammeController.worldcloudApi',
    'GET /programme/wholeAnalysis': 'ProgrammeController.wholeAnalysis',
    'GET /programme/:id/visualAnalysisPerProg': 'ProgrammeController.visualAnalysisPerProg',

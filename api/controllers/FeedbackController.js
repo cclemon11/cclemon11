@@ -236,7 +236,6 @@ module.exports = {
         var sum4 = 0;
         var sum5 = 0;
         var sum6 = 0;
-
         var count = 0;
 
         result.programmes.forEach(element => {
