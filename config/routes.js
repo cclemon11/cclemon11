@@ -50,6 +50,7 @@ module.exports.routes = {
    'GET /programme/wholeAnalysis': 'ProgrammeController.wholeAnalysis',
    'GET /programme/:id/visualAnalysisPerProg': 'ProgrammeController.visualAnalysisPerProg',
    'GET /programme/:id/feelingBarChart': 'ProgrammeController.feelingBarChart',
+   'GET /programme/:id/curriculumBarChart': 'ProgrammeController.curriculumBarChart',
    'DELETE /programme/:id': 'ProgrammeController.delete',
 
    'GET /programme/update/:id': 'ProgrammeController.update',
@@ -70,6 +71,7 @@ module.exports.routes = {
    'GET /feedback/getQ1/:id' : 'FeedbackController.getQ1',
 
    'GET /feedback/getQ1Q10/:id' : 'FeedbackController.getQ1Q10',
+   'GET /feedback/getQ1118/:id' : 'FeedbackController.getQ11Q18',
 
    'GET /programme/json': 'ProgrammeController.populate',
 

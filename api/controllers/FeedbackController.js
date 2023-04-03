@@ -39,10 +39,6 @@ module.exports = {
 
         if (!thatFeedback) return res.notFound();
 
-        // var thatProgramme = await Programme.findOne(req.params.id);
-
-        // if (!thatProgramme) return res.notFound();
-
         console.log(thatFeedback)
 
         return res.view('programme/result', { programme: thatFeedback.feedback, feedback: thatFeedback });
@@ -185,14 +181,50 @@ module.exports = {
             {"network": "Q8.", value: sum8/count},
             {"network": "Q9. ", value: sum9/count},
             {"network": "Q10. ", value: sum10/count}
-
         ]
         return res.json(final);
 
-        
+    },
+    getQ1118: async function (req, res) {
+
+        var result = await Programme.findOne(req.params.id).populate("programmes");
+
+        var sum1 = 0;
+        var sum2 = 0;
+        var sum3 = 0;
+        var sum4 = 0;
+        var sum5 = 0;
+        var sum6 = 0;
+        var sum7 = 0;
+        var sum8 = 0;
+        var count = 0;
+
+        result.programmes.forEach(element => {
+            sum1 = sum1 + parseInt(element.q11instructions)
+            sum2 = sum2 + parseInt(element.q12difficulty)
+            sum3 = sum3 + parseInt(element.q13adapt)
+            sum4 = sum4 + parseInt(element.q14wellstructured)
+            sum5 = sum5 + parseInt(element.q15resources)
+            sum6 = sum6 + parseInt(element.q16support)
+            sum7 = sum7 + parseInt(element.q17facilities)
+            sum8 = sum8 + parseInt(element.q18overall)
+     
+            count++
+        });
+
+        var final = [
+            {"network": "Q11.", value: sum1/count },
+            {"network": "Q12.",  value: sum2/count},
+            {"network": "Q13.",  value: sum3/count},
+            {"network": "Q14.", value: sum4/count},
+            {"network": "Q15.", value: sum5/count},
+            {"network": "Q16.", value: sum6/count},
+            {"network": "Q17.", value: sum7/count},
+            {"network": "Q18.", value: sum8/count},
+        ]
+        return res.json(final);
 
     }
-
 
 
 }
