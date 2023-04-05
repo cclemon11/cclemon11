@@ -38,7 +38,7 @@ var legend = chart.children.push(
     fillField: "color",
     strokeField: "color",
     //centerY: am5.p50,
-    marginLeft: 20,
+    marginLeft: 1,
     y: 20,
     layout: root.verticalLayout,
     clickTarget: "none"
@@ -258,7 +258,7 @@ var yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
 }));
 
 yAxis.get("renderer").labels.template.setAll({
-  fontSize: 12,
+  fontSize: 10,
   location: 0.5
 })
 
@@ -343,8 +343,8 @@ function createRange(label, category, color) {
   
 }
 
-createRange("Creative and Professional Writing", "642abb14150d3651a26009dbQ5", chart.get("colors").getIndex(0));
-createRange("Bachelor of Arts (Hons) in Music", "642abb14150d3651a26009daQ5", chart.get("colors").getIndex(1));
+createRange("Creative & Professional Writing", "Bachelor of Arts (Hons) in Creative and Professional Writing: Career", chart.get("colors").getIndex(0));
+createRange("Music", "Bachelor of Arts (Hons) in Music: Career", chart.get("colors").getIndex(1));
 createRange("South", "Florida", chart.get("colors").getIndex(2));
 createRange("West", "California", chart.get("colors").getIndex(3));
 
@@ -372,27 +372,7 @@ if (response.ok) {
   // xAxis.data.setAll(data);
   yAxis.data.setAll(data);
   series.data.setAll(data);
-  // series.appear();
 
-//   series.columns.template.adapters.add("fill", function(fill, target) {
-//   if (target.dataItem) {
-//     switch(target.dataItem.dataContext.region) {
-//       case "Bachelor of Arts (Hons) in Creative and Professional Writing":
-//         return chart.get("colors").getIndex(0);
-//         break;
-//       case "East":
-//         return chart.get("colors").getIndex(1);
-//         break;
-//       case "South":
-//         return chart.get("colors").getIndex(2);
-//         break;
-//       case "West":
-//         return chart.get("colors").getIndex(3);
-//         break;
-//     }
-//   }
-//   return fill;
-// })
 
 }
 

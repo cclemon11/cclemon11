@@ -404,6 +404,10 @@ module.exports = {
             var q8 = 0
             var q9 = 0
             var q10 = 0
+            var total = 0
+            var feeling = 0
+            var curriculum = 0
+            var career = 0
             var count = 0
 
             program.programmes.forEach(function (feedback) {
@@ -413,9 +417,17 @@ module.exports = {
                 q3 = q3 + feedback.q3catchup
                 q4 = q4 + feedback.q4progress
                 q5 = q5 + feedback.q5enjoy
-            
-                count++
-                console.log(q1)
+                // q6 = q6 + feedback.q6pressured
+                // q7 = q7 + feedback.q7recommend
+                // q8 = q8 + feedback.q8wholeperson
+                // q9 = q9 + feedback.q9choose
+                // q10 = q10 + feedback.q10joyful
+                 total = total + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall  + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
+                 feeling = feeling + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful
+                 curriculum = curriculum + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall
+                 career = career + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
+                 count++
+                // console.log(q1)
 
 
             })
@@ -424,33 +436,57 @@ module.exports = {
                 array.push(
                     {
                         region: program.programmename,
-                        state: program.id + "Q1",
-                        sales: q1 / count 
+                        state: program.programmename + ": Total",
+                        sales: total / (count*24)
 
                     },
                     {
                         region: program.programmename,
-                        state: program.id + "Q2",
-                        sales: q2 / count 
+                        state: program.programmename + ": Feeling",
+                        sales: feeling / (count *10)
                     },
                     {
 
                         region: program.programmename,
-                        state: program.id +  "Q3",
-                        sales: q3 / count 
+                        state: program.programmename +  ": Curriculum",
+                        sales: curriculum / (count *8)
                     },
                     {
                         region: program.programmename,
-                        state: program.id + "Q4",
-                        sales: q4 / count
+                        state: program.programmename + ": Career",
+                        sales: career / (count*6)
                     },
-                    {
-                        region: program.programmename,
-                        state: program.id +  "Q5",
-                        sales: q5 / count 
-                    },   
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q5",
+                    //     sales: q5 / count 
+                    // },   
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q6",
+                    //     sales: q6 / count 
+                    // },   
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q7",
+                    //     sales: q7 / count 
+                    // },   
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q8",
+                    //     sales: q8 / count 
+                    // },   
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q9",
+                    //     sales: q9 / count 
+                    // },   
                  
-
+                    // {
+                    //     region: program.programmename,
+                    //     state: program.programmename +  ": Q10",
+                    //     sales: q10 / count 
+                    // },   
 
                     )
             }
