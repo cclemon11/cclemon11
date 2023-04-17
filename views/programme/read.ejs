@@ -50,10 +50,25 @@
 
 
         <td><a a class="button is-link" href="http://localhost:1337/programme/<%= programme.id %>/worldcloud">
-          WorldCloud
-      </a> </td>
+            WorldCloud
+          </a> </td>
 
-        <a class="button is-primary "
+
+      
+
+
+        <div class="select">
+          <select name="facultyname" onchange="myFunction(this.value)" required>
+              <option value="">Select Question Area</option>
+              <option value="programmeQ1-Q10">Q1-Q10</option>
+              <option value="programmeQ11-Q18">Q11-Q18</option>
+              <option value="programmeQ19-Q24">Q19-Q24</option>
+          </select>
+      </div>
+
+
+
+        <a class="button is-primary " id="programmeQ1-Q10"
           href="http://localhost:1337/programme/<%= programme.id %>/feelingBarChart">
           Feeling on Programme Q1-10
         </a>
@@ -77,6 +92,20 @@
 
     </div>
     <script>
+      function myFunction(value) {
+        var x = document.getElementById("programmeQ1-Q10");
+        if (x.style.display == "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+    </script>
+    <script>
+
+
+
+
       async function deleteProgramme(id) {
         var r = confirm("Confirm Delete?");
 

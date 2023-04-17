@@ -61,6 +61,7 @@ module.exports.routes = {
    'POST /programme/evaluation/:id': 'FeedbackController.create',
 
    'GET /programme/partitionedBarChart': 'ProgrammeController.partitionedBarChart',
+   'GET /programme/partitionedBarChartBusiness': 'ProgrammeController.partitionedBarChartBusiness',
 
    'GET /feedbacks': 'FeedbackController.json',
    'GET /feedback/:id': 'FeedbackController.read',
@@ -83,6 +84,7 @@ module.exports.routes = {
    'POST /user/logout': 'UserController.logout',
 
    'GET /data/BarChart' : 'ProgrammeController.newChart',
+   'GET /data/BarChartBusiness' : 'ProgrammeController.newChartBusiness',
   //  'GET /programme/wholeAnalysis' : 'ProgrammeController.chartdataBarProgramme'
 
   'GET /data/chartforsnsd' : 'ProgrammeController.charforsnsd',

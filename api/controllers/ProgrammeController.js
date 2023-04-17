@@ -260,7 +260,7 @@ module.exports = {
 
         ];
 
-        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
+        var array = ["Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Communication", "School of Creative Arts"
             , "Faculty of Science", "Faculty of Social Science"]
 
 
@@ -293,7 +293,7 @@ module.exports = {
 
         ];
 
-        var array = ["School of Chinese Medicine", "Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Coomunication", "School of Creative Arts"
+        var array = ["Faculty of Arts", "School of Business", "School of Chinese Medicine", "School of Communication", "School of Creative Arts"
             , "Faculty of Science", "Faculty of Social Science"]
 
 
@@ -353,15 +353,7 @@ module.exports = {
         }
     },
     partitionedBarChart: async function (req, res) {
-        // var data = [{
-        //     //   region: "Central",
-        //     //   state: "North Dakota",
-        //     //   sales: 920
-        //     // }, {
-        //     //   region: "Central",
-        //     //   state: "South Dakota",
-        //     //   sales: 1317
-
+    
 
         var allFacultyofArts = ["Bachelor of Arts (Hons) in Chinese Language and Literature", "Bachelor of Arts (Hons) in Creative and Professional Writing", "Bachelor of Arts (Hons) in English Language and Literature", "Bachelor of Arts (Hons) in Humanities",
             "Bachelor of Arts (Hons) in Translation", "Bachelor of Arts (Hons) in Religion, Philosophy and Ethics", "Bachelor of Music (Hons) in Creative Industries", "Bachelor of Arts (Hons) in Music"]
@@ -394,16 +386,6 @@ module.exports = {
         var programmes = await Programme.find({ facultyname: "Faculty of Arts" }).populate("programmes")
 
         programmes.forEach(function (program) {
-
-            var q1 = 0
-            var q2 = 0
-            var q3 = 0
-            var q4 = 0
-            var q5 = 0
-            var q7 = 0
-            var q8 = 0
-            var q9 = 0
-            var q10 = 0
             var total = 0
             var feeling = 0
             var curriculum = 0
@@ -412,23 +394,13 @@ module.exports = {
 
             program.programmes.forEach(function (feedback) {
 
-                q1 = q1 + feedback.q1love
-                q2 = q2 + feedback.q2related
-                q3 = q3 + feedback.q3catchup
-                q4 = q4 + feedback.q4progress
-                q5 = q5 + feedback.q5enjoy
-                // q6 = q6 + feedback.q6pressured
-                // q7 = q7 + feedback.q7recommend
-                // q8 = q8 + feedback.q8wholeperson
-                // q9 = q9 + feedback.q9choose
-                // q10 = q10 + feedback.q10joyful
+             
                  total = total + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall  + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
                  feeling = feeling + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful
                  curriculum = curriculum + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall
                  career = career + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
                  count++
                 // console.log(q1)
-
 
             })
 
@@ -456,53 +428,77 @@ module.exports = {
                         state: program.programmename + ": Career",
                         sales: career / (count*6)
                     },
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q5",
-                    //     sales: q5 / count 
-                    // },   
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q6",
-                    //     sales: q6 / count 
-                    // },   
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q7",
-                    //     sales: q7 / count 
-                    // },   
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q8",
-                    //     sales: q8 / count 
-                    // },   
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q9",
-                    //     sales: q9 / count 
-                    // },   
-                 
-                    // {
-                    //     region: program.programmename,
-                    //     state: program.programmename +  ": Q10",
-                    //     sales: q10 / count 
-                    // },   
 
                     )
             }
-
-
-
-
-
         })
-
         return res.json(array)
+    },
 
+
+    newChartBusiness: async function (req, res) {
+
+        var array = []
+
+        var programmes = await Programme.find({ facultyname: "School of Business" }).populate("programmes")
+
+        programmes.forEach(function (program) {
+            var total = 0
+            var feeling = 0
+            var curriculum = 0
+            var career = 0
+            var count = 0
+
+            program.programmes.forEach(function (feedback) {
+
+             
+                 total = total + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall  + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
+                 feeling = feeling + feedback.q1love + feedback.q2related + feedback.q3catchup +feedback.q4progress+ feedback.q5enjoy +  feedback.q6pressured + feedback.q7recommend + feedback.q8wholeperson+  feedback.q9choose + feedback.q10joyful
+                 curriculum = curriculum + feedback.q11instructions+ feedback.q12difficulty+ feedback.q13adapt + feedback.q14wellstructured  + feedback.q15resources  + feedback.q16support + feedback.q17facilities  + feedback.q18overall
+                 career = career + feedback.q19connect  + feedback.q20internship  + feedback.q21help + feedback.q22knowledge + feedback.q23career + feedback.q24useful
+                 count++
+                // console.log(q1)
+
+            })
+
+            if (count != 0) {
+                array.push(
+                    {
+                        region: program.programmename,
+                        state: program.programmename + ": Total",
+                        sales: total / (count*24)
+
+                    },
+                    {
+                        region: program.programmename,
+                        state: program.programmename + ": Feeling",
+                        sales: feeling / (count *10)
+                    },
+                    {
+
+                        region: program.programmename,
+                        state: program.programmename +  ": Curriculum",
+                        sales: curriculum / (count *8)
+                    },
+                    {
+                        region: program.programmename,
+                        state: program.programmename + ": Career",
+                        sales: career / (count*6)
+                    },
+
+                    )
+            }
+        })
+        return res.json(array)
     },
 
     partitionedBarChart: async function (req, res) {
 
         return res.view('programme/partitionedBarChart')
+    },
+
+    partitionedBarChartBusiness: async function (req, res) {
+
+        return res.view('programme/partitionedBarChartBusiness')
     }
 }
