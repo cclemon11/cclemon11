@@ -291,7 +291,7 @@ series.columns.template.setAll({
 series.columns.template.adapters.add("fill", function(fill, target) {
   if (target.dataItem) {
     switch(target.dataItem.dataContext.region) {
-      case "Central":
+      case "Bachelor of Business Adminstration (Hons) in Accounting Concentration":
         return chart.get("colors").getIndex(0);
         break;
       case "Bachelor of Arts (Hons) in Music":
@@ -343,13 +343,13 @@ function createRange(label, category, color) {
   
 }
 
-createRange("Account", "Bachelor of Business Adminstration (Hons) in Accounting Concentration", chart.get("colors").getIndex(0));
-createRange("Applied Economics", "Bachelor of Business Administration (Hons) in Applied Economics", chart.get("colors").getIndex(1));
+createRange("Account", "Bachelor of Business Adminstration (Hons) in Accounting Concentration: Career", chart.get("colors").getIndex(0));
+createRange("Applied Economics", "Bachelor of Business Administration (Hons) in Applied Economics: Career", chart.get("colors").getIndex(1));
 createRange("Economics & Data Analytics", "Bachelor of Business Administration (Hons) in Economics and Data Analytics", chart.get("colors").getIndex(2));
 createRange("Entrepreneurship", "Bachelor of Business Administration (Hons) in Entrepreneurship", chart.get("colors").getIndex(3));
 createRange("Finance", "Bachelor of Business Administration (Hons) in Finance", chart.get("colors").getIndex(4));
 createRange("Human Resources Management", "Bachelor of Business Administration (Hons) in Human Resources Management", chart.get("colors").getIndex(5));
-createRange("Marketing", "Bachelor of Business Administration (Hons) in Marketing", chart.get("colors").getIndex(5));
+createRange("Marketing", "Bachelor of Business Administration (Hons) in Marketing", chart.get("colors").getIndex(6));
 
 legend.data.setAll(legendData);
 

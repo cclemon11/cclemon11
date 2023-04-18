@@ -111,7 +111,51 @@ module.exports.bootstrap = async function () {
         duration: 4,
         imageurl: "https://busrpg.hkbu.edu.hk/wp-content/uploads/2021/09/ECON.jpg"
 
-      }
+      },
+      {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Economics and Data Analytics",
+        enrollment: 20,
+        programmeobjectives: "Allow students to apply economic reasoning to analyse individual markets, macroeconomies and international economies; to make decisions and formulate strategies for business and government",
+        programmewebsite: "https://handbook.ar.hkbu.edu.hk/2021-2022/academic-programmes/undergraduate-programmes/school-of-business-1/bachelor-of-business-administration-honours/economics-and-data-analytics-concentration",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://bus.hkbu.edu.hk/eng/bus/programme/undergraduate-programmes/images/programme_bba.jpg"
+
+      },
+      {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Entrepreneurship",
+        enrollment: 35,
+        programmeobjectives: "Foster entrepreneurial spirit and global vision of students by using a multi-disciplinary and practical approach to provide them with entrepreneurial mindset, skills, knowledge and experience for business venturing, growth and development in local and international environment",
+        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-ebi",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Asso_Year1_Bachelor_of_Business_Administration.jpg"
+
+      },
+      {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Finance",
+        enrollment: 45,
+        programmeobjectives: "Sharpens students’ quantitative and analytical skill to make pertinent financial and investment decisions taking into account the global environment and to develop careers in banking, finance, marketing, accounting or general management",
+        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-fine#:~:text=The%20Finance%20Concentration%20equips%20students,securities%20management%20and%20corporate%20finance.",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
+
+      },
+      // {
+      //   facultyname: "School of Business",
+      //   programmename: "Bachelor of Business Administration (Hons) in Human Resources Management",
+      //   enrollment: 30,
+      //   programmeobjectives: "Sharpens students’ quantitative and analytical skill to make pertinent financial and investment decisions taking into account the global environment and to develop careers in banking, finance, marketing, accounting or general management",
+      //   programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-fine#:~:text=The%20Finance%20Concentration%20equips%20students,securities%20management%20and%20corporate%20finance.",
+      //   credits: 128,
+      //   duration: 4,
+      //   imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
+
+      // }
     ]);
   }
 
@@ -221,12 +265,17 @@ module.exports.bootstrap = async function () {
 
   let p1 = await Programme.findOne({ programmename: "Bachelor of Arts (Hons) in Creative and Professional Writing" })
   let p2 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Applied Economics" })
+  let p3 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Accounting Concentration" })
+  let p4 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Entrepreneurship" })
+  let p5 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Finance" })
   let f1 = await Feedback.findOne({ studentID: "19232195" })
   let f2 = await Feedback.findOne({ studentID: "19363583" })
   let f3 = await Feedback.findOne({ studentID: "21365785" })
-  await Programme.addToCollection(p1.id, 'programmes').members([f1.id, f2.id]);
-  await Programme.addToCollection(p2.id, 'programmes').members([f3.id, f2.id]);
-
+  await Programme.addToCollection(p1.id, 'programmes').members([f1.id]);
+  await Programme.addToCollection(p2.id, 'programmes').members([f3.id]);
+  await Programme.addToCollection(p3.id, 'programmes').members([f2.id]);
+  // await Programme.addToCollection(p4.id, 'programmes').members([f3.id, f2.id]);
+  // await Programme.addToCollection(p5.id, 'programmes').members([f1.id, f2.id]);
   return generateUsers();
 
   async function generateUsers() {

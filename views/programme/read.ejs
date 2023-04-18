@@ -59,7 +59,7 @@
 
         <div class="select">
           <select name="facultyname" onchange="myFunction(this.value)" required>
-              <option value="">Select Question Area</option>
+              <option value="select">Select Question Area</option>
               <option value="programmeQ1-Q10">Q1-Q10</option>
               <option value="programmeQ11-Q18">Q11-Q18</option>
               <option value="programmeQ19-Q24">Q19-Q24</option>
@@ -68,15 +68,15 @@
 
 
 
-        <a class="button is-primary " id="programmeQ1-Q10"
+        <a class="button is-primary " id="programmeQ1-Q10" style="display: none;"
           href="http://localhost:1337/programme/<%= programme.id %>/feelingBarChart">
           Feeling on Programme Q1-10
         </a>
-        <a class="button is-link " href="http://localhost:1337/programme/<%= programme.id %>/curriculumBarChart">
+        <a class="button is-link " id="programmeQ11-Q18" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/curriculumBarChart">
           Programme's curriculum Q11-18
         </a>
 
-        <a class="button is-success " href="http://localhost:1337/programme/<%= programme.id %>/careerBarChart">
+        <a class="button is-success " id="programmeQ19-Q24" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/careerBarChart">
           Programme links to career Q19-24
         </a>
         <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->
@@ -93,12 +93,29 @@
     </div>
     <script>
       function myFunction(value) {
-        var x = document.getElementById("programmeQ1-Q10");
-        if (x.style.display == "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
+        document.getElementById(value).setAttribute('style','display: inline-block')
+        if (value == "programmeQ1-Q10") {
+          document.getElementById('programmeQ11-Q18').setAttribute('style','display:none')
+          document.getElementById('programmeQ19-Q24').setAttribute('style','display:none')
+        } else if ( value == "programmeQ11-Q18"){
+          document.getElementById('programmeQ1-Q10').setAttribute('style','display:none')
+          document.getElementById('programmeQ19-Q24').setAttribute('style','display:none')
+        } else if (value == "programmeQ19-Q24"){
+          document.getElementById('programmeQ1-Q10').setAttribute('style','display:none')
+          document.getElementById('programmeQ11-Q18').setAttribute('style','display:none')
+        } else if (value == "select"){
+          document.getElementById('programmeQ1-Q10').setAttribute('style','display:none')
+          document.getElementById('programmeQ11-Q18').setAttribute('style','display:none')
+          document.getElementById('programmeQ19-Q24').setAttribute('style','display:none')
         }
+
+
+        // var x = document.getElementById("programmeQ1-Q10");
+        // if (x.style.display == "none") {
+        //   x.style.display = "block";
+        // } else {
+        //   x.style.display = "none";
+        // }
       }
     </script>
     <script>
