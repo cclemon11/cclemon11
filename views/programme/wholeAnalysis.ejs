@@ -17,20 +17,47 @@
             <div class=content is-medium>
 
 
+                <div class="select">
+                    <select name="participation" onchange="myFunctionPar(this.value)" required>
+                        <option value="select">Select Faculty Option
+                        <option value="arts">Faculty of Arts</option>
+                        <option value="business">Faculty of Business</option>
+                        <option value="chinesemedicine">School of Chinese Medicine</option>
+                        <option value="communication">School of Communication</option>
+                        <option value="creativearts">School of Creative Arts</option>
+                        <option value="science">Faculty of Science</option>
+                        <option value="social sciences">Faculty of Social Sciences</option>
+                    </select>
+                </div>
 
-                <a class="button is-warning" href="http://localhost:1337/programme/partitionedBarChart">
-                    PartitionedBarChart for Faculty of Arts
+                <a class="button is-warning" id="arts" style="display: none;" href="http://localhost:1337/programme/partitionedBarChart">
+                    PartitionedBarChart
+
+                <a class="button is-warning" id="business" style="display: none;" href="http://localhost:1337/programme/partitionedBarChartBusiness">
+                    PartitionedBarChart
                 </a>
 
-                <a class="button is-warning" href="http://localhost:1337/programme/partitionedBarChartBusiness">
-                    PartitionedBarChart for Faculty of Business
-                </a>
-
+              
 
                 <a class="button is-success" href="http://localhost:1337/programme/visualAnalysis">
                     Faculty Analysis
                 </a>
 
+
+
+                <script>
+                    function myFunctionPar(value) {
+                        document.getElementById(value).setAttribute('style','display: inline-block')
+
+                      if (value == "arts") {
+                        document.getElementById('business').setAttribute('style','display:none')
+
+                      } else if ( value == "business"){
+                        document.getElementById('art').setAttribute('style','display:none')
+
+                      }
+                    }
+                  </script>
             </div>
 
 
