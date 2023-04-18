@@ -30,12 +30,14 @@
                     </select>
                 </div>
 
-                <a class="button is-warning" id="arts" style="display: none;" href="http://localhost:1337/programme/partitionedBarChart">
-                    PartitionedBarChart
-
                 <a class="button is-warning" id="business" style="display: none;" href="http://localhost:1337/programme/partitionedBarChartBusiness">
                     PartitionedBarChart
                 </a>
+
+                <a class="button is-warning" id="arts" style="display: none;" href="http://localhost:1337/programme/partitionedBarChart">
+                    PartitionedBarChart
+
+              
 
               
 
@@ -49,10 +51,10 @@
                     function myFunctionPar(value) {
                         document.getElementById(value).setAttribute('style','display: inline-block')
 
-                      if (value == "arts") {
+                      if (value == "business") {
                         document.getElementById('business').setAttribute('style','display:none')
 
-                      } else if ( value == "business"){
+                      } else if ( value == "arts"){
                         document.getElementById('art').setAttribute('style','display:none')
 
                       }

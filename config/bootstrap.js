@@ -145,17 +145,28 @@ module.exports.bootstrap = async function () {
         imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
 
       },
-      // {
-      //   facultyname: "School of Business",
-      //   programmename: "Bachelor of Business Administration (Hons) in Human Resources Management",
-      //   enrollment: 30,
-      //   programmeobjectives: "Sharpens students’ quantitative and analytical skill to make pertinent financial and investment decisions taking into account the global environment and to develop careers in banking, finance, marketing, accounting or general management",
-      //   programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-fine#:~:text=The%20Finance%20Concentration%20equips%20students,securities%20management%20and%20corporate%20finance.",
-      //   credits: 128,
-      //   duration: 4,
-      //   imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
+      {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Human Resources Management",
+        enrollment: 20,
+        programmeobjectives: "Prepare for the HR profession, including recruitment and selection, human resources development, performance and reward management, labour relations and law",
+        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-hrm",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://bba.hkbu.edu.hk/f/section_banner/350/1440c400/curriculum.jpg"
 
-      // }
+      },
+      {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Marketing",
+        enrollment: 45,
+        programmeobjectives: "Realizing your conceptual ability to resolve marketing problems and contribute to the well-being of the society",
+        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-mkt",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://www.cie.hkbu.edu.hk/main/images/programmes/cs/UG/bus/mkg/highlight.jpg"
+      }
+
     ]);
   }
 
@@ -384,7 +395,71 @@ module.exports.bootstrap = async function () {
       "feel": "easy, understand",
       "share": "satisfied",
       "comments": "good"
-    }
+    },
+    ,{
+      "name": "Wan Chu Ming",
+      "studentID": "19173437",
+      "email": "chuming@gmail.com",
+      "q1love": 3,
+      "q2related": 4,
+      "q3catchup": 2,
+      "q4progress": 5,
+      "q5enjoy": 5,
+      "q6pressured": 5,
+      "q7recommend": 2,
+      "q8wholeperson": 3,
+      "q9choose": 3,
+      "q10joyful": 4,
+      "q11instructions": 4,
+      "q12difficulty":5,
+      "q13adapt": 4,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 4,
+      "q17facilities": 4,
+      "q18overall": 1,
+      "q19connect": 3,
+      "q20internship": 5,
+      "q21help": 1,
+      "q22knowledge": 3,
+      "q23career": 1,
+      "q24useful": 2,
+      "feel": "funny, good, understand",
+      "share": "satisfied",
+      "comments": "excellent"
+    },
+    ,{
+      "name": "Yau Tai Tong",
+      "studentID": "20177435",
+      "email": "taitong@gmail.com",
+      "q1love": 2,
+      "q2related": 4,
+      "q3catchup": 3,
+      "q4progress": 5,
+      "q5enjoy": 5,
+      "q6pressured": 4,
+      "q7recommend": 2,
+      "q8wholeperson": 2,
+      "q9choose": 4,
+      "q10joyful": 4,
+      "q11instructions": 4,
+      "q12difficulty":5,
+      "q13adapt": 4,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 4,
+      "q17facilities": 4,
+      "q18overall": 4,
+      "q19connect": 3,
+      "q20internship": 5,
+      "q21help": 1,
+      "q22knowledge": 5,
+      "q23career": 1,
+      "q24useful": 2,
+      "feel": "happy, good, understand",
+      "share": "satisfied",
+      "comments": "excellent"
+    },
     ]);
   }
 
@@ -393,6 +468,11 @@ module.exports.bootstrap = async function () {
   let p3 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Accounting Concentration" })
   let p4 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Entrepreneurship" })
   let p5 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Finance" })
+  let p6 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Economics and Data Analytics" })
+  let p7 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Human Resources Management" })
+  let p8 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Marketing" })
+
+
   let f1 = await Feedback.findOne({ studentID: "19232195" })
   let f2 = await Feedback.findOne({ studentID: "19363583" })
   let f3 = await Feedback.findOne({ studentID: "21365785" })
@@ -400,14 +480,18 @@ module.exports.bootstrap = async function () {
   let f5 = await Feedback.findOne({ studentID: "19263489" })
   let f6 = await Feedback.findOne({ studentID: "20133481" })
   let f7 = await Feedback.findOne({ studentID: "21143433" })
+  let f8 = await Feedback.findOne({ studentID: "19173437" })
+  let f9 = await Feedback.findOne({ studentID: "20177435" })
   
-  
-
-  await Programme.addToCollection(p1.id, 'programmes').members([f1.id]);
+  await Programme.addToCollection(p1.id, 'programmes').members([f1.id, f9.id]);
   await Programme.addToCollection(p2.id, 'programmes').members([f3.id]);
   await Programme.addToCollection(p3.id, 'programmes').members([f2.id]);
-  // await Programme.addToCollection(p4.id, 'programmes').members([f3.id, f2.id]);
-  // await Programme.addToCollection(p5.id, 'programmes').members([f1.id, f2.id]);
+  await Programme.addToCollection(p4.id, 'programmes').members([f4.id]);
+  await Programme.addToCollection(p5.id, 'programmes').members([f5.id]);
+  await Programme.addToCollection(p6.id, 'programmes').members([f6.id]);
+  await Programme.addToCollection(p7.id, 'programmes').members([f7.id]);
+  await Programme.addToCollection(p8.id, 'programmes').members([f8.id]);
+
   return generateUsers();
 
   async function generateUsers() {
