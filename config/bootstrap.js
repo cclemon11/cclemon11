@@ -46,17 +46,7 @@ module.exports.bootstrap = async function () {
   if (await Programme.count() == 0) {
 
     await Programme.createEach([
-      {
-        facultyname: "School of Business",
-        programmename: "Bachelor of Business Administration (Hons) in Accounting Concentration",
-        enrollment: 100,
-        programmeobjectives: "The Bachelor of Business Administration (Hons) Programme is an integrated combination of general education and high quality business studies",
-        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=13",
-        credits: 244,
-        duration: 4,
-        imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg",
-
-      },
+     
       {
         facultyname: "School of Chinese Medicine",
         programmename: "Bachelor of Pharmacy (Hons) in Chinese Medicine",
@@ -110,7 +100,17 @@ module.exports.bootstrap = async function () {
         duration: 4,
         imageurl: "https://www.simplilearn.com/ice9/free_resources_article_thumb/Data-Science-vs.-Big-Data-vs.jpg"
 
-      },
+      },,{
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) in Chinese Language and Literature",
+        enrollment: 25,
+        programmeobjectives: "Cultivate in students a deeper knowledge of Chinese culture and broaden their vision with new perspectives to prepare them in meeting the challenges of the changing society",
+        programmewebsite: "https://gs.hkbu.edu.hk/programmes/master-of-arts-ma-in-chinese-literature-language-and-culture",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ixYVkfXfw7xjKTF_kD1XLssto9uegD6z9A&usqp=CAU"
+
+      },  
       {
         facultyname: "Faculty of Arts",
         programmename: "Bachelor of Arts (Hons) in Music",
@@ -130,20 +130,10 @@ module.exports.bootstrap = async function () {
         programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=1",
         credits: 128,
         duration: 4,
-        imageurl: "https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/212432/images/collaborator.jpg"
+        imageurl: ""
 
       },
-      {
-        facultyname: "Faculty of Arts",
-        programmename: "Bachelor of Arts (Hons) in Chinese Language and Literature",
-        enrollment: 25,
-        programmeobjectives: "Cultivate in students a deeper knowledge of Chinese culture and broaden their vision with new perspectives to prepare them in meeting the challenges of the changing society",
-        programmewebsite: "https://gs.hkbu.edu.hk/programmes/master-of-arts-ma-in-chinese-literature-language-and-culture",
-        credits: 128,
-        duration: 4,
-        imageurl: "https://artsbu.hkbu.edu.hk/f/page/805/1918/0p0/English%20Poetry%20Contest_1576206337.jpg"
-
-      },
+     
       {
         facultyname: "Faculty of Arts",
         programmename: "Bachelor of Arts (Hons) in English Language and Literature",
@@ -165,17 +155,7 @@ module.exports.bootstrap = async function () {
         imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_Arts_Humanities.jpg"
 
       },
-      {
-        facultyname: "School of Business",
-        programmename: "Bachelor of Business Administration (Hons) in Applied Economics",
-        enrollment: 40,
-        programmeobjectives: "Apply economic theories in analysing individual markets, macroeconomics, international economies, games and strategies, public policies, and digital markets",
-        programmewebsite: "https://handbook.ar.hkbu.edu.hk/2019-2020/academic-programmes/undergraduate-programmes/school-of-business-1/bachelor-of-business-administration-honours/applied-economics-concentration",
-        credits: 128,
-        duration: 4,
-        imageurl: "https://busrpg.hkbu.edu.hk/wp-content/uploads/2021/09/ECON.jpg"
-
-      },
+    
       {
         facultyname: "School of Business",
         programmename: "Bachelor of Business Administration (Hons) in Economics and Data Analytics",
@@ -198,17 +178,7 @@ module.exports.bootstrap = async function () {
         imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Asso_Year1_Bachelor_of_Business_Administration.jpg"
 
       },
-      {
-        facultyname: "School of Business",
-        programmename: "Bachelor of Business Administration (Hons) in Finance",
-        enrollment: 45,
-        programmeobjectives: "Sharpens students’ quantitative and analytical skill to make pertinent financial and investment decisions taking into account the global environment and to develop careers in banking, finance, marketing, accounting or general management",
-        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-fine#:~:text=The%20Finance%20Concentration%20equips%20students,securities%20management%20and%20corporate%20finance.",
-        credits: 128,
-        duration: 4,
-        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
-
-      },
+    
       {
         facultyname: "School of Business",
         programmename: "Bachelor of Business Administration (Hons) in Human Resources Management",
@@ -229,6 +199,36 @@ module.exports.bootstrap = async function () {
         credits: 128,
         duration: 4,
         imageurl: "https://www.cie.hkbu.edu.hk/main/images/programmes/cs/UG/bus/mkg/highlight.jpg"
+      } ,   {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Finance",
+        enrollment: 45,
+        programmeobjectives: "Sharpens students’ quantitative and analytical skill to make pertinent financial and investment decisions taking into account the global environment and to develop careers in banking, finance, marketing, accounting or general management",
+        programmewebsite: "https://bba.hkbu.edu.hk/academics/concentration-fine#:~:text=The%20Finance%20Concentration%20equips%20students,securities%20management%20and%20corporate%20finance.",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_BA_Finance.jpg"
+
+      },{
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Applied Economics",
+        enrollment: 40,
+        programmeobjectives: "Apply economic theories in analysing individual markets, macroeconomics, international economies, games and strategies, public policies, and digital markets",
+        programmewebsite: "https://handbook.ar.hkbu.edu.hk/2019-2020/academic-programmes/undergraduate-programmes/school-of-business-1/bachelor-of-business-administration-honours/applied-economics-concentration",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://busrpg.hkbu.edu.hk/wp-content/uploads/2021/09/ECON.jpg"
+
+      }, {
+        facultyname: "School of Business",
+        programmename: "Bachelor of Business Administration (Hons) in Accounting Concentration",
+        enrollment: 100,
+        programmeobjectives: "The Bachelor of Business Administration (Hons) Programme is an integrated combination of general education and high quality business studies",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=13",
+        credits: 244,
+        duration: 4,
+        imageurl: "https://presspay.ng/news/wp-content/uploads/2022/08/Business-la-gi-e1623418238104.jpeg",
+
       }
 
 
@@ -618,8 +618,8 @@ module.exports.bootstrap = async function () {
       "q22knowledge": 2,
       "q23career": 3,
       "q24useful": 5,
-      "feel": "happy, good, understand",
-      "share": "satisfied",
+      "feel": "difficult, hard",
+      "share": "satisfied, happy, good, understand",
       "comments": "excellent"
     },
     ]);
@@ -653,9 +653,9 @@ module.exports.bootstrap = async function () {
   let f11 = await Feedback.findOne({ studentID: "20171422" })
   let f12 = await Feedback.findOne({ studentID: "19714322" })
 
-  await Programme.addToCollection(p1.id, 'programmes').members([f1.id, f12.id]);
+  await Programme.addToCollection(p1.id, 'programmes').members([f1.id]);
   await Programme.addToCollection(p2.id, 'programmes').members([f3.id]);
-  await Programme.addToCollection(p3.id, 'programmes').members([f2.id]);
+  await Programme.addToCollection(p3.id, 'programmes').members([f2.id, f12.id]);
   await Programme.addToCollection(p4.id, 'programmes').members([f4.id]);
   await Programme.addToCollection(p5.id, 'programmes').members([f5.id]);
   await Programme.addToCollection(p6.id, 'programmes').members([f6.id]);
