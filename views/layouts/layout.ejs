@@ -141,6 +141,8 @@
             <% } %>
 
 
+            <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+            || (req.session.role == "executivemanger" ) || (req.session.role == "student" )){ %>
             <a class="navbar-item" href="http://localhost:1337/programme/wholeAnalysis" >
               <span class="icon has-text-info">
                 <i class="fas fa-info-circle"></i>
@@ -148,7 +150,7 @@
               &nbsp;Whole Analysis
 
             </a>
-         
+            <% } %>
  
             </div>
           </div>

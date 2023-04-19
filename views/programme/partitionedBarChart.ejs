@@ -291,16 +291,16 @@ series.columns.template.setAll({
 series.columns.template.adapters.add("fill", function(fill, target) {
   if (target.dataItem) {
     switch(target.dataItem.dataContext.region) {
-      case "Central":
+      case "Bachelor of Arts (Hons) in Creative and Professional Writing":
         return chart.get("colors").getIndex(0);
         break;
       case "Bachelor of Arts (Hons) in Music":
         return chart.get("colors").getIndex(1);
         break;
-      case "South":
+      case "Bachelor of Arts (Hons) in Chinese Language and Literature":
         return chart.get("colors").getIndex(2);
         break;
-      case "West":
+      case "Bachelor of Arts (Hons) in English Language and Literature":
         return chart.get("colors").getIndex(3);
         break;
     }
@@ -345,10 +345,8 @@ function createRange(label, category, color) {
 
 createRange("Creative & Professional Writing", "Bachelor of Arts (Hons) in Creative and Professional Writing: Career", chart.get("colors").getIndex(0));
 createRange("Music", "Bachelor of Arts (Hons) in Music: Career", chart.get("colors").getIndex(1));
-createRange("English Language & Literature", "Bachelor of Arts (Hons) in English Language and Literature: Career", chart.get("colors").getIndex(2));
-createRange("Humanities", "Bachelor of Arts (Hons) in Humanities: Career", chart.get("colors").getIndex(3));
-createRange("Translation", "Bachelor of Arts (Hons) in Translation: Career", chart.get("colors").getIndex(4));
-createRange("Chinese Language & Literature", "Bachelor of Arts (Hons) in Chinese Language and Literature: Career", chart.get("colors").getIndex(5));
+createRange("English Language & Literature", "Bachelor of Arts (Hons) in Chinese Language and Literature: Career", chart.get("colors").getIndex(2));
+createRange("Chinese Language & Literature", "Bachelor of Arts (Hons) in English Language and Literature: Career", chart.get("colors").getIndex(3));
 
 legend.data.setAll(legendData);
 

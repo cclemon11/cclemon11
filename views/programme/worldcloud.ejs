@@ -36,7 +36,7 @@
 
             var string = await response.text()
 
-            alert(string)
+            // alert(string)
             string = string.replaceAll("the", "")
             string = string.replaceAll("can", "")
             string = string.replaceAll("system", "")
@@ -50,7 +50,7 @@
             string = string.replaceAll(".", "")
             string = string.replaceAll("undefined", "")
            
-            alert(string)
+            // alert(string)
             // series.data.text = string
 
             var series = root.container.children.push(am5wc.WordCloud.new(root, {

@@ -34,29 +34,36 @@
 
         </ul>
 
+        <%  if((req.session.role == "admin" ) || (req.session.role == "student" )){ %>
         <td><a a class="button is-link" href="http://localhost:1337/programme/feedback/<%= programme.id %>">
             Give Feedback
           </a> </td>
-
+          <% } %>
+          <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+          || (req.session.role == "executivemanger" ) ){ %>
 
         <a class="button is-warning" href="http://localhost:1337/programme/<%= programme.id %>/feedbacks">
           Feedback Result
         </a>
+        <% } %>
 
+        <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+        || (req.session.role == "executivemanger" ) || (req.session.role == "student" )){ %>
         <a class="button is-success" href="http://localhost:1337/programme/<%= programme.id %>/visualAnalysisPerProg">
           Visual Analysis per Programme
         </a>
-        <br>
-
-
+    
         <td><a a class="button is-link" href="http://localhost:1337/programme/<%= programme.id %>/worldcloud">
             WorldCloud
           </a> </td>
 
-
+          <% } %>
       
+          <!-- &nbsp -->
+          <% if((req.session.role == "admin" ) || (req.session.role == "facultymember" ) 
+          || (req.session.role == "executivemanger" ) || (req.session.role == "student" )){ %>
 
-
+          <br />
         <div class="select">
           <select name="facultyname" onchange="myFunction(this.value)" required>
               <option value="select">Select Question Area</option>
@@ -66,17 +73,18 @@
           </select>
       </div>
 
-
-
+      <% } %>
+      <!-- &nbsp -->
         <a class="button is-primary " id="programmeQ1-Q10" style="display: none;"
           href="http://localhost:1337/programme/<%= programme.id %>/feelingBarChart">
           Feeling on Programme Q1-10
         </a>
-        <a class="button is-link " id="programmeQ11-Q18" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/curriculumBarChart">
+        <!-- &nbsp -->
+        <a class="button is-primary " id="programmeQ11-Q18" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/curriculumBarChart">
           Programme's curriculum Q11-18
         </a>
-
-        <a class="button is-success " id="programmeQ19-Q24" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/careerBarChart">
+        <!-- &nbsp -->
+        <a class="button is-primary " id="programmeQ19-Q24" style="display: none;" href="http://localhost:1337/programme/<%= programme.id %>/careerBarChart">
           Programme links to career Q19-24
         </a>
         <!-- <form action="/programme/delete/<%= programme.id %>" method="POST"> -->

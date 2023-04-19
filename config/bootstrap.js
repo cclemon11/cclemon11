@@ -67,6 +67,38 @@ module.exports.bootstrap = async function () {
         duration: 6,
         imageurl: "https://images.chinahighlights.com/allpicture/2020/02/a85b1cd2578e48a8b46b6ef5_cut_800x500_61.jpg"
 
+      },   {
+        facultyname: "School of Creative Arts",
+        programmename: "Bachelor of Arts (Hons) in Visual Arts",
+        enrollment: 30,
+        programmeobjectives: "Cultivate and enhance students’ competence in applying Chinese medicine theories and methods in clinical practice as well as in the research and development of Chinese medicine",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=3",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_Arts.jpg"
+
+      },{
+        facultyname: "Faculty of Social Sciences",
+        programmename: "Bachelor of Social Sciences (Hons) in History",
+        enrollment: 45,
+        programmeobjectives: "Learn from the past and apply this knowledge to the present and future in a critical and constructive fashion",
+        programmewebsite: "https://scholars.hkbu.edu.hk/en/organisations/department-of-history-2",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPf2beOMjN-0gfUMprU6NE4yo22b5Yh_RU5bGnsI65LlU3NJXnOBtHgFVUiB4_B15dNXA&usqp=CAU"
+
+      },
+    
+      {
+        facultyname: "School of Communication",
+        programmename: "Bachelor of Communication (Hons) in Journalism and Digital Media",
+        enrollment: 40,
+        programmeobjectives: "Prepare students for a career in Chinese-language media or international media that operate in English",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=202",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/Programmes_on_Offer_banner_05.jpg"
+
       },
       {
         facultyname: "Faculty of Science",
@@ -95,10 +127,42 @@ module.exports.bootstrap = async function () {
         programmename: "Bachelor of Arts (Hons) in Creative and Professional Writing",
         enrollment: 35,
         programmeobjectives: "To provide students with a vigorous curriculum to develop creative and professional writing skills in Chinese and English",
-        programmewebsite: "https://artsbu.hkbu.edu.hk/study/prospective/scholarships/faculty-wide",
+        programmewebsite: "https://admissions.hkbu.edu.hk/en/programme-detail.html?id=1",
         credits: 128,
         duration: 4,
-        imageurl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBoKKajccYnR4Bib0Nb0I3R_7jm-uNdOwZYQ&usqp=CAU"
+        imageurl: "https://libapps-au.s3-ap-southeast-2.amazonaws.com/accounts/212432/images/collaborator.jpg"
+
+      },
+      {
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) in Chinese Language and Literature",
+        enrollment: 25,
+        programmeobjectives: "Cultivate in students a deeper knowledge of Chinese culture and broaden their vision with new perspectives to prepare them in meeting the challenges of the changing society",
+        programmewebsite: "https://gs.hkbu.edu.hk/programmes/master-of-arts-ma-in-chinese-literature-language-and-culture",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://artsbu.hkbu.edu.hk/f/page/805/1918/0p0/English%20Poetry%20Contest_1576206337.jpg"
+
+      },
+      {
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) in English Language and Literature",
+        enrollment: 15,
+        programmeobjectives: "A rigorous and rewarding educational experience for its students",
+        programmewebsite: "https://scholars.hkbu.edu.hk/en/organisations/department-of-english-language-and-literature/persons/",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://artsbu.hkbu.edu.hk/f/programme_detail/371/1220c454/ENG_English%20Poetry%20Contest%20%28Unpublished%20Work%29%202018%E8%8B%B1%E8%A9%A9%E5%89%B5%E4%BD%9C%E6%AF%94%E8%B3%BD_17%20November2018_1576489271.jpg"
+
+      }, {
+        facultyname: "Faculty of Arts",
+        programmename: "Bachelor of Arts (Hons) in Humanities",
+        enrollment: 20,
+        programmeobjectives: "engage in all manner of interdisciplinary perspectives on culture, including cultural studies, food studies, gender studies, literary studies, media studies, and philosophy",
+        programmewebsite: "https://hmw.hkbu.edu.hk/",
+        credits: 128,
+        duration: 4,
+        imageurl: "https://admissions.hkbu.edu.hk/uploads/en/faculty/programme/inside_banner_Faculty_of_Arts_Humanities.jpg"
 
       },
       {
@@ -167,6 +231,8 @@ module.exports.bootstrap = async function () {
         imageurl: "https://www.cie.hkbu.edu.hk/main/images/programmes/cs/UG/bus/mkg/highlight.jpg"
       }
 
+
+      
     ]);
   }
 
@@ -460,6 +526,102 @@ module.exports.bootstrap = async function () {
       "share": "satisfied",
       "comments": "excellent"
     },
+    ,{
+      "name": "Man Hei Long",
+      "studentID": "18173432",
+      "email": "heilong@gmail.com",
+      "q1love": 4,
+      "q2related": 4,
+      "q3catchup": 2,
+      "q4progress": 5,
+      "q5enjoy": 5,
+      "q6pressured": 4,
+      "q7recommend": 3,
+      "q8wholeperson": 2,
+      "q9choose": 4,
+      "q10joyful": 4,
+      "q11instructions": 4,
+      "q12difficulty":5,
+      "q13adapt": 3,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 4,
+      "q17facilities": 4,
+      "q18overall": 4,
+      "q19connect": 3,
+      "q20internship": 5,
+      "q21help": 1,
+      "q22knowledge": 2,
+      "q23career": 1,
+      "q24useful": 5,
+      "feel": "happy, good, understand",
+      "share": "satisfied",
+      "comments": "excellent"
+    },
+    ,{
+      "name": "Wong Sze Yan",
+      "studentID": "20171422",
+      "email": "szeyan@gmail.com",
+      "q1love": 1,
+      "q2related": 4,
+      "q3catchup": 2,
+      "q4progress": 5,
+      "q5enjoy": 3,
+      "q6pressured": 4,
+      "q7recommend": 3,
+      "q8wholeperson": 2,
+      "q9choose": 4,
+      "q10joyful": 4,
+      "q11instructions": 4,
+      "q12difficulty":4,
+      "q13adapt": 3,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 4,
+      "q17facilities": 4,
+      "q18overall": 4,
+      "q19connect": 5,
+      "q20internship": 5,
+      "q21help": 1,
+      "q22knowledge": 2,
+      "q23career": 1,
+      "q24useful": 5,
+      "feel": "happy, good, understand",
+      "share": "satisfied",
+      "comments": "excellent"
+    },
+    ,{
+      "name": "Lam Suet Yan",
+      "studentID": "19714322",
+      "email": "suetyan@gmail.com",
+      "q1love": 2,
+      "q2related": 4,
+      "q3catchup": 2,
+      "q4progress": 5,
+      "q5enjoy": 3,
+      "q6pressured": 3,
+      "q7recommend": 3,
+      "q8wholeperson": 2,
+      "q9choose": 4,
+      "q10joyful": 4,
+      "q11instructions": 4,
+      "q12difficulty":4,
+      "q13adapt": 4,
+      "q14wellstructured": 3,
+      "q15resources": 3,
+      "q16support": 4,
+      "q17facilities": 4,
+      "q18overall": 4,
+      "q19connect": 5,
+      "q20internship": 5,
+      "q21help": 1,
+      "q22knowledge": 2,
+      "q23career": 3,
+      "q24useful": 5,
+      "feel": "happy, good, understand",
+      "share": "satisfied",
+      "comments": "excellent"
+    },
     ]);
   }
 
@@ -471,7 +633,12 @@ module.exports.bootstrap = async function () {
   let p6 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Economics and Data Analytics" })
   let p7 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Human Resources Management" })
   let p8 = await Programme.findOne({ programmename: "Bachelor of Business Administration (Hons) in Marketing" })
+  let p9 = await Programme.findOne({ programmename: "Bachelor of Arts (Hons) in Music" })
+  let p10 = await Programme.findOne({ programmename: "Bachelor of Arts (Hons) in Chinese Language and Literature" })
+  let p11 = await Programme.findOne({ programmename: "Bachelor of Arts (Hons) in English Language and Literature" })
 
+  
+  
 
   let f1 = await Feedback.findOne({ studentID: "19232195" })
   let f2 = await Feedback.findOne({ studentID: "19363583" })
@@ -482,8 +649,11 @@ module.exports.bootstrap = async function () {
   let f7 = await Feedback.findOne({ studentID: "21143433" })
   let f8 = await Feedback.findOne({ studentID: "19173437" })
   let f9 = await Feedback.findOne({ studentID: "20177435" })
-  
-  await Programme.addToCollection(p1.id, 'programmes').members([f1.id, f9.id]);
+  let f10 = await Feedback.findOne({ studentID: "18173432" })
+  let f11 = await Feedback.findOne({ studentID: "20171422" })
+  let f12 = await Feedback.findOne({ studentID: "19714322" })
+
+  await Programme.addToCollection(p1.id, 'programmes').members([f1.id, f12.id]);
   await Programme.addToCollection(p2.id, 'programmes').members([f3.id]);
   await Programme.addToCollection(p3.id, 'programmes').members([f2.id]);
   await Programme.addToCollection(p4.id, 'programmes').members([f4.id]);
@@ -491,6 +661,10 @@ module.exports.bootstrap = async function () {
   await Programme.addToCollection(p6.id, 'programmes').members([f6.id]);
   await Programme.addToCollection(p7.id, 'programmes').members([f7.id]);
   await Programme.addToCollection(p8.id, 'programmes').members([f8.id]);
+  await Programme.addToCollection(p9.id, 'programmes').members([f9.id]);
+  await Programme.addToCollection(p10.id, 'programmes').members([f10.id]);
+  await Programme.addToCollection(p11.id, 'programmes').members([f11.id]);
+
 
   return generateUsers();
 
